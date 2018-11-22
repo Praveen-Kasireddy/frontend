@@ -1,0 +1,9 @@
+{
+    "gpid": "KPMG00000006",
+    "firstName": "Test User",
+    "lastName": "WithConfigs",
+    "email": "Testuser06@kpmg.com",
+    "isActive": true,
+    "isAdmin": false,
+    "isAllowCreateProject": true
+}

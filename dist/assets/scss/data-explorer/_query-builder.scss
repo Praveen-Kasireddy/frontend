@@ -1,0 +1,41 @@
+#dataExplorerQueryBuilder {
+    .modal-dialog {
+        width: 1200px;
+        max-width: 100%;
+    }
+
+    ._dimensions {
+        label {
+            display: flex;
+            width: 100%;
+
+            ._label {
+                display: flex;
+                flex: 1;
+                align-items: center;
+            }
+
+            ._dropdown {
+
+            }
+        }
+    }
+
+    ._preview {
+        height: 500px;
+    }
+
+    ._formula {
+        border-top: 1px solid #ddd;
+        padding: 20px 0 0 0;
+        margin: 20px 0 0 0;
+
+        label {
+            width: 100%;
+
+            textarea {
+                height: 200px;
+            }
+        }
+    }
+}

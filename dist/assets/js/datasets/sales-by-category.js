@@ -1,0 +1,28 @@
+export const salesByCategoryDataset = [{
+    "value": 1000,
+    "attribute": "Monitors",
+    "legal_entity": "Dynamic Robotics",
+    "time": 2017,
+    "layer": "Actual",
+    "quality": "Reported",
+    "unit": "EUR",
+    "scale": 1000,
+}, {
+    "value": 2000,
+    "attribute": "Laptops",
+    "legal_entity": "Dynamic Robotics",
+    "time": 2017,
+    "layer": "Actual",
+    "quality": "Reported",
+    "unit": "EUR",
+    "scale": 1000,
+}, {
+    "value": 500,
+    "attribute": "Video Cards",
+    "legal_entity": "Dynamic Robotics",
+    "time": 2017,
+    "layer": "Actual",
+    "quality": "Reported",
+    "unit": "EUR",
+    "scale": 1000,
+}];

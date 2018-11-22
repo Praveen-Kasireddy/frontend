@@ -1,0 +1,18 @@
+#database_loader {
+    max-width: 700px;
+    margin: 10px 0 0 0;
+
+    .form-control,
+    .btn {
+        margin-bottom: 3px;
+    }
+
+    .btn {
+        width: 48.5%;
+        margin-top: 10px;
+
+        &:nth-child(2n) {
+            float: right;
+        }
+    }
+}

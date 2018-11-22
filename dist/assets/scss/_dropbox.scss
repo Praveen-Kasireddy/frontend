@@ -1,0 +1,119 @@
+#dropbox {
+    #dropbox_data_files {
+        .file-list {
+            overflow: auto;
+            padding: 40px 0 25px 25px;
+
+            ._file {
+                width: 100%;
+                height: auto;
+                border-bottom: 1px solid #ccc;
+                color: rgb(110, 129, 155);
+                float: left;
+                margin: 0 15px 0 0;
+                padding: 12px 10px;
+                background-color: #fff;
+                cursor: pointer;
+                position: relative;
+
+                &:last-child {
+                    border-bottom: none !important;
+                }
+
+                ._icon,
+                ._name {
+                    float: left;
+                }
+
+                ._icon {
+                    color: #19754C;
+                }
+
+                ._name {
+                    font-size: 12px;
+                    color: #282c37;
+                    margin-left: 10px;
+                }
+
+                ._percentage {
+                    color: #282c37;
+                    border-radius: 4px;
+                    width: 40px;
+                    padding: 5px;
+                    text-align: center;
+                    line-height: 1;
+                    position: absolute;
+                    bottom: 9px;
+                    right: 40px;
+                    font-size: 12px;
+                }
+
+                &._button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    border: 1px dashed rgb(160, 168, 189);
+                    background-color: transparent;
+                }
+
+                .kpmg-icon-add-large {
+                    font-size: 32px;
+                    margin-bottom: 15px;
+                }
+            }
+
+            ._template {
+                display: none;
+            }
+        }
+    }
+
+    ._submenu {
+        border-bottom: 1px solid #ccc;
+        padding-left: 35px;
+        padding-right: 35px;
+
+        #dropbox_show_data,
+        #dropbox_mapping {
+            float: right;
+        }
+
+        #dropbox_show_data {
+            margin-right: 10px;
+        }
+    }
+
+    .dropbox-sidebar {
+        background-color: white;
+        border-right: 1px solid #ccc;
+        padding: 20px 0 0 0;
+    }
+
+    #dropbox_file_list {
+        flex: 1;
+        padding-top: 20px !important;
+        box-shadow: inset 2px 2px 20px rgba(206, 206, 206, .6);
+
+        ._file_navigation_container {
+            padding: 0 0 15px 15px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+
+            img {
+                width: 12px;
+                margin-right: 20px;
+            }
+
+            ._file_navigation_title {
+                font-weight: bold;
+                font-size: 10px;
+            }
+        }
+
+        ._file_column_title {
+            font-size: 10px;
+            padding: 0 0 10px 0;
+        }
+    }
+}

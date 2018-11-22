@@ -1,0 +1,91 @@
+<div class="container-with-sidebar">
+    <div class="_content">
+        <div class="_options">
+            <div class="main-options-container">
+                <div class="first-line-info">
+                    <div class="title-info">
+                        <span>
+                            &nbsp;
+                        </span>
+                        <h3>
+                            Project Setup
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-4">
+                    <label for="">Dimensions:</label>
+                </div>
+                <div class="col-xs-8">
+                    <table class="table table-bordered _dimensions">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Has structures</th>
+                            <th>Has global terms</th>
+                            <th>Used as identifier</th>
+                            <th>Has time intervals</th>
+                            <th>Data type</th>
+                            <th>Dimension options</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="_template">
+                            <td class="_name"></td>
+                            <td class="_has-structures"><input type="checkbox"></td>
+                            <td class="_has-global-terms">
+                                <input class="_has-global-terms-input" type="checkbox">
+                                <div class="_dictionary-selector"></div>
+                            </td>
+                            <td class="_used-as-identifier"><input type="checkbox"></td>
+                            <td class="_has-time-intervals"><input type="checkbox"></td>
+                            <td class="_data-type">
+                                <select class="form-control">
+                                    <option value="0">String</option>
+                                    <option value="1">Number</option>
+                                    <option value="2">Currency</option>
+                                </select>
+                            </td>
+                            <td class="_dimension-options">
+                                <i class="fa fa-eye _hide-dimension"></i>
+                                <i class="kpmg-icon kpmg-icon-trash _remove-dimension"></i>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-default _add-custom-dimension">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        Add Custom Dimension
+                    </button>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <label for="">Data Structures:</label>
+                </div>
+                <div class="col-xs-8">
+                    <div class="_delta-add-children-container">
+                        <label>
+                            <input type="checkbox" class="_delta-add-children">
+                            Delta uses addition instead of substraction
+                            </input>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-sidebar">
+        <div class="main_sidebar">
+        </div>
+    </div>
+</div>

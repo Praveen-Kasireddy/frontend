@@ -1,0 +1,211 @@
+.brush-section {
+    line-height: 1;
+
+    ._brush-container {
+        display: flex;
+        margin: 0 0 6px 0;
+        line-height: 1;
+    }
+
+    ._brush, ._label-brush-range {
+        padding: 8px 10px;
+        margin: 0 0 5px 0;
+        background: #bbb;
+        cursor: pointer;
+        color: #111;
+        border-radius: $border-radius-base;
+        overflow: hidden;
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+            border: 2px solid transparent;
+            border-radius: $border-radius-base;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: $transition-base;
+        }
+
+        &._active {
+            &:before {
+                border-color: rgba(#fff, 0.9);
+            }
+        }
+
+        &:hover {
+            &:before {
+                border-color: rgba(#fff, 1);
+            }
+        }
+    }
+
+    ._label-brush-range {
+        cursor: pointer;
+        width: 20%;
+        display: inline-block;
+        background-color: white;
+        padding: 10px 5px;
+        border-radius: 6px;
+        overflow: hidden;
+        position: relative;
+        color: black;
+        margin: 0 0 0 5px;
+        flex: 1;
+    }
+
+    ._label-brush._brush {
+        width: $brush-label-width;
+        display: inline-block;
+        margin: 0;
+
+        &._active {
+            &:before {
+                border-color: rgba(#fff, 0.5);
+            }
+        }
+
+        &:hover {
+            &:before {
+                border-color: rgba(#fff, 0.75);
+            }
+        }
+    }
+
+    ._label-global {
+        padding: 10px 5px;
+        width: 10%;
+        display: inline-block;
+        margin: 0 0 0 5px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+._label-properties {
+    ._dimension-picker-container {
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    ._remove-rule {
+        margin-bottom: 10px;
+        display: block;
+        width: 150px;
+        margin-left: auto;
+    }
+
+    ._add-new-label-rule {
+        margin-bottom: 10px;
+        display: block;
+        width: 150px;
+        margin-left: auto;
+
+        + ._field {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 10px;
+        }
+    }
+}
+
+._freeze-col, ._freeze-row {
+    width: 38%;
+    display: inline-block;
+}
+
+._freeze-col, ._unfreeze-col {
+    float: left;
+}
+
+._freeze-row, ._unfreeze-row {
+    float: right;
+}
+
+._freeze-row {
+    margin-right: 3px !important;
+}
+
+._unfreeze-col {
+    margin-left: 3px !important;
+}
+
+._unfreeze-col, ._unfreeze-row {
+    width: 10%;
+    display: inline-block;
+}
+
+._dimensions-section {
+    clear: both;
+}
+
+#source_data_files ._add-file-global-mapping {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+
+    ._mapping-select-dimension {
+        display: inline-table;
+        margin: 10px 30px;
+    }
+
+    ._mapping-container {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: space-between;
+
+        ._values-left {
+            min-width: 150px;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+            padding-left: 30px;
+
+            ._mapping-value {
+                cursor: pointer;
+                border: 1px solid gray;
+                margin-bottom: 5px;
+                padding: 5px;
+                text-align: center;
+                border-radius: 5px;
+            }
+
+            ._active {
+                border: 2px solid #9e9e9e;
+                background: beige;
+            }
+        }
+
+        ._terms-right {
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+
+            ._global-terms-from-dictionary {
+                display: flex;
+                flex-direction: column;
+                overflow: auto;
+                margin-top: 10px;
+
+                ._global-term-from-dictionary {
+                    cursor: pointer;
+                    border: 1px solid gray;
+                    margin-bottom: 5px;
+                    padding: 5px;
+                    text-align: center;
+                    border-radius: 5px;
+
+                    ._term-title {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

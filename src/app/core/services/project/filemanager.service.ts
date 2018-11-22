@@ -19,7 +19,7 @@ export class FileManagerService {
 
     private _apiTestUrl: string = 'python';
 
-    private _apiBlobUrl: string = '/api/cellvalue';
+    private _apiBlobUrl: string = 'https://cosmosnorth.azurewebsites.net/api/cellvalue';
 
     constructor(private _http: HttpClient, private _logger: NGXLogger) {
         this._baseUrl = KosmosConfigurationService.appConfig.API_URL_CORE;

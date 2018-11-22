@@ -1,0 +1,13 @@
+{
+    "production": false,
+    "clientLogLevel": "DEBUG",
+    "serverLogUrl": "http://localhost:20034/api/v2/core/log",
+    "serverLogLevel": "INFO",
+    "traceRouting": false,
+    "API_URL": "http://localhost:20034/api/v2",
+    "API_URL_CORE": "http://localhost:20034/api/v2/core",
+    "API_URL_INGEST": "http://localhost:20034/api/v2/ingest",
+    "API_URL_RENDER": "http://localhost:20034/api/v2/render",
+    "FROALA_LICENSE_KEY": "tE1B4D2A6mD6F5E4G3E1B9B5C3F5B4g1Rd1Rb1MKF1AKUBWBOR==",
+    "SPREADJS_LICENSE_KEY": "kosmos-qa.kpmg.de|dev.kosmos.kpmg.com,697458839625518#A0tc3O6IiOiQWSiwSflNHbhZmOiI7ckJye0ICbuFkI1pjIEJCLi4TPRhnVWl4M8I5VjdUY7xGS4lnY9NkeQdTMlVUNUlXR0Z5MYxEUMlFZUZ6dq36dJVjbvhnaPZUMPBFd73SVwUXbQZVT9gGTmh4cpdHUJpXMhJnUwl4NPdmI0IyUiwyMxcDN8UjNzcTM0IicfJye35XX3JyMiZzZiojIDJCLiETMuYHITpEIkFWZyB7UiojIOJyebpjIkJHUiwiIzUTNwcDMgkTM9ADOxAjMiojI4J7QiwiIt36YucWbwtmLz3Wbz36auYXZkxSZk9yZtB7auEWctM7btN7brJiOiMXbEJCLigkYtdEIUlEIH5EULJiOiEmTDJCLigTM5UjM6kzMtg7N"
+}

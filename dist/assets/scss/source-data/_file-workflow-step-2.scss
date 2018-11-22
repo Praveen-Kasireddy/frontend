@@ -1,0 +1,31 @@
+#source_data .wj-cell {
+    &._structure-mode-parent {
+        &:before {
+            content: "P";
+            background: $colour--kpmg-11-orange;
+        }
+    }
+
+    &._structure-mode-child {
+        &:before {
+            content: "C";
+            background: $colour--kpmg-10-yellow;
+        }
+    }
+    &._structure-mode-parent,
+    &._structure-mode-child {
+        &:before {
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            display: flex;
+            z-index: 1000;
+            width: 20px;
+            height: 20px;
+            line-height: 1;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+#analyses_list ._analyses-list {
+    margin-top: 20px;
+
+    ._analysis {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ccc;
+        color: #6e819b;
+        float: left;
+        margin: 0 15px 0 0;
+        padding: 12px 10px;
+        background-color: #fff;
+        cursor: pointer;
+        position: relative;
+    }
+}

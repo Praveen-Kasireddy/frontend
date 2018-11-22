@@ -1,6 +1,6 @@
 {
     "/api": {
-        "target": "https://appservicesprint4.azurewebsites.net",
+        "target": "https://cosmosnorth.azurewebsites.net",
         "secure": false,
         "changeOrigin": true
     },

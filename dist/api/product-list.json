@@ -1,0 +1,62 @@
+[
+    {
+        "name": "TS",
+        "visible": false,
+        "children": [
+            {
+                "name": "Product: Factbook",
+                "visible": false
+            },
+            {
+                "name": "Product: FDD",
+                "visible": false
+            }
+        ]
+    },
+    {
+        "name": "VAL",
+        "visible": false
+    },
+    {
+        "name": "M & A",
+        "visible": false,
+        "children": [
+            {
+                "name": "Product: Teaser",
+                "visible": false
+            },
+            {
+                "name": "Product: Info Memo",
+                "visible": false
+            }
+        ]
+    },
+    {
+        "name": "RES",
+        "visible": false,
+        "children": [
+            {
+                "name": "Product: Teaser",
+                "visible": false
+            },
+            {
+                "name": "Product: Info Memo",
+                "visible": false
+            }
+        ]
+    },
+    {
+        "name": "SG",
+        "visible": false,
+        "children": [
+            {
+                "name": "Product: Teaser",
+                "visible": false
+            },
+            {
+                "name": "Product: Info Memo",
+                "visible": false
+            }
+        ]
+    }
+]

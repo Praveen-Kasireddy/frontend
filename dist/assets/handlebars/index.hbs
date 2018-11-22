@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KOSMOS TECH POC</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <script src="dist/js/jquery.js?v={{assetVersion}}"></script>
+	<link rel="stylesheet" type="text/css" href="dist/jquery-ui-dist/jquery-ui.css"/>
+    <script src="dist/js/jquery-ui.js?v={{assetVersion}}"></script>
+    <script src="dist/js/bootstrap.js?v={{assetVersion}}"></script>
+    <script src="dist/js/Sortable.js?v={{assetVersion}}"></script>
+
+    <script type="text/javascript" src="dist/js/highcharts.js"></script>
+    <script type="text/javascript" src="node_modules/xlsx-style/dist/xlsx.full.min.js"></script>
+
+    <script type="text/javascript" src="node_modules/vis/dist/vis.js"></script>
+    <link href="node_modules/vis/dist/vis.css" rel="stylesheet">
+
+    <script type="text/javascript" src="node_modules/moment/min/moment.min.js"></script>
+
+    <!-- Chroma -->
+    <script src="dist/js/chroma.js" type="text/javascript"></script>
+
+    <!-- Wijmo -->
+    <link href="assets/wijmo/styles/wijmo.min.css" rel="stylesheet"/>
+    <script src="assets/wijmo/controls/wijmo.min.js" type="text/javascript"></script>
+    <script src="assets/wijmo/controls/wijmo.input.min.js" type="text/javascript"></script>
+    <script src="assets/wijmo/controls/wijmo.grid.min.js" type="text/javascript"></script>
+    <script src="assets/wijmo/controls/wijmo.grid.filter.min.js" type="text/javascript"></script>
+    <script src="assets/wijmo/controls/wijmo.nav.min.js" type="text/javascript"></script>
+	<script src="assets/wijmo/controls/wijmo.xlsx.min.js" type="text/javascript"></script>
+	<script src="assets/wijmo/controls/wijmo.grid.xlsx.min.js" type="text/javascript"></script>
+    <script src="assets/js/lib/jszip.min.js" type="text/javascript"></script>
+
+    <!-- Popper.js and Tooltip.js -->
+    <script src="dist/popper.js/popper.js" type="text/javascript"></script>
+    <script src="dist/tooltip.js/tooltip.js" type="text/javascript"></script>
+
+    <!-- jQuery-contextMenu -->
+    <link href="dist/jquery-contextmenu/jquery.contextMenu.css" rel="stylesheet"/>
+    <script src="dist/jquery-contextmenu/jquery.contextMenu.min.js" type="text/javascript"></script>
+    <script src="dist/jquery-contextmenu/jquery.ui.position.js" type="text/javascript"></script>
+
+    <!--FIX for Safari: Can't find variable intl.-->
+    <script src="node_modules/intl/dist/Intl.js?v={{assetVersion}}"></script>
+    <script src="node_modules/intl/locale-data/jsonp/en.js?v={{assetVersion}}"></script>
+
+    <script type="text/javascript" src="assets/js/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="dist/js/polyfill.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="dist/multi-hash-map/multi-hash-map.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="dist/js/math.js?v={{assetVersion}}"></script>
+
+    <link href="node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css?v={{assetVersion}}"/>
+
+    <script src="dist/bootstrap-slider/bootstrap-slider.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="dist/bootstrap-slider/css/bootstrap-slider.min.css">
+</head>
+
+<body>
+<div class="body-container">
+    <div class="side-menu">
+        <div class="extending-sub-menu">
+            <img src="assets/images/kosmos-logo-dark.png">
+
+            <ul class="nav nav-tabs" role="tablist" id="main_nav_tabs">
+                <li>
+                    <a href="#source_data" data-toggle="tab">
+                        <span class="kpmg-icon kpmg-icon-menu-project-data"></span>
+                        <span class="side-menu-icon-label">Source data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#output_table" data-toggle="tab">
+                        <span class="kpmg-icon kpmg-icon-menu-data-explorer"></span>
+                        <span class="side-menu-icon-label">Data explorer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#dropbox" data-toggle="tab">
+                        <span class="kpmg-icon kpmg-icon-menu-data-explorer"></span>
+                        <span class="side-menu-icon-label">Dropbox</span>
+                    </a>
+                </li>
+                <li>
+                    <br><br><br>
+                </li>
+                <li><a href="#project_setup" data-toggle="tab">
+                    <span class="kpmg-icon kpmg-icon-menu-project-setup"></span>
+                    <span class="side-menu-icon-label">Project Setup</span>
+                </a>
+                </li>
+                <li><a href="#database_view" data-toggle="tab">
+                    <span class="kpmg-icon kpmg-icon-menu-home"></span>
+                    <span class="side-menu-icon-label">Kosmos Home</span>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="_show-loading">
+        <svg focusable="false" viewBox="0 0 40 40" style="width: 40px; height: 40px;">
+            <path fill-rule="evenodd"
+                  d="M5.9 9.5C6.8 10.1 7.2 11.3 6.6 12.3 6.3 12.9 5.6 13.3 4.9 13.3 4.5 13.3 4.1 13.2 3.8 13 2.9 12.4 2.5 11.2 3.1 10.2 3.7 9.3 4.9 9 5.9 9.5ZM10.2 3.1C11.2 2.5 12.4 2.8 13 3.8 13.6 4.8 13.2 6 12.3 6.6 11.9 6.7 11.6 6.8 11.3 6.8 10.6 6.8 9.9 6.4 9.5 5.8 8.9 4.9 9.3 3.7 10.2 3.1ZM20 0.5C30.7 0.5 39.5 9.3 39.5 20 39.5 30.7 30.7 39.5 20 39.5 9.3 39.5 0.5 30.7 0.5 20 0.5 18.9 1.4 18 2.5 18 3.6 18 4.5 18.9 4.5 20 4.5 28.6 11.4 35.5 20 35.5 28.6 35.5 35.5 28.6 35.5 20 35.5 11.4 28.6 4.5 20 4.5 18.9 4.5 18 3.6 18 2.5 18 1.4 18.9 0.5 20 0.5Z"
+                  stroke="none" fill="currentColor"></path>
+        </svg>
+    </div>
+
+    <div class="main-content">
+        <div class="tab-content">
+            <div class="tab-pane" id="database_view">
+                {{> kosmos_home }}
+            </div>
+
+            <div class="tab-pane" id="dropbox">
+                {{> dropbox }}
+            </div>
+
+            <div class="tab-pane" id="output_table">
+                {{> data-explorer/analyses }}
+            </div>
+
+            <div class="tab-pane" id="source_data">
+                {{> source_data }}
+            </div>
+
+            <div class="tab-pane" id="project_setup">
+                {{> project_setup }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="dist/js/entry.js?v={{assetVersion}}"></script>
+</body>
+
+</html>

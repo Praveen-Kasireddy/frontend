@@ -1,0 +1,413 @@
+<div class="container-with-sidebar">
+    <div class="_content">
+        <div class="_options">
+            <div class="main-options-container">
+                <div class="first-line-info">
+                    <div class="title-info">
+                        <span>
+	                        &nbsp;
+                        </span>
+                        <h3>
+                            Source Data
+                        </h3>
+                    </div>
+                    <div class="btn-group _mode" data-toggle="buttons">
+                        <label class="btn btn-primary">
+                            <input type="radio" name="source_data_mode" value="graph_view">
+                            Map
+                        </label>
+                        <label class="btn btn-primary active">
+                            <input type="radio" name="source_data_mode" value="data_points" checked>
+                            Data Cockpit
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="source_data_mode" value="data_structures">
+                            Structures
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="source_data_mode" value="files">
+                            Files
+                        </label>
+                        <label class="btn btn-primary _add-manually">
+                            <input type="radio" name="source_data_mode" value="manual_workflow">
+                            Manual Workflow
+                        </label>
+                    </div>
+                    <div class="_add-data-buttons">
+                        <button class="btn btn-default _add-file"><i class="fa fa-plus" aria-hidden="true"></i> Add File
+                        </button>
+
+                        <button class="btn btn-default _add-data-points-manually"><i class="fa fa-plus"
+                                                                                     aria-hidden="true"></i> Add
+                            Manually
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="add_manual_workflow">
+            <div class="_manual-ingestion-steps-display">
+                <div class="_step" data-step="1">Define Data Points</div>
+                <div class="_step" data-step="2">Structure Data</div>
+                <div class="_step" data-step="3">Review</div>
+            </div>
+
+            <div class="_table"></div>
+
+            <div class="_data-structures dataStructuresComponent">
+                {{> source_data_structures }}
+            </div>
+        </div>
+
+        <div id="source_data_files">
+            <div id="source_data_files_pre_ingestion" data-active="false">
+                <div>
+                    <div class="_ingestion-steps-display">
+                        <div class="_step" data-step="1">Define Data</div>
+                        <div class="_step" data-step="2">Structure Data</div>
+                        <div class="_step" data-step="3">Global Mapping</div>
+                        <div class="_step" data-step="4">Review</div>
+                    </div>
+                </div>
+
+                <div class="_table">
+                    <div class="_modal-container">
+                        <form id="cell_modal_form">
+                            <!-- Modal -->
+                            <div class="modal" id="tableCellModal" tabindex="-1" role="dialog" data-backdrop="static"
+                                 data-keyboard="false"
+                                 aria-labelledby="tableCellModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document" data-line_range="false">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="tableCellModalLabel"></h5>
+                                        </div>
+                                        <div class="modal-body" data-cell_type="label">
+                                            <div class="_fields _label-properties">
+                                                <div class="btn btn-default _add-new-label-rule">
+                                                    Add new dimension
+                                                </div>
+                                                <div class="_field">
+                                                    <div class="_name">Range</div>
+                                                    <div class="_range-picker"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-success _apply-and-next">
+                                                Apply & Next
+                                            </button>
+
+                                            <button type="submit" class="btn btn-primary _save-cell-properties">
+                                                Apply
+                                            </button>
+
+                                            <button type="button" class="btn btn-secondary _close" data-dismiss="modal">
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="_data-structures dataStructuresComponent">
+                    {{> source_data_structures }}
+                </div>
+
+                <div class="_add-file-global-mapping">
+                    <div class="_mapping-select-dimension"></div>
+                    <div class="_mapping-container">
+                        <div class="_values-left"></div>
+                        <div class="_terms-right">
+                            <div class="_select-dictionary"></div>
+                            <div class="_global-terms-from-dictionary"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="_review-table"></div>
+            </div>
+        </div>
+
+        <div id="source_data_data_points">
+            <div class="_submenu">
+                <div class="_column-selector"></div>
+
+                <select class="form-control _scale-selector">
+                    <option value="1" selected>1</option>
+                    <option value="1000">1,000</option>
+                    <option value="1000000">1,000,000</option>
+                </select>
+
+                <button class="btn btn-default _clear-filters">
+                    Clear Filters
+                    <i class="fa fa-filter" aria-hidden="true"></i>
+                </button>
+
+                <button class="btn btn-default _export-excel">
+                    Export as Excel
+                    <i class="kpmg-icon-download" aria-hidden="true"></i>
+                </button>
+
+                <div id="_data-points-counter">
+                </div>
+            </div>
+
+            <div id="source_data_all_data_table"></div>
+        </div>
+
+        <div id="source_data_data_structures" class="dataStructuresComponent">
+            {{> source_data_structures }}
+        </div>
+
+        <div id="graph_view">
+            <div class="_submenu">
+                Dimension:
+                <div class="_dimension-selector"></div>
+                &nbsp;&nbsp;&nbsp;
+
+                Source files:
+                <div class="_source-file-selector"></div>
+                &nbsp;&nbsp;&nbsp;
+
+                Coloring:
+                <div class="_coloring-selector"></div>
+
+                <div class="_row2">
+                    <label>
+                        <input type="checkbox" class="_hierarchical-checkbox" checked>
+                        Hierarchical
+                    </label>
+                    &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="checkbox" class="_use-global-terms-checkbox">
+                        Use Global Mapping
+                    </label>
+                    &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="checkbox" class="_hide-disconnected-values" checked>
+                        Hide Disconnected Values
+                    </label>
+                </div>
+
+                <div class="_row3" style="display: none"></div>
+
+                <div class="_graph-progress"></div>
+            </div>
+
+            <div class="_graph"></div>
+        </div>
+    </div>
+
+    <div class="main-sidebar">
+        <div id="source_data_new_entry">
+            <div class="_fields">
+                <div class="_field _template">
+                    <div class="_lock-container">
+                        <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+                        <input type="checkbox" class="_lock">
+                    </div>
+                    <div class="_data-structures-container">
+                        <i class="fa fa-database" aria-hidden="true"></i>
+                    </div>
+                    <div class="_name">
+                        Value
+                    </div>
+                    <div>
+                        <div class="_input"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-default _add-custom-dimension">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                Add Custom Dimension
+            </button>
+
+            <button type="button" class="btn btn-primary _add-data-point">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                <span class="_add">Add New</span>
+            </button>
+
+            <button type="button" class="btn btn-default _clear">
+                <i class="fa fa-eraser" aria-hidden="true"></i>
+                Clear Form
+            </button>
+
+            <button type="button" class="btn btn-primary _save-data-point">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                Save Changes
+            </button>
+
+            <button type="button" class="btn btn-default _delete-data-point">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                Delete
+            </button>
+        </div>
+
+        <div id="source_data_files_sidebar">
+            <div class="_top">
+                <section class="_status-section">
+	                <h4 class="_table-name"></h4>
+
+                    <h4>Status</h4>
+
+                    <div class="_numbers">
+                        <label class="hide-cells-container">
+                            <input type="checkbox" id="hide_cells" class="_hide-cells"/> Hide unused cells
+                        </label>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="legend-section">
+                        <h4>Legend</h4>
+
+                        <div class="_colors"></div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="brush-section">
+                        <h4>Ranges</h4>
+
+                        <div class="_brush _data-point">
+                            <i class="fa fa-paint-brush" aria-hidden="true"></i> Data Points
+                        </div>
+                        <div class="_brush _not-used">
+                            <i class="fa fa-paint-brush" aria-hidden="true"></i> Not Used
+                        </div>
+                        <div class="_brush _table">
+                            <i class="fa fa-paint-brush" aria-hidden="true"></i> Table
+                        </div>
+
+                        <div class="_brush _freeze-col">
+                            <i class="fa fa-paint-brush" aria-hidden="true"></i> Freeze col
+                        </div>
+                        <div class="_brush _unfreeze-col">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </div>
+                        <div class="_brush _unfreeze-row">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </div>
+                        <div class="_brush _freeze-row">
+                            <i class="fa fa-paint-brush" aria-hidden="true"></i> Freeze row
+                        </div>
+                        <div class="_dimensions-section">
+                            <h4>Dimensions</h4>
+                            <i class="fa fa-cog _dimensions-cog"></i>
+                            <i class="fa fa-eye _range-global-visibility"></i>
+
+                            <div class="_column-selector"></div>
+
+                            <button type="button" class="btn btn-default _add-custom-dimension">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                Add Custom Dimension
+                            </button>
+                        </div>
+                    </div>
+
+	                <div class="_zoom-slider-container">
+		                <div>Table zoom:</div>
+		                <input id="_zoom-slider" data-slider-id="zoomSlider1" type="text">
+	                </div>
+                </section>
+
+                <section>
+                    <div class="data-structures-section">
+                        <h4>Data Structures</h4>
+
+                        <button type="button" class="btn btn-default _add-relationship">
+                            Add Parent-Child Relationship
+                        </button>
+
+                        <div class="_add-relationship-container">
+                            <div class="_delta">
+                                Delta: <span class="_value"></span>
+                            </div>
+
+                            <button type="button" class="btn btn-default _cancel">
+                                Cancel
+                            </button>
+
+                            <button type="button" class="btn btn-success _save">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="_ingestion-steps">
+                <button type="button" class="btn btn-default _cancel">Cancel</button>
+                <span class="_back btn btn-lg btn-primary">Back</span>
+                <span class="_next btn btn-lg btn-success">Next</span>
+            </div>
+        </div>
+
+        <div id="add_manual_sidebar">
+            <div class="_manual-workflow-form">
+                <button type="button" class="btn btn-default _cancel">Cancel</button>
+
+                <h3>Setup</h3>
+
+                <div id="add_manual_form">
+                    <div class="_fields">
+                        <div class="_field _template">
+                            <div class="_lock-container">
+                                <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+                                <input type="checkbox" class="_lock">
+                            </div>
+                            <div class="_name">
+                                Value
+                            </div>
+                            <div>
+                                <div class="_input"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary _add-data-point">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <span class="_add">Add New</span>
+                    </button>
+
+                    <button type="button" class="btn btn-default _clear">
+                        <i class="fa fa-eraser" aria-hidden="true"></i>
+                        Clear Form
+                    </button>
+
+                    <button type="button" class="btn btn-primary _save-data-point">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                        Save Changes
+                    </button>
+
+                    <button type="button" class="btn btn-default _delete-data-point">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        Delete
+                    </button>
+                </div>
+
+                <div class="_dimensions-section">
+                    <h4>Dimensions</h4>
+
+                    <div class="_column-selector"></div>
+
+                    <button type="button" class="btn btn-default _add-custom-dimension">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        Add Custom Dimension
+                    </button>
+                </div>
+            </div>
+
+            <div class="_ingestion-steps">
+                <span class="_back btn btn-lg btn-primary">Back</span>
+                <span class="_next btn btn-lg btn-success">Next</span>
+            </div>
+        </div>
+    </div>
+</div>
