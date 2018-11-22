@@ -1,0 +1,28 @@
+.dataStructuresComponent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    ._dataStructuresTable {
+        flex: 1;
+
+        .wj-glyph-right {
+            padding-right: 2px;
+        }
+
+        .wj-glyph-down-right._hidden {
+            opacity: 0;
+            cursor: inherit;
+            width: 13px;
+        }
+
+        ._view-sets {
+            float: right;
+            padding: 0 20px;
+        }
+    }
+
+    ._setsTable {
+        flex: 1;
+    }
+}

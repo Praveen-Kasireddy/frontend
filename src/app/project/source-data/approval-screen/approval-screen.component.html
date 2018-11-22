@@ -1,0 +1,3 @@
+<kosmos-spread-sheet id="approval-sheet" readOnly="true" menu="false" [data]="data" (cellSelectionChanged)="onCellSelectionChanged($event)"></kosmos-spread-sheet>
+<kosmos-approval-popup [displayCells]="selectedCells"></kosmos-approval-popup>
+<kosmos-message-box title="Warning" showDoneButton="true" showCloseButton="true" (closeEvent)="onClosePopup($event)"></kosmos-message-box>

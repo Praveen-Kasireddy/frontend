@@ -1,0 +1,11 @@
+@import "app-shared";
+
+.dropdown-menu {
+	padding: $spacing--5;
+	z-index: $depth--5;
+	border-radius: 3px;
+}
+
+.dropdown-item {
+	font-weight: $font-weight-bold;
+}

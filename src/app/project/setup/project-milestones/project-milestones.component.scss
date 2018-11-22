@@ -1,0 +1,48 @@
+@import 'app-shared';
+@import '../../../assets/styles/themes/material/colours.scss';
+
+:host {
+    background: #edf0f4;
+    border-radius: 2px;
+    border: 1px solid $colour--borders--mischka;
+    display: block;
+    list-style: none;
+    margin-top: $spacing--5;
+    padding: $spacing--5;
+}
+
+.form-group {
+    .date {
+        min-width: 90px;
+    }
+}
+
+ul {
+    &.item-list {
+        > li {
+            margin: $spacing--5 0 0;
+
+            &:first-child {
+                margin-top: $spacing--4;
+            }
+        }
+    }
+}
+
+.flex-item {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > .date {
+        flex: 0 0 20%;
+        max-width: 20%;
+        padding-right: $spacing--5;
+    }
+
+    > .name {
+        flex: 0 0 80%;
+        max-width: 80%;
+        text-overflow: ellipsis;
+    }
+}

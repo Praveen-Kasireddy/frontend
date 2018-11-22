@@ -1,0 +1,243 @@
+<div class="container-with-sidebar" id="single_analysis">
+    <div class="_content">
+        <div>
+            <div class="_options">
+                <div class="main-options-container">
+	                <div class="first-line-info">
+		                <div class="title-info _analysis-title">
+			                <h3>
+                                Style test 2
+                            </h3>
+                        </div>
+                        <div class="btn-group _outputMode" data-toggle="buttons">
+                            <label class="btn btn-primary">
+                                <input type="radio" name="output_mode" value="chart">
+                                Chart
+                            </label>
+                            <label class="btn btn-primary active">
+                                <input type="radio" name="output_mode" value="table">
+                                Table
+                            </label>
+                        </div>
+
+		                <div class="_menu-dropdown-group">
+			                <div class="dropdown _file-dropdown">
+				                <button class="btn btn-secondary dropdown-toggl" type="button" id="fileDropdownButton"
+				                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					                File
+				                </button>
+				                <div class="dropdown-menu" aria-labelledby="fileDropdownButton">
+					                <a class="dropdown-item" href="#">
+						                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#templateModal"> Load from template...</button></a>
+					                <a class="dropdown-item _back-to-list" href="#">Close</a>
+				                </div>
+
+				                <div class="modal fade" id="templateModal" tabindex="-1" role="dialog" aria-hidden="true">
+					                <div class="modal-dialog modal-dialog-centered" role="document">
+						                <div class="modal-content">
+							                <h5 class="modal-title" id="templateModalOpen">Select template</h5>
+							                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								                <span aria-hidden="true">&times;</span>
+							                </button>
+							                <div class="form-group _template-button-container">
+								                <label for="exampleFormControlSelect1">Example select</label>
+								                <select class="form-control" id="exampleFormControlSelect1">
+									                <option class="_template-button" data-source-template="1">Template 1</option>
+									                <option class="_template-button" data-source-template="2">Template 2</option>
+									                <option class="_template-button" data-source-template="3">Template 3</option>
+									                <option class="_template-button" data-source-template="4">PL Template</option>
+									                <option class="_template-button" data-source-template="5">Reset</option>
+								                </select>
+							                </div>
+						                </div>
+					                </div>
+				                </div>
+			                </div>
+
+			                <div class="dropdown _dropbox-dropdown">
+				                <button class="btn btn-secondary dropdown-toggl" type="button" id="dropboxDropdownButton"
+				                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					                Dropbox
+				                </button>
+				                <div class="dropdown-menu" aria-labelledby="dropboxDropdownButton">
+					                <a class="dropdown-item" id="data_explorer_import_table_button" href="#">Upload Excel file</a>
+					                <div class="dropdown-item _split-screen-mode-switch">
+						                <p>View linked Excel files</p>
+						                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+					                </div>
+				                </div>
+			                </div>
+		                </div>
+
+                        <div class="_control-buttons-container">
+                            <input type="file" id="data_explorer_import_table"
+                                   accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                        </div>
+
+                        <div class="_edit-mode-container">
+                            <label class="_edit-mode-switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                            <span>Edit Mode</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-container">
+                        <div class="_scale">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <label for="scale">
+                                        Scale:
+                                    </label>
+                                </div>
+                                <div class="col-xs-8">
+                                    <select class="form-control" id="scale">
+                                        <option value="1" selected>1</option>
+                                        <option value="1000" selected>1,000</option>
+                                        <option value="1000000">1,000,000</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-related-data">
+                        <div class="btn-group _chartStackingMode" data-toggle="buttons">
+                            <label class="btn btn-primary btn-sm active">
+                                <input type="radio" name="chart_stacking_type" value="normal" checked>
+                                Normal
+                            </label>
+
+                            <label class="btn btn-primary btn-sm">
+                                <input type="radio" name="chart_stacking_type" value="stacked">
+                                Stacked
+                            </label>
+
+                            <label class="btn btn-primary btn-sm">
+                                <input type="radio" name="chart_stacking_type" value="percent">
+                                Percentage
+                            </label>
+                        </div>
+
+                        <div class="btn-group _chartMode" data-toggle="buttons">
+                            <label class="btn btn-primary btn-sm active">
+                                <input type="radio" name="chart_type" value="bar" checked>
+                                <i class="kpmg-icon kpmg-icon-graph" aria-hidden="true"></i>
+                                Bar
+                            </label>
+
+                            <label class="btn btn-primary btn-sm">
+                                <input type="radio" name="chart_type" value="column">
+                                <i class="kpmg-icon kpmg-icon-graph" aria-hidden="true"></i>
+                                Col.
+                            </label>
+
+                            <label class="btn btn-primary btn-sm">
+                                <input type="radio" name="chart_type" value="line">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                                Line
+                            </label>
+
+                            <label class="btn btn-primary btn-sm">
+                                <input type="radio" name="chart_type" value="area">
+                                <i class="fa fa-area-chart" aria-hidden="true"></i>
+                                Area
+                            </label>
+
+                            <label class="btn btn-primary btn-sm">
+                                <input type="radio" name="chart_type" value="pie">
+                                <i class="fa fa-pie-chart" aria-hidden="true"></i>
+                                Pie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-9">
+            </div>
+        </div>
+
+        <div>
+            <div class="col-xs-12 _data-explorer-chart">
+                <div contenteditable="true" class="_formula-cell-editor" data-equality-prefix="true"></div>
+
+                <span class="_formula-cell-editor-query"><i class="fa fa-flask" aria-hidden="true"></i></span>
+
+                <table id="pivot" class="table">
+                </table>
+
+                <div id="outputChart" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+
+        <div class="_data-explorer-template-content">
+            <div class="headline-filter-container"></div>
+            <div id="data-explorer-table"></div>
+        </div>
+    </div>
+
+    <div class="main-sidebar" id="output_table_sidebar">
+        <div class="main_sidebar">
+            <ul class="nav nav-tabs" role="tablist" id="main_sidebar_nav_tabs">
+                <li class="active"><a href="#main_sidebar_columns" data-toggle="tab">Columns</a></li>
+                <li><a href="#main_sidebar_rows" data-toggle="tab">Rows</a></li>
+                <li><a href="#main_sidebar_global" data-toggle="tab">Global</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="main_sidebar_columns">
+                    <ul id="column_box" class="item-group" data-type="filter" data-set="column" data-columns>
+                    </ul>
+                </div>
+
+                <div class="tab-pane" id="main_sidebar_rows">
+                    <ul id="row_box" class="item-group" data-type="filter" data-set="row" data-rows>
+                    </ul>
+                </div>
+
+                <div class="tab-pane" id="main_sidebar_global">
+                    <div class="global-filter-container">
+                        <span class="filter-title">Headline filters</span>
+                        <ul id="filter_box_headline" class="item-group item-group-horizontal global-filter"
+                            data-type="filter">
+
+                        </ul>
+                    </div>
+                    <div class="global-filter-container">
+                        <span class="filter-title">A1 filters</span>
+                        <ul id="filter_box_a1" class="item-group item-group-horizontal global-filter"
+                            data-type="filter">
+                        </ul>
+                    </div>
+                    <div class="global-filter-container">
+                        <span class="filter-title">Hidden filters</span>
+                        <ul id="filter_box_hidden" class="item-group item-group-horizontal  global-filter"
+                            data-type="filter">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="secondary_sidebar">
+            <div class="secondary_sidebar-menu">
+                <div class="_close">
+                    <span class="kpmg-icon kpmg-icon-remove"></span>
+                </div>
+
+                <div id="available_box" data-type="all">
+                </div>
+
+                <input type="text" placeholder="Search">
+            </div>
+
+            <div id="attr_dim_list"></div>
+        </div>
+    </div>
+</div>
+
+{{> data-explorer/query-builder }}
+
+{{> data-explorer/formula-cell-viewer }}

@@ -1,0 +1,21 @@
+<div class="header">
+    <div class="label">{{ characteristic.label }}</div>
+    <input class="caption" type="text" #box (focusout)="edited(box.value)" (keydown.enter)="edited(box.value)" [value]="characteristic.caption">
+    <div class="header-buttons">
+        <div [id]="groupButtonId" class="header-button kpmg-icon-group group-button" (click)="handleGrouping()"></div>
+        <div [id]="chartButtonId" [ngClass]="{'button-disabled': !showInChartEnabled, 'button-active': characteristic.removeFromChart}"
+            class="header-button kpmg-icon-graph" (click)="toggleChart()" tooltip="chartTooltip"></div>
+        <dx-tooltip [target]="chartButtonTarget" showEvent="dxhoverstart" hideEvent="dxhoverend">
+            <div *dxTemplate="let data of 'content'">
+                <p>{{ chartTooltip }}</p>
+            </div>
+        </dx-tooltip>
+        <dx-tooltip [target]="groupButtonTarget" showEvent="dxhoverstart" hideEvent="dxhoverend">
+            <div *dxTemplate="let data of 'content'">
+                <p>{{ groupTooltip }}</p>
+            </div>
+        </dx-tooltip>
+        <div class="header-button kpmg-icon-close" (click)="remove()"></div>
+    </div>
+
+</div>

@@ -1,0 +1,245 @@
+<div class="container">
+    <kosmos-smart-workspace-table-of-content *ngIf="isPageContentLoaded" (selectPage)="selectPage($event)" (close)="hideTableOfContent()"
+        (addPage)="addNewPageByTableOfContent($event)" (deletePage)="removePageByTableOfContent($event)" [isOpen]="tableOfContentVisible"></kosmos-smart-workspace-table-of-content>
+    <kosmos-smart-workspace-toolbar class="smart-workspace-toolbar">
+        <kosmos-toolbar-group class="toolbar-group toolbar-group-icons">
+            <dx-button icon="kpmg-icon kpmg-icon-toolbar-list-view" i18n-text="Smart Workspace Toolbar|Show Table of content@@smartworkspace:toolbar:button:showtableofcontent"
+                type="normal" hint="Show table of content" (onClick)="showTableOfContent()"></dx-button>
+        </kosmos-toolbar-group>
+
+        <kosmos-toolbar-group class="toolbar-group toolbar-group-icons">
+            <dx-select-box [dataSource]="layouts" displayExpr="name" valueExpr="id" fieldTemplate="field" placeholder=""
+                [disabled]="reportPage?.data?.type != PAGE_TYPE.PAGE" (onOpened)="onLayoutSelectBoxOpen($event)"
+                (onSelectionChanged)="onLayoutSelectBoxChange($event)">
+                <div *dxTemplate="let data of 'field'">
+                    <dx-text-box class="product-name" [readOnly]="true"></dx-text-box>
+                </div>
+                <div *dxTemplate="let data of 'dropDownButton'">
+                    <div class="dx-button-content">
+                        <i class="dx-icon kpmg-icon kpmg-icon-template template"></i>
+                    </div>
+                </div>
+                <div *dxTemplate="let data of 'item'">
+                    <img src="{{ data.imageSrc }}" />
+                </div>
+            </dx-select-box>
+        </kosmos-toolbar-group>
+
+        <kosmos-toolbar-group class="toolbar-group toolbar-group-icons">
+            <kosmos-segmented-button class="kosmos-toolbar-segmented-button-save">
+                <button [kosmosCheckRights]="RIGHTS.SAVE_BUTTON_ACTIVE" [disabled]="!hasUnsavedChanges" i18n="Smart Workspace Toolbar|Save@@smartworkspace:toolbar:button:save"
+                    (click)="doSavePage()">Save</button>
+                <kosmos-menu-item>
+                    <button [kosmosCheckRights]="RIGHTS.SAVE_BUTTON_ACTIVE" [disabled]="!hasUnsavedChanges" i18n="Smart Workspace Toolbar|Save@@smartworkspace:toolbar:button:save"
+                        (click)="doSavePage()">Save</button>
+                </kosmos-menu-item>
+                <kosmos-menu-item *ngIf="currentUser?.isAdmin">
+                    <button [disabled]="reportPage?.data?.isCustom" i18n="Smart Workspace Toolbar|Save as template@@smartworkspace:toolbar:button:saveastemplate"
+                        (click)="doSaveTemplate()">Save as template</button>
+                </kosmos-menu-item>
+            </kosmos-segmented-button>
+
+            <kosmos-menu class="kosmos-toolbar-menu-task-state" *ngIf="taskState">
+                <button class="toolbar-button btn-set-state" title="{{ taskState?.name }}">
+                    <kosmos-task-progress-state [stateId]="taskState?.id"></kosmos-task-progress-state>
+                    <span class="label">{{ taskState?.name }}</span>
+                    <span class="kpmg-icon kpmg-icon-arrow-down"></span>
+                </button>
+                <kosmos-menu-item [kosmosCheckRights]="state.progressStateRight" *ngFor="let state of progressStates"
+                    (click)="setState(state)" class="progress-states">
+                    <kosmos-task-progress-state [stateId]="state.id"></kosmos-task-progress-state>
+                    <span class="label-spacing" title="{{ state.name }}">{{ state.name }}</span>
+                </kosmos-menu-item>
+            </kosmos-menu>
+
+            <kosmos-menu class="kosmos-toolbar-menu-page-add">
+                <button class="toolbar-button toolbar-icon-button btn-toolbar-page-add" title="Add new page" i18n-text="Smart Workspace Toolbar|Add new page@@smartworkspace:toolbar:button:addNewPage">
+                    <span class="kpmg-icon kpmg-icon-toolbar-page-add"></span>
+                </button>
+                <kosmos-menu-item (click)="addNewPage(ReportPageOrientation.Landscape)">
+                    <img src="assets/images/page-template.png" />
+                    <span class="description">Blank page</span>
+                </kosmos-menu-item>
+                <kosmos-menu-item (click)="addNewCoverPage(ReportPageOrientation.Landscape)">
+                    <img src="assets/images/cover-page.png" />
+                    <span class="description">Cover page</span>
+                </kosmos-menu-item>
+                <kosmos-menu-item *ngFor="let template of reportTemplates$ | async" (click)="addNewPageByTemplate(template.id)"
+                    class="content-template">
+                    <div class="template-images">
+                        <img [attr.src]="template?.previewUrl | secure | async" onError="this.src='assets/images/page-template.png';this.className += 'error'" />
+                        <span class="description">{{ template.name }}</span>
+                        <a class="download noCloseOnClick" (click)="downloadTemplate($event, template)" title="Download template">
+                            <kosmos-svg-icon [icon]="SvgIcons.DOWNLOAD" width="15" height="15"></kosmos-svg-icon>
+                        </a>
+                        <a class="delete noCloseOnClick" (click)="deleteTemplate($event, template)" *ngIf="currentUser?.isAdmin"
+                            title="Delete template">
+                            <kosmos-svg-icon [icon]="SvgIcons.CLOSE" width="10" height="10"></kosmos-svg-icon>
+                        </a>
+                    </div>
+                </kosmos-menu-item>
+                <kosmos-menu-footer>
+                    <div *ngIf="currentUser?.isAdmin">
+                        <dx-button icon="upload" type="normal" (onClick)="templateImport.value=null; templateImport.click();"
+                            text="Import" hint="Import" i18n-hint="Smart Workspace Toolbar|Import@@smartworkspace:toolbar:button:importtemplate"
+                            i18n-text="Smart Workspace Toolbar|Import@@smartworkspace:toolbar:button:importtemplate"
+                            [disabled]="reportPage?.data?.isCustom"></dx-button>
+                        <input #templateImport style="display:none;" crossorigin type='file' (change)="importTemplate($event)"
+                            accept=".cosmos">
+                    </div>
+                </kosmos-menu-footer>
+            </kosmos-menu>
+        </kosmos-toolbar-group>
+
+        <kosmos-toolbar-group class="toolbar-group toolbar-group-icons">
+            <dx-button icon="kpmg-icon kpmg-icon-toolbar-text" type="normal" (onClick)="addGenericContainer()" hint="Insert Text container"
+                i18n-hint="Smart Workspace Toolbar|Insert Generic Container@@smartworkspace:toolbar:button:insertgenericcontainer"></dx-button>
+            <dx-button icon="kpmg-icon kpmg-icon-toolbar-image" type="normal" (onClick)="addImageContainer()" hint="Insert Image container"
+                i18n-hint="Smart Workspace Toolbar|Insert Image Container@@smartworkspace:toolbar:button:insertimageccontainer"></dx-button>
+            <dx-button icon="kpmg-icon kpmg-icon-toolbar-table" type="normal" (onClick)="InsertTableContainer()" hint="Insert Table container"
+                i18n-hint="Smart Workspace Toolbar|Insert Table Container@@smartworkspace:toolbar:button:inserttablecontainer"></dx-button>
+
+            <kosmos-menu class="kosmos-toolbar-menu-analysis">
+                <button class="toolbar-button toolbar-icon-button btn-toolbar-analysis-add" title="Add new Analysis"
+                    i18n-text="Smart Workspace Toolbar|Add new Analysis@@smartworkspace:toolbar:button:addNewAnalysis">
+                    <span class="kpmg-icon kpmg-icon-table-chart"></span>
+                </button>
+                <kosmos-menu-item class="analysis-filter noCloseOnClick">
+                    <kosmos-tab-button caption="Mine {{ analysisesByUser?.length }}" [isLargeButton]="false"
+                        [isSelected]="analysisForUser" (click)="showAnalysis(true)"></kosmos-tab-button>
+                    <kosmos-tab-button caption="All {{ analysises?.length }}" [isLargeButton]="false" [isSelected]="!analysisForUser"
+                        (click)="showAnalysis(false)"></kosmos-tab-button>
+                </kosmos-menu-item>
+                <kosmos-menu-item *ngFor="let analysis of analysisesList" (click)="addAnalysis(analysis)" class="analysis">
+                    <p class="analysis-name">
+                        <span [ngClass]="{'kpmg-icon-chart-line': analysis.isChartAnalysis, 'kpmg-icon-toolbar-table': !analysis.isChartAnalysis}"></span>
+                        {{ analysis.name }}
+                    </p>
+                    <p class="analysis-creator">
+                        Created by {{ analysis.userCreatedBy.firstName }} {{ analysis.userCreatedBy.lastName }}
+                    </p>
+                </kosmos-menu-item>
+            </kosmos-menu>
+            <dx-button text="Edit in Data Explorer" i18n-text="Smart Workspace Toolbar|Edit in Data Explorer@@smartworkspace:toolbar:button:editInDataExplorer"
+                type="normal" icon="kpmg-icon kpmg-icon-edit" (onClick)="onEditInDataExplorer()" [visible]="isAnalysisContainerSelected"></dx-button>
+            <dx-button text="Update Analysis" i18n-text="Smart Workspace Toolbar|Update Analysis@@smartworkspace:toolbar:button:updateanalysis"
+                type="normal" icon="kpmg-icon kpmg-icon-refresh" (onClick)="onUpdateAnalysis()" [visible]="isAnalysisContainerSelected"></dx-button>
+        </kosmos-toolbar-group>
+
+        <kosmos-toolbar-group class="toolbar-group toolbar-group-icons">
+            <label i18n-text="Smart Workspace Toolbar|Preview@@smartworkspace:toolbar:switch:introColumn">Intro Column</label>
+            <dx-switch [value]="introColumnEnabled" #switchIntroColumn (onValueChanged)="onIntroColumnChange($event)"
+                [disabled]="reportPage?.data?.type != PAGE_TYPE.PAGE"></dx-switch>
+        </kosmos-toolbar-group>
+
+        <kosmos-toolbar-group class="toolbar-group toolbar-group-icons">
+            <dx-button icon="chevronup" i18n-text="Smart Workspace Toolbar|Page Down@@smartworkspace:toolbar:button:pageleft"
+                type="normal" hint="Flip back" (onClick)="previousPage()"></dx-button>
+            <dx-button icon="chevrondown" i18n-text="Smart Workspace Toolbar|Page Up@@smartworkspace:toolbar:button:pageright"
+                type="normal" hint="Flip forward" (onClick)="nextPage()"></dx-button>
+        </kosmos-toolbar-group>
+
+        <!-- the right side buttons ... -->
+        <kosmos-toolbar-group toolbar-right class="toolbar-group">
+            <dx-button text="Generate report" i18n-text="Smart Workspace Toolbar|Generate report@@smartworkspace:toolbar:button:generatereport"
+                type="normal" icon="kpmg-icon kpmg-icon-download" (onClick)="doGenerateReport()"></dx-button>
+            <dx-button icon="kpmg-icon kpmg-icon-delete-page" type="normal" (onClick)="removePage()" hint="Remove"
+                i18n-hint="Smart Workspace Toolbar|Remove@@smartworkspace:toolbar:button:removepage" [disabled]="!reportPage?.data?.canDelete"></dx-button>
+        </kosmos-toolbar-group>
+    </kosmos-smart-workspace-toolbar>
+
+    <div class="content">
+        <div class="geEditor sm-container" id="drawIOContainer">
+            <div id="geInfo">
+                <h1 id="geStatus">Loading
+                    <hr />Smart Workspace
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<kosmos-sidebar [showHelpToggle]="guidanceSnippetText != undefined && !guidanceIsLoading" [isSmartWorkspace]="true">
+    <span class="sidebar-title">Smart Workspace</span>
+    <div class="sidebar-content" *ngIf="guidanceSnippetText != undefined && !guidanceIsLoading" [innerHtml]="guidanceSnippetText">
+    </div>
+    <div class="sidebar-content no-content" *ngIf="guidanceSnippetText == undefined && !guidanceIsLoading">
+        <p i18n="Smart Workspace Toolbar|Guidance Text@@smartworkspace:toolbar:guidanceText">No guidance available.</p>
+    </div>
+    <div class="sidebar-smartworkspace" id="reportsidebar"></div>
+
+    <div class="sidebar-smartworkspace-snippets" id="" [style.display]="isSnippetsVisible?'inherit':'none'">
+        <div class="sidebar-snippets-header"><span class="sidebar-title">Suggested Snippets</span></div>
+        <div class="sidebar-snippets">
+            <kosmos-info-snippet-list (clickHandler)="handleSidebarSnippetClicked($event)" [taskId]="reportPage?.data?.scopeItemId"></kosmos-info-snippet-list>
+
+        </div>
+        <div class="sidebar-snippets-footer"></div>
+    </div>
+</kosmos-sidebar>
+
+<div id="chart-demo" style="position: absolute !important;top: -9999px !important;left: -9999px !important;">
+    <kosmos-chart-view [analysis]="analysis" [showBar]="false" (chartDrawn)="onChartReadyEvent($event)"></kosmos-chart-view>
+</div>
+
+<dx-popup class="froala-popup" [showTitle]="true" title="EDITOR" position="10px 10px" [width]="froalaPopupSize.width"
+    [height]="froalaPopupSize.height" [dragEnabled]="false" [closeOnOutsideClick]="false" (onShowing)="onEditPopupShowing()"
+    [(visible)]="popupVisible" (onHiding)="onFroalaPopupHiding()">
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'Done',
+        onClick: onDonePopup
+    }">
+    </dxi-toolbar-item>
+    <div *dxTemplate="let data of 'content'">
+        <div class="froala-container" [ngClass]="froalaPopupSize.className" id="froala-editor" [froalaEditor]="froalaOptions"
+            (froalaInit)="initFroala($event)"></div>
+        <div class="snippet-container" [ngStyle]="froalaPopupSize.snippetsStyle">
+            <h3 i18n="Smart Froala Popup|Suggested Snippets@@smartworkspace:froala:popup:suggested-snippets">Suggested
+                Snippets</h3>
+            <dx-scroll-view class="snippet-scroll-view">
+                <kosmos-info-snippet-list (clickHandler)="handleSnippetClicked($event)" [taskId]="reportPage?.data?.scopeItemId"></kosmos-info-snippet-list>
+            </dx-scroll-view>
+        </div>
+    </div>
+</dx-popup>
+
+<dx-popup class="delete-page-popup" [showTitle]="false" title="CONFIRM DELETE" [width]="300" [height]="150"
+    [dragEnabled]="false" [closeOnOutsideClick]="false" [(visible)]="confirmDeletePopupVisible">
+    <dxi-toolbar-item widget="dxButton" location="before" toolbar="bottom" [options]="{
+        text: 'Yes',
+        onClick: onConfirmDeletePagePopup
+    }">
+    </dxi-toolbar-item>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'No',
+        onClick: onCloseDeletePagePopup
+    }">
+    </dxi-toolbar-item>
+    <div *dxTemplate="let data of 'content'">
+        <p>Are you sure you want to delete Page {{ pageToDelete?.pageNumber }} from "{{ pageToDelete?.taskName }}"?</p>
+    </div>
+</dx-popup>
+
+<dx-popup class="delete-template-popup" [showTitle]="true" title="WARNING" [width]="300" height="auto" [dragEnabled]="false"
+    [closeOnOutsideClick]="false" [(visible)]="confirmDeleteTemplateVisible">
+    <dxi-toolbar-item widget="dxButton" location="before" toolbar="bottom" [options]="{
+        text: 'Yes',
+        onClick: onConfirmDeleteTemplatePopup
+    }">
+    </dxi-toolbar-item>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'No',
+        onClick: onCloseDeleteTemplatePopup
+    }">
+    </dxi-toolbar-item>
+    <div *dxTemplate="let data of 'content'">
+        <p>Are you sure you want to delete the template?</p>
+    </div>
+</dx-popup>
+
+<kosmos-new-content-template-popup [(visible)]="isNewContentTemplatePopupVisible" (done)="saveContentTemplate($event)"
+    (close)="closeContentTemplatePopup()"></kosmos-new-content-template-popup>
+<kosmos-generate-report-popup [visible]="generateReportPopupVisible" [currentPage]="reportPage?.data?.globalPageNumber"
+    [pageCount]="reportPage?.links?.pageCount" (done)="generateReport($event)" (close)="closeGenerateReportPopup()"></kosmos-generate-report-popup>
+<kosmos-cropper-popup [isVisible]="imagePopupVisible" (done)="addImageToCell($event)" (close)="closeImagePopup()"
+    [imageFromCell]="imageFromCell"></kosmos-cropper-popup>

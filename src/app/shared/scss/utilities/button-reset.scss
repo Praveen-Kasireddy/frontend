@@ -1,0 +1,15 @@
+@mixin button-reset() {
+	padding: 0;
+	font: inherit;
+	color: inherit;
+
+	cursor: pointer;
+	background: none;
+	border: 0;
+	appearance: none;
+	outline: none;
+
+	&:disabled {
+		cursor: default;
+	}
+}

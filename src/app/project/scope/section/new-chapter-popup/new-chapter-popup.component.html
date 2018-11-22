@@ -1,0 +1,30 @@
+<dx-popup title="ADD CHAPTER" (onHidden)="popupHidden()" (onShowing)="popupShowing()" (visibleChange)="popupVisibleChanged()"
+    [(visible)]="visible" i18n-title="Name|Name@@new-chapter:popup" height="250px" width="450px" resizeEnabled="true">
+    <div *dxTemplate="let data of 'content'" class="popup">
+        <dx-validation-group>
+            <div class="form-group">
+                <div class="form-item">
+                    <label i18n-placeholder="Title|Title@@new-chapter:popup">Title</label>
+                    <dx-text-box class="name" [inputAttr]="{id: 'titleChapter'}" [(value)]="name" i18n-placeholder="enter-title|enter-title@@new-chapter:popup"
+                        placeholder="Enter Title" (onFocusOut)="validateMe($event)">
+                        <dx-validator>
+                            <dxi-validation-rule type="required"></dxi-validation-rule>
+                        </dx-validator>
+                    </dx-text-box>
+                </div>
+            </div>
+        </dx-validation-group>
+    </div>
+    <dxi-toolbar-item widget="dxButton" location="before" toolbar="bottom" [options]="{
+        text: 'Add another',
+        elementAttr: { id: 'anotherChapter' },
+        onClick: add
+   }">
+    </dxi-toolbar-item>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+    text: 'Done',
+    elementAttr: { id: 'doneChapter' },
+    onClick: addAndClose
+}">
+    </dxi-toolbar-item>
+</dx-popup>

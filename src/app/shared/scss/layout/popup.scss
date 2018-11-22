@@ -1,0 +1,16 @@
+.dx-popup-normal {
+    .dx-toolbar {
+        &.dx-popup-bottom {
+            .dx-toolbar-button {
+                .dx-button {
+                    background-color: $colour--name-sidebar-gray;
+                    color: $colour--name-catskill-white;
+
+                    &.dx-state-hover {
+                        background-color: #333846;
+                    }
+                }
+            }
+        }
+    }
+}

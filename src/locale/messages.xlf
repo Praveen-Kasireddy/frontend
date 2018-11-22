@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file original="ng.template" id="ngi18n">
+    <unit id="main-nav:My Projects">
+      <notes>
+        <note category="description">My Projects Link</note>
+        <note category="meaning">My Projects</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:12</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:31</note>
+      </notes>
+      <segment>
+        <source>My Projects</source>
+      </segment>
+    </unit>
+    <unit id="main-nav:Tasks List">
+      <notes>
+        <note category="description">My Projects Link</note>
+        <note category="meaning">Task Lists</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:19</note>
+      </notes>
+      <segment>
+        <source>Task List</source>
+      </segment>
+    </unit>
+    <unit id="main-nav:Source Data">
+      <notes>
+        <note category="description">My Projects Link</note>
+        <note category="meaning">Source Data</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:21</note>
+      </notes>
+      <segment>
+        <source>Source Data</source>
+      </segment>
+    </unit>
+    <unit id="main-nav:Data Explorer">
+      <notes>
+        <note category="description">My Projects Link</note>
+        <note category="meaning">Data Explorer</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:23</note>
+      </notes>
+      <segment>
+        <source>Data Explorer</source>
+      </segment>
+    </unit>
+    <unit id="main-nav:Data Overview">
+      <notes>
+        <note category="description">My Projects Link</note>
+        <note category="meaning">Data Overview</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:25</note>
+      </notes>
+      <segment>
+        <source>Data Overview</source>
+      </segment>
+    </unit>
+    <unit id="main-nav:Project Setup">
+      <notes>
+        <note category="description">My Projects Link</note>
+        <note category="meaning">Project Setup</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:28</note>
+      </notes>
+      <segment>
+        <source>Project Setup</source>
+      </segment>
+    </unit>
+    <unit id="main-nav:Project Scope">
+      <notes>
+        <note category="description">My Projects Link</note>
+        <note category="meaning">Project Scope</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:30</note>
+      </notes>
+      <segment>
+        <source>Project Scope</source>
+      </segment>
+    </unit>
+    <unit id="main-nav:User management">
+      <notes>
+        <note category="description">User management Link</note>
+        <note category="meaning">User Management</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:37,39</note>
+      </notes>
+      <segment>
+        <source>
+                User Management
+            </source>
+      </segment>
+    </unit>
+    <unit id="data-explorer:new-analysis">
+      <notes>
+        <note category="description">Name</note>
+        <note category="meaning">Name</note>
+        <note category="location">app/project/data-explorer/new-analysis-popup/new-analysis-popup.component.ts:8</note>
+        <note category="location">app/project/data-explorer/new-analysis-popup/new-analysis-popup.component.ts:14,16</note>
+      </notes>
+      <segment>
+        <source>Enter Title</source>
+      </segment>
+    </unit>
+    <unit id="data-explorer::new-analysis-popup">
+      <notes>
+        <note category="description">Title</note>
+        <note category="meaning">Title</note>
+        <note category="location">app/project/data-explorer/new-analysis-popup/new-analysis-popup.component.ts:1</note>
+      </notes>
+      <segment>
+        <source>CREATE NEW ANALYSIS</source>
+      </segment>
+    </unit>
+    <unit id="project:data-explorer">
+      <notes>
+        <note category="description">Data explorer subtitle</note>
+        <note category="meaning">Data explorer</note>
+        <note category="location">app/project/data-explorer/data-explorer.component.ts:4</note>
+      </notes>
+      <segment>
+        <source>Data Explorer Analysis</source>
+      </segment>
+    </unit>
+    <unit id="project:scope:deliverables:title">
+      <notes>
+        <note category="description"> add deliverables</note>
+        <note category="meaning">DELIVERABLES</note>
+        <note category="location">app/project/scope/deliverable-list/deliverable-list.component.ts:1</note>
+      </notes>
+      <segment>
+        <source>CHOOSE DELIVERABLES</source>
+      </segment>
+    </unit>
+    <unit id="project:scope">
+      <notes>
+        <note category="description">Project Scope Subtitle for Header</note>
+        <note category="meaning">Project Scope</note>
+        <note category="location">app/project/scope/project-scope.component.ts:4</note>
+        <note category="location">app/project/source-data/source-data.component.ts:4</note>
+      </notes>
+      <segment>
+        <source>Project Scope</source>
+      </segment>
+    </unit>
+    <unit id="project:tasklist">
+      <notes>
+        <note category="description">Project Tasklist Subtitle for Header</note>
+        <note category="meaning">Task List</note>
+        <note category="location">app/project/scope/project-scope.component.ts:7</note>
+      </notes>
+      <segment>
+        <source>Task List</source>
+      </segment>
+    </unit>
+    <unit id="project:create">
+      <notes>
+        <note category="description">Create Title for Header</note>
+        <note category="meaning">Project setup</note>
+        <note category="location">app/project/setup/project-setup.component.ts:3</note>
+        <note category="location">app/project/setup/project-setup.component.ts:4</note>
+      </notes>
+      <segment>
+        <source>Project setup</source>
+      </segment>
+    </unit>
+    <unit id="project:create:section:engagement-details">
+      <notes>
+        <note category="description">Section Headline Engagement details</note>
+        <note category="meaning">Engagement details</note>
+        <note category="location">app/project/setup/project-setup.component.ts:11</note>
+      </notes>
+      <segment>
+        <source>Engagement Details</source>
+      </segment>
+    </unit>
+    <unit id="project:create:section:legal-entities">
+      <notes>
+        <note category="description">Section Headline Legal Entities</note>
+        <note category="meaning">Legal Entities</note>
+        <note category="location">app/project/setup/project-setup.component.ts:132</note>
+      </notes>
+      <segment>
+        <source>Legal Entities</source>
+      </segment>
+    </unit>
+    <unit id="project:create:section:stakeholders">
+      <notes>
+        <note category="description">Section Headline Stakeholders</note>
+        <note category="meaning">Stakeholders</note>
+        <note category="location">app/project/setup/project-setup.component.ts:144</note>
+      </notes>
+      <segment>
+        <source>Stakeholders</source>
+      </segment>
+    </unit>
+    <unit id="project:create:section:team">
+      <notes>
+        <note category="description">Section Headline Team</note>
+        <note category="meaning">Team</note>
+        <note category="location">app/project/setup/project-setup.component.ts:151</note>
+      </notes>
+      <segment>
+        <source>Team</source>
+      </segment>
+    </unit>
+    <unit id="project:create:validation-message:team-members">
+      <notes>
+        <note category="description">Validation Message Team Members</note>
+        <note category="meaning">Team Members</note>
+        <note category="location">app/project/setup/project-setup.component.ts:155,157</note>
+      </notes>
+      <segment>
+        <source>
+                        Please assign at least one team member
+                    </source>
+      </segment>
+    </unit>
+    <unit id="project:create:sidebar:title">
+      <notes>
+        <note category="description"> Title</note>
+        <note category="meaning">Project Setup Sidebar</note>
+        <note category="location">app/project/setup/project-setup.component.ts:170</note>
+      </notes>
+      <segment>
+        <source>Set up a new Project</source>
+      </segment>
+    </unit>
+    <unit id="project:create:sidebar:content">
+      <notes>
+        <note category="description"> content</note>
+        <note category="meaning">Project Setup Sidebar</note>
+        <note category="location">app/project/setup/project-setup.component.ts:171,175</note>
+      </notes>
+      <segment>
+        <source>
+        <pc id="0" equivStart="START_HEADING_LEVEL2" equivEnd="CLOSE_HEADING_LEVEL2" type="other" dispStart="&lt;h2&gt;" dispEnd="&lt;/h2&gt;">ENGAGEMENT DETAILS</pc>
+        <pc id="1" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">The Engagement Details con be viewed by members of the team, so ensure that the Project Summary...</pc>
+        <pc id="2" equivStart="START_HEADING_LEVEL2" equivEnd="CLOSE_HEADING_LEVEL2" type="other" dispStart="&lt;h2&gt;" dispEnd="&lt;/h2&gt;">LEGAL ENTITIES</pc>
+    </source>
+      </segment>
+    </unit>
+    <unit id="project:create:button:projectcreate">
+      <notes>
+        <note category="description">create project</note>
+        <note category="meaning">Project Setup Sidebar</note>
+        <note category="location">app/project/setup/project-setup.component.ts:177</note>
+      </notes>
+      <segment>
+        <source><ph id="0" equiv="INTERPOLATION" disp="{{editHandler.saveButtonText}}"/></source>
+      </segment>
+    </unit>
+    <unit id="project:start:toast-message">
+      <notes>
+        <note category="description">toastMessage</note>
+        <note category="meaning">toastMessage</note>
+        <note category="location">app/project/setup/project-setup.component.ts:180</note>
+        <note category="location">app/project/project-start/project-start.component.ts:100</note>
+      </notes>
+      <segment>
+        <source>Project was successfully updated</source>
+      </segment>
+    </unit>
+    <unit id="project:Source Data">
+      <notes>
+        <note category="description">Source Data Subtitle for Header</note>
+        <note category="meaning">Source Data</note>
+        <note category="location">app/project/source-data/filemanager/filemanager.component.ts:4</note>
+      </notes>
+      <segment>
+        <source>Source Data</source>
+      </segment>
+    </unit>
+    <unit id="project:create:stakeholders:add-stakeholder">
+      <notes>
+        <note category="description">Add stakeholder button description</note>
+        <note category="meaning">Add stakeholders</note>
+        <note category="location">app/project/stakeholder/stakeholder-component.ts:15</note>
+        <note category="location">app/project/setup/project-stakeholders/stakeholder-new/stakeholder-new.component.ts:6</note>
+      </notes>
+      <segment>
+        <source>Add stakeholder</source>
+      </segment>
+    </unit>
+    <unit id="project:list">
+      <notes>
+        <note category="description">List Title for Headerk</note>
+        <note category="meaning">Project Card</note>
+        <note category="location">app/project/list/project-list.component.ts:3</note>
+      </notes>
+      <segment>
+        <source>My Projects</source>
+      </segment>
+    </unit>
+    <unit id="project:list:card:duespan">
+      <notes>
+        <note category="description">project due date</note>
+        <note category="meaning">Project Card</note>
+        <note category="location">app/project/list/card/card.component.ts:13</note>
+      </notes>
+      <segment>
+        <source>Due</source>
+      </segment>
+    </unit>
+    <unit id="project:list:card:done">
+      <notes>
+        <note category="description">items done</note>
+        <note category="meaning">Project Card</note>
+        <note category="location">app/project/list/card/card.component.ts:22</note>
+      </notes>
+      <segment>
+        <source>items done</source>
+      </segment>
+    </unit>
+    <unit id="project:list:card-new">
+      <notes>
+        <note category="description">New Projectk</note>
+        <note category="meaning">Project Card</note>
+        <note category="location">app/project/list/card-new/card-new.component.ts:7</note>
+      </notes>
+      <segment>
+        <source>Create new project</source>
+      </segment>
+    </unit>
+    <unit id="project:list:card-new-deactivated">
+      <notes>
+        <note category="description">New Projectk</note>
+        <note category="meaning">Project Card</note>
+        <note category="location">app/project/list/card-new-deactivated/card-new-deactivated.component.ts:7</note>
+      </notes>
+      <segment>
+        <source>You are not permitted to create a new project. Please contact your administrator if needed</source>
+      </segment>
+    </unit>
+    <unit id="project:create:stakeholders:popup">
+      <notes>
+        <note category="description">Name</note>
+        <note category="meaning">Name</note>
+        <note category="location">app/project/setup/project-stakeholders/popup/stakeholder-popup.component.ts:8</note>
+        <note category="location">app/project/setup/project-stakeholders/popup/stakeholder-popup.component.ts:17</note>
+        <note category="location">app/project/setup/project-stakeholders/popup/stakeholder-popup.component.ts:28</note>
+        <note category="location">app/project/setup/project-stakeholders/popup/stakeholder-popup.component.ts:39</note>
+        <note category="location">app/project/setup/project-stakeholders/popup/stakeholder-popup.component.ts:51</note>
+        <note category="location">app/project/scope/rename-popup/rename-popup.component.ts:13</note>
+      </notes>
+      <segment>
+        <source>Name</source>
+      </segment>
+    </unit>
+    <unit id="project:list:sidebar:title">
+      <notes>
+        <note category="description"> Title</note>
+        <note category="meaning">Project List Sidebar</note>
+        <note category="location">app/project/list/project-list-sidebar/project-list-sidebar.component.ts:6</note>
+      </notes>
+      <segment>
+        <source>My Projects</source>
+      </segment>
+    </unit>
+    <unit id="project:list:sidebar:content">
+      <notes>
+        <note category="description"> Title</note>
+        <note category="meaning">Project List Sidebar</note>
+        <note category="location">app/project/list/project-list-sidebar/project-list-sidebar.component.ts:15,48</note>
+      </notes>
+      <segment>
+        <source>
+                    <pc id="0" equivStart="START_HEADING_LEVEL2" equivEnd="CLOSE_HEADING_LEVEL2" type="other" dispStart="&lt;h2&gt;" dispEnd="&lt;/h2&gt;">WELCOME</pc>
+                    <pc id="1" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">Welcome to KPMG Cosmos. We have designed KPMG Cosmos as modern web application which is running inside your browser,
+                        so it might be useful for you to remember the following principles, before entering KPMG Cosmos:</pc>
+                    <pc id="2" equivStart="START_UNORDERED_LIST" equivEnd="CLOSE_UNORDERED_LIST" type="other" dispStart="&lt;ul&gt;" dispEnd="&lt;/ul&gt;">
+                        <pc id="3" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            <pc id="4" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">General navigation</pc> happens via the left hand sidebar which automatically hides when
+                            ever you don’t use it.</pc>
+                        <pc id="5" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            <pc id="6" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">Bottom left</pc> you can always press the home button which will bring you back to this screen
+                            directly.
+                        </pc>
+                        <pc id="7" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">Before you close the KPMG Cosmos tab in your browser or before using the browser navigation, please make
+                            sure to press the
+                            <pc id="8" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">save button</pc> on your screen.</pc>
+                        <pc id="9" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">In case you need any assistance, you have any positive/ negative feedback please feel free to contact
+                            us via our
+                            <pc id="10" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a&gt;" dispEnd="&lt;/a&gt;">KPMG Cosmos mailbox</pc>
+                        </pc>
+                    </pc>
+                    <pc id="11" equivStart="START_HEADING_LEVEL2" equivEnd="CLOSE_HEADING_LEVEL2" type="other" dispStart="&lt;h2&gt;" dispEnd="&lt;/h2&gt;">MY PROJECTS</pc>
+                    <pc id="12" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">All projects, you have access to, are shown on the left.</pc>
+                    <pc id="13" equivStart="START_UNORDERED_LIST" equivEnd="CLOSE_UNORDERED_LIST" type="other" dispStart="&lt;ul&gt;" dispEnd="&lt;/ul&gt;">
+                        <pc id="14" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">Once you
+                            <pc id="15" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">select a project</pc>, you have full access to all project details and the project navigation
+                            will be shown on your left sidebar. </pc>
+                        <pc id="16" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">In addition to project and client name, you can also see the
+                            <pc id="17" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">current project status</pc> which shows you the amount of completed scope items in a second.
+                        </pc>
+                        <pc id="18" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">In case you want to
+                            <pc id="19" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">create a new project</pc>, please click the “plus button” on the very left which will directly
+                            bring you to the project setup screen.</pc>
+                    </pc>
+                </source>
+      </segment>
+    </unit>
+    <unit id="project:config-select:sidebar:title">
+      <notes>
+        <note category="description"> Title</note>
+        <note category="meaning">Project Config Sidebar</note>
+        <note category="location">app/project/config-select/project-config-select-sidebar/project-config-select-sidebar.component.ts:6</note>
+        <note category="location">app/project/scope/project-scope-sidebar/project-scope-sidebar.component.ts:7</note>
+        <note category="location">app/project/source-data/source-data-sidebar/source-data-sidebar.component.ts:7</note>
+      </notes>
+      <segment>
+        <source>Project configuration</source>
+      </segment>
+    </unit>
+    <unit id="project:config-select:sidebar:content">
+      <notes>
+        <note category="description"> content</note>
+        <note category="meaning">Project Config Sidebar</note>
+        <note category="location">app/project/config-select/project-config-select-sidebar/project-config-select-sidebar.component.ts:15,20</note>
+        <note category="location">app/project/scope/project-scope-sidebar/project-scope-sidebar.component.ts:16,41</note>
+        <note category="location">app/project/source-data/source-data-sidebar/source-data-sidebar.component.ts:16,26</note>
+      </notes>
+      <segment>
+        <source>
+                    <pc id="0" equivStart="START_HEADING_LEVEL2" equivEnd="CLOSE_HEADING_LEVEL2" type="other" dispStart="&lt;h2&gt;" dispEnd="&lt;/h2&gt;">Select Project Configuration</pc>
+                    <pc id="1" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">Please select configuration and press button Setup project to create a new project based on the selected
+                        configuration
+                    </pc>
+                </source>
+      </segment>
+    </unit>
+    <unit id="project:config-select:button:projectsetup">
+      <notes>
+        <note category="description">setup projectx</note>
+        <note category="meaning">Project Config Sidebar</note>
+        <note category="location">app/project/config-select/project-config-select-sidebar/project-config-select-sidebar.component.ts:24</note>
+      </notes>
+      <segment>
+        <source>Setup project</source>
+      </segment>
+    </unit>
+    <unit id="project:project-scope:sidebar:subtitle">
+      <notes>
+        <note category="description"> Subtitle</note>
+        <note category="meaning">Project Scope Sidebar Subtitle</note>
+        <note category="location">app/project/scope/project-scope-sidebar/project-scope-sidebar.component.ts:43</note>
+      </notes>
+      <segment>
+        <source>Assign Team Members</source>
+      </segment>
+    </unit>
+    <unit id="project:create:team-members:add-team-member">
+      <notes>
+        <note category="description">Add team member button description</note>
+        <note category="meaning">Add team member</note>
+        <note category="location">app/project/setup/team-members/team-member-new/team-member-new.component.ts:6</note>
+        <note category="location">app/project/scope/new-product-button/new-product-button.component.ts:6</note>
+        <note category="location">app/project/scope/section/new-chapter-button/new-chapter-button.component.ts:6</note>
+      </notes>
+      <segment>
+        <source>Add team member</source>
+      </segment>
+    </unit>
+    <unit id="project:create:chapter:add-chapter">
+      <notes>
+        <note category="description">Add chapter button description</note>
+        <note category="meaning">Add chapter</note>
+        <note category="location">app/project/scope/section/new-chapter-button/new-chapter-button.component.html:6</note>
+      </notes>
+      <segment>
+        <source>Add chapter</source>
+      </segment>
+    </unit>
+    <unit id="project:create:deliverable:add-deliverable">
+      <notes>
+        <note category="description">Add deliverable button description</note>
+        <note category="meaning">Add deliverable</note>
+        <note category="location">app/project/scope/new-product-button/new-product-button.component.html:6</note>
+      </notes>
+      <segment>
+        <source>Add deliverable</source>
+      </segment>
+    </unit>
+    <unit id="empty-page:header">
+      <notes>
+        <note category="description">header on empty page</note>
+        <note category="meaning">Empty Page</note>
+        <note category="location">app/project/empty-page/empty-page.component.ts:2</note>
+      </notes>
+      <segment>
+        <source>New and empty page.</source>
+      </segment>
+    </unit>
+    <unit id="project:start">
+      <notes>
+        <note category="description">Name</note>
+        <note category="meaning">Name</note>
+        <note category="location">app/project/project-start/project-start.component.ts:8</note>
+        <note category="location">app/project/project-start/project-start.component.ts:17</note>
+        <note category="location">app/project/project-start/project-start.component.ts:26</note>
+        <note category="location">app/project/project-start/project-start.component.ts:1</note>
+        <note category="location">app/project/scope/rename-popup/rename-popup.component.ts:1</note>
+      </notes>
+      <segment>
+        <source>Project Name</source>
+      </segment>
+    </unit>
+    <unit id="project:start:validation-message:commercialAction">
+      <notes>
+        <note category="description">commercialActionValidation</note>
+        <note category="meaning">commercialActionValidation</note>
+        <note category="location">app/project/project-start/project-start.component.ts:38,40</note>
+      </notes>
+      <segment>
+        <source>
+                        Please add at least one option
+                    </source>
+      </segment>
+    </unit>
+    <unit id="project:start:validation-message:fees">
+      <notes>
+        <note category="description">feesValidation</note>
+        <note category="meaning">feesValidation</note>
+        <note category="location">app/project/project-start/project-start.component.ts:65,67</note>
+      </notes>
+      <segment>
+        <source>
+                        Please select an option
+                    </source>
+      </segment>
+    </unit>
+    <unit id="project:start:validation-message:daContacts">
+      <notes>
+        <note category="description">daContactsValidation</note>
+        <note category="meaning">daContactsValidation</note>
+        <note category="location">app/project/project-start/project-start.component.ts:83,85</note>
+      </notes>
+      <segment>
+        <source>
+                        Please add at least one DA contact
+                    </source>
+      </segment>
+    </unit>
+    <unit id="new-chapter:popup">
+      <notes>
+        <note category="description">enter-title</note>
+        <note category="meaning">enter-title</note>
+        <note category="location">app/project/scope/section/new-chapter-popup/new-chapter-popup.component.ts:8</note>
+        <note category="location">app/project/scope/section/new-chapter-popup/new-chapter-popup.component.ts:1</note>
+      </notes>
+      <segment>
+        <source>Enter Title</source>
+      </segment>
+    </unit>
+    <unit id="project:scope:chapter:add-task">
+      <notes>
+        <note category="description">Add task button description</note>
+        <note category="meaning">Add task</note>
+        <note category="location">app/project/scope/chapter/new-task-button/new-task-button.component.ts:6</note>
+      </notes>
+      <segment>
+        <source>Add Task</source>
+      </segment>
+    </unit>
+    <unit id="new-task:popup">
+      <notes>
+        <note category="description">enter-title</note>
+        <note category="meaning">enter-title</note>
+        <note category="location">app/project/scope/chapter/new-task-popup/new-task-popup.component.ts:8</note>
+        <note category="location">app/project/scope/chapter/new-task-popup/new-task-popup.component.ts:1</note>
+      </notes>
+      <segment>
+        <source>Enter Title</source>
+      </segment>
+    </unit>
+    <unit id="project:data-explorer:create-new-analysis">
+      <notes>
+        <note category="description">Create new analysis button description</note>
+        <note category="meaning">Create new analysis</note>
+        <note category="location">app/project/data-explorer/new-analysis-button/new-analysis-button.component.ts:6</note>
+      </notes>
+      <segment>
+        <source>Create new analysis</source>
+      </segment>
+    </unit>
+    <unit id="project:data-explorer:add-new-analysis">
+      <notes>
+        <note category="description">Add new analysis button description</note>
+        <note category="meaning">Add new analysis</note>
+        <note category="location">app/project/data-explorer/new-analysis/new-analysis.component.ts:6</note>
+      </notes>
+      <segment>
+        <source>Add new analysis</source>
+      </segment>
+    </unit>
+    <unit id="smartworkspace:toolbar:button:fliporientation">
+      <notes>
+        <note category="description">Flip orientation</note>
+        <note category="meaning">Smart Workspace Toolbar</note>
+        <note category="location">app/project/smart-workspace/smart-workspace.component.ts:26</note>
+      </notes>
+      <segment>
+        <source>Flip orientation</source>
+      </segment>
+    </unit>
+    <unit id="smartworkspace:toolbar:button:save">
+      <notes>
+        <note category="description">Save</note>
+        <note category="meaning">Smart Workspace Toolbar</note>
+        <note category="location">app/project/smart-workspace/smart-workspace.component.ts:27</note>
+      </notes>
+      <segment>
+        <source>Save</source>
+      </segment>
+    </unit>
+    <unit id="smartworkspace:toolbar:button:insertgenericcontainer">
+      <notes>
+        <note category="description">Insert Generic Container</note>
+        <note category="meaning">Smart Workspace Toolbar</note>
+        <note category="location">app/project/smart-workspace/smart-workspace.component.ts:34</note>
+      </notes>
+      <segment>
+        <source>Insert generic container</source>
+      </segment>
+    </unit>
+    <unit id="smartworkspace:toolbar:button:insertdata">
+      <notes>
+        <note category="description">Insert data</note>
+        <note category="meaning">Smart Workspace Toolbar</note>
+        <note category="location">app/project/smart-workspace/smart-workspace.component.ts:36</note>
+      </notes>
+      <segment>
+        <source>Insert data</source>
+      </segment>
+    </unit>
+    <unit id="smartworkspace:toolbar:button:generatereport">
+      <notes>
+        <note category="description">Generate report</note>
+        <note category="meaning">Smart Workspace Toolbar</note>
+        <note category="location">app/project/smart-workspace/smart-workspace.component.ts:50</note>
+      </notes>
+      <segment>
+        <source>Generate report</source>
+      </segment>
+    </unit>
+    <unit id="smartworkspace:toolbar:button:removepage">
+      <notes>
+        <note category="description">Remove</note>
+        <note category="meaning">Smart Workspace Toolbar</note>
+        <note category="location">app/project/smart-workspace/smart-workspace.component.ts:52</note>
+      </notes>
+      <segment>
+        <source>Remove</source>
+      </segment>
+    </unit>
+    <unit id="smartworkspace:froala:popup:suggested-snippets">
+      <notes>
+        <note category="description">Suggested Snippets</note>
+        <note category="meaning">Smart Froala Popup</note>
+        <note category="location">app/project/smart-workspace/smart-workspace.component.ts:91</note>
+      </notes>
+      <segment>
+        <source>Suggested Snippets</source>
+      </segment>
+    </unit>
+    <unit id="user-management:userlist">
+      <notes>
+        <note category="description">List Title for Headerk</note>
+        <note category="meaning">User Management</note>
+        <note category="location">app/user-management/userlist/userlist.component.ts:2</note>
+      </notes>
+      <segment>
+        <source>KPMG Cosmos Management System</source>
+      </segment>
+    </unit>
+    <unit id="userlist:editError:toast-message">
+      <notes>
+        <note category="description">toastMessage</note>
+        <note category="meaning">toastMessage</note>
+        <note category="location">app/user-management/userlist/userlist.component.ts:51</note>
+      </notes>
+      <segment>
+        <source>The user could not be edited!</source>
+      </segment>
+    </unit>
+  </file>
+</xliff>

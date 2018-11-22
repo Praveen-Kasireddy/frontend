@@ -1,0 +1,16 @@
+<dx-popup class="unsaved-changes-popup" [showTitle]="true" title="CONFIRM" [width]="300" [height]="220" [dragEnabled]="false"
+    [closeOnOutsideClick]="false" [(visible)]="popupVisible" (onHiding)="onClose()">
+    <dxi-toolbar-item widget="dxButton" location="before" toolbar="bottom" [options]="{
+        text: 'Yes',
+        onClick: onConfirm
+    }">
+    </dxi-toolbar-item>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'No',
+        onClick: onClose
+    }">
+    </dxi-toolbar-item>
+    <div *dxTemplate="let data of 'content'">
+        <p>Changes have been made and not saved. Do you want to leave anyway?</p>
+    </div>
+</dx-popup>

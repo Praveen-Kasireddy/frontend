@@ -1,0 +1,8 @@
+<kosmos-sheet-characteristic *ngIf="characteristic.type == characteristicType || characteristic.type == customFormulaType"
+    [characteristic]="characteristic" [characteristicIndex]="itemIndex" [sheetDimensionType]="sheetDimensionType"
+    [canBeChartItem]="canBeChartItem" (drop)="onDropOnCharacteristicOfTopLevel(itemIndex)">
+</kosmos-sheet-characteristic>
+<kosmos-sheet-characteristic-group *ngIf="characteristic.type == characteristicGroupType" [characteristic]="characteristic"
+    [groupIndex]="itemIndex" [characteristicCaption]="characteristic.caption" [isRemovedFromChart]="characteristic.removeFromChart"
+    [sheetDimensionType]="sheetDimensionType" [canBeChartItem]="canBeChartItem" (drop)="onDropOnGroup(itemIndex)">
+</kosmos-sheet-characteristic-group>

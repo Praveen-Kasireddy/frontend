@@ -1,0 +1,54 @@
+<div class="container">
+    <kosmos-header i18n-title="Title|Title@@project:data-explorer:analysis-page" [title]='selectedProject?.name'
+        i18n-subtitle="Subtitle|subtitle@@project:data-explorer:analysis" [(subtitle)]="analysisName"
+        [subtitleValidationCallback]="validate" editable="true"></kosmos-header>
+    <div name="bottons" class="menu-buttons">
+        <div class="menu-button" (click)="onTableViewClicked()" [ngClass]="{ 'button-was-selected': showTable, 'button-not-selected': !showTable }">
+            <div class="button-text">{{ tableViewCaption }}</div>
+        </div>
+        <div class="menu-button" (click)="onChartViewClicked()" [ngClass]="{ 'button-was-selected': showChart, 'button-not-selected': !showChart }">
+            <div class="button-text">{{ chartViewCaption }}</div>
+        </div>
+    </div>
+    <div class="inner-container">
+        <kosmos-analysis-toolbar class="analysis-toolbar">
+            <kosmos-toolbar-group class="toolbar-group toolbar-group-icons">
+                <dx-button [kosmosCheckRights]="RIGHTS.SAVE_DATA_EXPLORER" text="Save" i18n-text="Analysis toolbar|Save@@analysis:toolbar:button:save"
+                           type="normal" (onClick)="save()"></dx-button>
+            </kosmos-toolbar-group>
+            <kosmos-toolbar-group toolbar-right class="toolbar-group">
+                <dx-drop-down-box #ScaleDropDown id="ScaleDropDown" [(value)]="selectedScales" [dataSource]="availableScales"
+                    valueExpr="value" displayExpr="displaySelected">
+                    <div *dxTemplate="let contentData of 'content'">
+                        <dx-list id="ScalesList" [dataSource]="availableScales" keyExpr="value" selectionMode="single"
+                            [(selectedItemKeys)]="selectedScales" (onSelectionChanged)="onScaleDropDownBoxSelectionChanged($event)">
+                            <div *dxTemplate="let data of 'item'">
+                                <div>{{ data.display }}</div>
+                            </div>
+                        </dx-list>
+                    </div>
+                </dx-drop-down-box>
+            </kosmos-toolbar-group>
+        </kosmos-analysis-toolbar>
+        <kosmos-formula-editor *ngIf="editFormula" (closeRequested)="closeFormulaEditor()"></kosmos-formula-editor>
+        <kosmos-chart-view *ngIf="showChart" [analysis]="analysis"></kosmos-chart-view>
+        <kosmos-table-view *ngIf="showTable" [analysis]="analysis"></kosmos-table-view>
+    </div>
+</div>
+<kosmos-data-palette></kosmos-data-palette>
+<kosmos-sidebar [isHeaderHidden]="true" [additionalSidebarStyle]="{'height': '100%'}">
+    <ng-container>
+        <div class="tabs">
+            <div class="left">
+                <kosmos-analysis-tab dimensionType="Columns" selected="true" title="Columns" i18n-title="columns|columns@@data-explorer:analysis::side-bar"></kosmos-analysis-tab>
+            </div>
+            <div class="left">
+                <kosmos-analysis-tab dimensionType="Rows" title="Rows" i18n-title="rows|rows@@data-explorer:analysis::side-bar"></kosmos-analysis-tab>
+            </div>
+            <div class="last">
+                <kosmos-analysis-tab dimensionType="Global" title="Global" i18n-title="global|global@@data-explorer:analysis::side-bar"></kosmos-analysis-tab>
+            </div>
+        </div>
+        <kosmos-sheet-characteristics></kosmos-sheet-characteristics>
+    </ng-container>
+</kosmos-sidebar>

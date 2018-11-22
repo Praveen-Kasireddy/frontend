@@ -1,0 +1,15 @@
+{
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.cursorBlinking": "phase",
+    "prettier.singleQuote": true,
+    "prettier.printWidth": 120,
+    "debug.allowBreakpointsEverywhere": true,
+    // Disable telemetry logging
+    "telemetry.enableTelemetry": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "git.ignoreLimitWarning": true
+}

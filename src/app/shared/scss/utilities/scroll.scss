@@ -1,0 +1,43 @@
+@import "vars/colour";
+
+@mixin scroll() {
+	-webkit-overflow-scrolling: touch;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+@mixin scroll-horizontal-only() {
+	@include scroll();
+	overflow-y: hidden;
+}
+
+@mixin scroll-vertical-only() {
+	@include scroll();
+	overflow-x: hidden;
+}
+
+@mixin use-custom-scrollbars($theme: "") { // "dark"
+	$scrollbar--thumb-colour: $colour--name-gray;
+	$scrollbar--track-colour: #f5f7fa;
+
+	@if $theme == "dark" {
+		$scrollbar--thumb-colour: $colour--name-dove-gray;
+		$scrollbar--track-colour: $colour--name-oxford-blue;
+	}
+
+	// styling for the scrollbar
+	&::-webkit-scrollbar {
+		appearance: none;
+		width: $size--scrollbar-thumb;
+		height: $size--scrollbar-thumb;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $scrollbar--thumb-colour;
+		border-radius: 0;
+	}
+
+	&::-webkit-scrollbar-track-piece {
+		background-color: $scrollbar--track-colour;
+	}
+}

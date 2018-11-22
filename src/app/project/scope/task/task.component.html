@@ -1,0 +1,36 @@
+<div #contentDiv class="outer">
+
+
+    <div id="Left{{dropZoneTaskId}}" (dragleave)="onDragLeave($event)" [ngClass]="{ 'dropHere': showLeftDropZone, 'dropzone': !showLeftDropZone}"
+        (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+    </div>
+
+    <div class="inner" id="{{innerDivTaskId}}" [ngClass]="{ 'active': task.isSelected, 'deactive': !task.isSelected}"
+        (dragenter)="onDragEnter($event)" (dragend)="onDragEnd($event)" (dragleave)="onDragLeave($event)" (dragover)="onDragOver($event)">
+
+        <div *ngIf="!isMyTasksView">
+            <label class=" menuAnchor context-menu-button kpmg-icon-menu-more" id="{{menuAnchorId}}"></label>
+            <dx-context-menu [dataSource]="menuItems" (onItemClick)="menuItemClick($event)" showEvent="click" target="#{{menuAnchorId}}"
+                [width]="200"></dx-context-menu>
+        </div>
+        <div class="body" (click)="changeStatus()" [ngClass]="{'waitingResponse': waitingResponse, 'acceptingClick': !waitingResponse }">
+            <div>
+                <label *ngIf="!isMyTasksView" class="dragicon" draggable="true" title="Use Drag & Drop to change the sort order of the tasks">&#x2261;</label>
+                <label *ngIf="!isMyTasksView" class="spacer">.</label>
+                <label *ngIf="task?.scopeItemGuid == undefined" class="individually-added">c</label>
+                <label class="name">&nbsp;{{ task?.name }}</label>
+            </div>
+            <div class="avatar">
+                <kosmos-avatar [name]="fullName"></kosmos-avatar>
+            </div>
+            <div class="state" *ngIf="task.isSelected">
+                <kosmos-workflow-state [stateId]="task?.progressStateId"></kosmos-workflow-state>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!isMyTasksView && ( isLastTaskInList || isLastTaskInRow )" id="Right{{dropZoneTaskId}}" (dragleave)="onDragLeave($event)"
+        [ngClass]="{ 'dropHere': showRightDropZone, 'dropzone': !showRightDropZone}" (dragover)="onDragOver($event)"
+        (drop)="onDrop($event)"></div>
+
+</div>

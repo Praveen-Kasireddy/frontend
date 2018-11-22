@@ -1,0 +1,66 @@
+<div [style.display]="showBar?'inherit':'none'">
+    <kosmos-chart-configuration-bar (chartTypeChanged)="onSetChartType($event)" (chartDisplayModeChanged)="onSetChartDisplayMode($event)"
+        [isStackedAllowed]="!isPie"></kosmos-chart-configuration-bar>
+</div>
+
+<div *ngIf="showData">
+    <div class="content-inner" *ngIf="!isPie">
+        <dx-chart #dxChart id="chart" [dataSource]="data" [rotated]="isBar" [style.width.px]="chartsWidth"
+            (onInitialized)="saveChartInstance(activeChartTypeEnum.Chart, $event)" (onDrawn)="onChartReady(activeChartTypeEnum.Chart)"
+            [style.height.px]="chartsHeight" resolveLabelOverlapping="stack">
+            <dxo-animation [enabled]="false"></dxo-animation>
+            <dxo-adaptive-layout [height]="1" [width]="1"></dxo-adaptive-layout>
+            <dxo-common-series-settings [opacity]=1 [argumentField]="argumentField" [valueField]="valueField" [type]="chartDisplayModeString">
+                <dxo-label [visible]="true" [customizeText]="chartLabel">
+                </dxo-label>
+                <dxo-point [visible]="true">
+                    <dxo-border [visible]="useBorder" color="white"></dxo-border>
+                </dxo-point>
+            </dxo-common-series-settings>
+            <dxo-series-template [nameField]="nameField"></dxo-series-template>
+            <dxo-argument-axis [valueMarginsEnabled]="enableMargin"></dxo-argument-axis>
+            <dxo-legend verticalAlignment="bottom" horizontalAlignment="center">
+            </dxo-legend>
+            <dxo-tooltip [enabled]="true"></dxo-tooltip>
+        </dx-chart>
+    </div>
+    <div *ngIf="canDisplayPie">
+        <div class="content-inner" *ngIf="isPie && showNormalPie">
+            <div id="pieChart-normal">
+                <dx-pie-chart #dxPieChartNormal id="pieChart" [dataSource]="pieChartData" resolveLabelOverlapping="shift"
+                    (onInitialized)="saveChartInstance(activeChartTypeEnum.PieChartNormal, $event)" (onDrawn)="onChartReady(activeChartTypeEnum.PieChartNormal)"
+                    [style.width.px]="chartsWidth" [style.height.px]="chartsHeight">
+                    <dxo-animation [enabled]="false"></dxo-animation>
+                    <dxo-adaptive-layout [height]="1" [width]="1"></dxo-adaptive-layout>
+                    <dxo-margin [bottom]="20"></dxo-margin>
+                    <dxo-legend [visible]="false"></dxo-legend>
+                    <dxi-series argumentField="argumentField" valueField="valueField">
+                        <dxo-label [visible]="true" [customizeText]="pieChartLabelNormal">
+                            <dxo-connector [visible]="true" [width]="1"></dxo-connector>
+                        </dxo-label>
+                    </dxi-series>
+                </dx-pie-chart>
+            </div>
+        </div>
+        <div class="content-inner" *ngIf="isPie && !showNormalPie">
+            <div id="pieChart-percent">
+                <dx-pie-chart #dxPieChartPercent id="pieChart" [dataSource]="pieChartData" resolveLabelOverlapping="shift"
+                    (onInitialized)="saveChartInstance(activeChartTypeEnum.PieChartPercent, $event)" (onDrawn)="onChartReady(activeChartTypeEnum.PieChartPercent)"
+                    [style.width.px]="chartsWidth" [style.height.px]="chartsHeight">
+                    <dxo-animation [enabled]="false"></dxo-animation>
+                    <dxo-adaptive-layout [height]="1" [width]="1"></dxo-adaptive-layout>
+                    <dxo-margin [bottom]="20"></dxo-margin>
+                    <dxo-legend [visible]="false"></dxo-legend>
+                    <dxi-series argumentField="argumentField" valueField="valueField">
+                        <dxo-label [visible]="true" [customizeText]="pieChartLabelPercent">
+                            <dxo-connector [visible]="true" [width]="1"></dxo-connector>
+                        </dxo-label>
+                    </dxi-series>
+                </dx-pie-chart>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isPie && !canDisplayPie" align="center">
+        A pie chart cannot be generated if more than one column is active.
+    </div>
+</div>

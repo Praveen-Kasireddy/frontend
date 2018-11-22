@@ -1,0 +1,22 @@
+{
+    "/api": {
+        "target": "https://appservicesprint4.azurewebsites.net",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/api/excel": {
+        "target": "https://master-kosmos-etl-backend.apps.motius.ci",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/kosmoscore": {
+        "target": "https://kosmosdbapp.azurewebsites.net/api/v2/core",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/locapi": {
+        "target": "http://localhost:20034",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

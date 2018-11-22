@@ -1,0 +1,46 @@
+@import 'app-shared';
+@import '../../../../assets/styles/themes/material/colours';
+
+.product-button {
+    height: 50px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+    z-index: 2;
+    width: 210px;
+}
+
+.product-name {
+    font-size: 12px;
+    font-family: UniversLTPro-45Bold, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+    font-weight: normal;
+    line-height: 17px;
+    max-height: 35px;
+    width: 177px;
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    overflow: hidden;
+}
+
+.delete-button {
+    position: absolute;
+    left: 189px;
+    top: 7px;
+}
+
+.button-was-selected {
+    background-color: $colour--name-black;
+    color: $colour--name-white;
+    border: solid 1px $colour--name-black;
+}
+
+.button-not-selected {
+    background-color: $colour--name-white;
+    color: $colour--name-black;
+    border: solid 1px $colour--name-black;
+}

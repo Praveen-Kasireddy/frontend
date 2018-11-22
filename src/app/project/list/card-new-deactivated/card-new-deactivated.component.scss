@@ -1,0 +1,61 @@
+@import 'app-shared';
+
+:host {
+    cursor: no-drop;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px dashed $colour--name-rock-blue;
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    width: 300px;
+}
+
+.card-item {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.card-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-action {
+    padding-top: 10px;
+    color: $colour--name-rock-blue;
+    font-size: 12px;
+    max-width: 280px;
+    text-align: center;
+}
+
+.card-button {
+    align-items: center;
+    border-radius: 50%;
+    border: 1px dashed $colour--name-rock-blue;
+    display: flex;
+    height: 64px;
+    justify-content: center;
+    position: relative;
+    width: 64px;
+}
+
+.plus-line {
+    background-color: $colour--name-rock-blue;
+    position: absolute;
+}
+
+.plus-line--horizontal {
+    height: 1px;
+    width: 30px;
+    left: 16px;
+}
+
+.plus-line--vertical {
+    height: 30px;
+    width: 1px;
+    top: 16px;
+}

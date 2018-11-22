@@ -1,0 +1,41 @@
+@import 'app-shared';
+
+.info-sippet-list {
+    // @include use-custom-scrollbars();
+    // height: 355px;
+    padding-right: 10px;
+}
+
+.selected-snippet {
+    background: $colour--name-catskill-white;
+    color: black;
+}
+
+.info-text {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 10px;
+    background: none;
+    border: thin solid rgba(160, 168, 189, 0.5);
+    border-radius: 5px;
+    text-align: left;
+    font-size: 0.9em;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+
+    &:active {
+        background: $colour--name-catskill-white;
+        color: black;
+    }
+    &:hover {
+        background: $colour--name-catskill-white;
+        color: black;
+    }
+}
+
+.nosnippets {
+    font-family: 'UniversLTStd-45Light';
+    font-size: 12px;
+    cursor: not-allowed;
+}

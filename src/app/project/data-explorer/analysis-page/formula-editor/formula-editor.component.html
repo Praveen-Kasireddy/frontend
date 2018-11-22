@@ -1,0 +1,17 @@
+<div class="container">
+    <div *ngFor="let item of items; let i = index" class="item">
+        <div *ngIf="currentItemIndex == i" id="formulaPaletteAnchor" class="anchor"></div>
+        <div class="label" (click)="itemClick(i)">{{ item.caption }}</div>
+        <div class="kpmg-icon-remove remove" (click)="removeItem(i)"></div>
+    </div>
+    <div class="first-place-holder" (click)="placeHolderClick()">
+        <div *ngIf="currentItemIndex == undefined" id="formulaPaletteAnchor" class="anchor"></div>
+        {{ firstPlaceHolder }}
+    </div>
+    <div *ngFor="let placeHolder of otherPlaceHolders" class="place-holder">{{ placeHolder }}</div>
+    <div>
+        <div class="kpmg-icon-check clickable" (click)="close()"></div>
+        <div class="kpmg-icon-remove removeAll" (click)="removeAll()"></div>
+    </div>
+</div>
+<kosmos-formula-palette></kosmos-formula-palette>

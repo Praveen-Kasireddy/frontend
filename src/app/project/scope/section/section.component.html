@@ -1,0 +1,23 @@
+<div *ngIf="!isMyTasksView || hasAnyChaptersWithTasks()" class="inner">
+
+    <div class="chapters" style="width: 100%;">
+        <kosmos-chapter [isMyTasksView]="isMyTasksView" *ngFor="let chapter of scopeItems" [isBottomMost]="isItBottomMost(chapter)"
+            [isTopMost]="isItTopMost(chapter)" [chapter]="chapter" [productId]="product?.id" (rename)="onRename($event)"
+            (delete)="onDelete($event)" (moveUpEvent)="onMoveUp($event)" (moveDownEvent)="onMoveDown($event)"
+            (taskRemoveFromChapter)="onTaskRemoveFromChapter($event)" (chapterTasksChanged)="onChapterTasksChanged($event)"></kosmos-chapter>
+    </div>
+    <kosmos-new-chapter-button id="
+            addChapter" *ngIf="!isMyTasksView && product" (componentClicked)="openNewChapterPopup()">
+    </kosmos-new-chapter-button>
+</div>
+<h3 *ngIf="isMyTasksView && !hasAnyChaptersWithTasks()" id="projectScopeSectionPlaceholderNoTasks" class="inner placeholder"
+    i18n-title="There are no tasks available|Placeholder - There are no tasks available@@project:scope:section">
+    There are no tasks available.
+</h3>
+<kosmos-new-chapter-popup [(visible)]="isNewChapterPopupVisible" (closeEvent)="closeNewChapterPopup()" (chapterCreated)="requeryChapters()"
+    [productGuid]="product?.guid"></kosmos-new-chapter-popup>
+<kosmos-rename-popup [(visible)]="isRenamePopupVisible && !isMyTasksView" [title]="newName" (newNameEvent)="changeName($event)"
+    (closeEvent)="closeRenamePopup()"></kosmos-rename-popup>
+
+<kosmos-delete-popup [(visible)]="isDeletePopupVisible && !isMyTasksView" [deleteChapter]="!itemToDelete?.isSection"
+    [deleteTask]="itemToDelete?.isSection" (closeEvent)="closeDeletePopup($event)"></kosmos-delete-popup>

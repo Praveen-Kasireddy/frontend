@@ -1,0 +1,15 @@
+#source_data_new_entry,
+._manual-workflow-form {
+    ._add-data-point,
+    ._clear,
+    ._delete-data-point,
+    ._save-data-point {
+        width: 48%;
+        margin: 0 0 15px 0;
+    }
+
+    ._clear,
+    ._delete-data-point {
+        float: right;
+    }
+}

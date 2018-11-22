@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "name": "Project 1",
+        "user": "Max Mustermann",
+        "dueDate": "2019-01-11T12:20:26",
+        "status": {
+            "name": "active"
+        },
+        "client": {
+            "name": "client 1",
+            "clientId": "1"
+        },
+        "scopeItemSummary": {
+            "total": "10",
+            "completed": "1"
+        },
+        "customProperties": [
+            {
+                "id": 1,
+                "value": "",
+                "name": "Property 1",
+                "isMandatory": true
+            },
+            {
+                "id": 2,
+                "value": "",
+                "name": "Property 2",
+                "isMandatory": true
+            },
+            {
+                "id": 3,
+                "value": "test",
+                "name": "Property 3",
+                "isMandatory": false
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Project 2",
+        "user": "John Doe",
+        "dueDate": "2018-04-18T02:30:56",
+        "status": {
+            "name": "closed"
+        },
+        "client": {
+            "name": "client 2",
+            "clientId": "2"
+        },
+        "scopeItemSummary": {
+            "total": "20",
+            "completed": "5"
+        }
+    },
+    {
+        "id": 3,
+        "name": "Project 3",
+        "user": "anonymous",
+        "dueDate": "2025-05-11T22:30:56",
+        "status": {
+            "name": "draft"
+        },
+        "client": {
+            "name": "client 3",
+            "clientId": "3"
+        },
+        "scopeItemSummary": {
+            "total": "30",
+            "completed": "25"
+        }
+    },
+    {
+        "id": 4,
+        "name": "Project 4",
+        "user": "anonymous",
+        "dueDate": "2025-05-11T22:30:56",
+        "status": {
+            "name": "draft"
+        },
+        "client": {
+            "name": "client 4",
+            "clientId": "4"
+        },
+        "scopeItemSummary": {
+            "total": "40",
+            "completed": "40"
+        }
+    }
+]

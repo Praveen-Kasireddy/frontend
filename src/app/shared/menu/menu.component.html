@@ -1,0 +1,11 @@
+<div class="button" (click)="toggle()">
+    <ng-content></ng-content>
+</div>
+<div class="menu-content" *ngIf="isOpen">
+    <div class="items" *ngIf="isActive" [@fadeInOut] (click)="close($event)">
+        <ng-content select="kosmos-menu-item"></ng-content>
+    </div>
+    <div class="footer" *ngIf="isActiveFooter">
+        <ng-content select="kosmos-menu-footer"></ng-content>
+    </div>
+</div>

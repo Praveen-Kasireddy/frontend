@@ -1,0 +1,28 @@
+<dx-popup title="ADD TEAM MEMBER" (visibleChange)="popupVisibleChanged()" [(visible)]="visible" height="520px" width="550px">
+    <div *dxTemplate="let data of 'content'">
+        <dx-data-grid class="team-member-grid" #grid id="gridContainer" [dataSource]="availableUsers" [hoverStateEnabled]="true"
+            [(selectedRowKeys)]="selectedGpid" [showRowLines]="false" [showColumnLines]="false" [showColumnHeaders]="false" [allowColumnResizing]="true"
+            keyExpr="gpid">
+            <dxo-selection mode="multiple" showCheckBoxesMode="always">
+            </dxo-selection>
+            <dxo-search-panel [visible]="true" [width]="506" i18n-text="Search|Search@@project:create:teamMembers:popup:search" placeholder="Search"></dxo-search-panel>
+            <dxo-paging [pageSize]="20"></dxo-paging>
+            <dxo-pager [showPageSizeSelector]="false"  [allowedPageSizes]="[20]"  [showInfo]="true"></dxo-pager>
+            <dxo-scrolling showScrollbar="onHover"></dxo-scrolling>
+            <dxi-column caption="Avatar" [allowFiltering]="false" [allowSorting]="false" [width]="48" dataField="fullName" cellTemplate="cellTemplate"></dxi-column>
+            <dxi-column dataField="gpid" [visible]="false" [allowSearch]="false"></dxi-column>
+            <dxi-column dataField="roleId" [visible]="false" [allowSearch]="false"></dxi-column>
+            <dxi-column dataField="fullName"></dxi-column>
+            <div *dxTemplate="let data of 'cellTemplate'">
+                <div class="avatar">
+                    <kosmos-avatar [name]="data.value"></kosmos-avatar>
+                </div>
+            </div>
+        </dx-data-grid>
+    </div>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'Done',
+        onClick: onSubmit
+    }">
+    </dxi-toolbar-item>
+</dx-popup>

@@ -1,0 +1,4 @@
+<kosmos-team-member-card *ngFor="let assignedUser of teamMembers" [assignedUser]="assignedUser" (deleteEvent)="delete($event)"></kosmos-team-member-card>
+<kosmos-new-team-member [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" (click)="openPopup()" [@fadeIn]></kosmos-new-team-member>
+<kosmos-team-member-popup [(visible)]="isPopupVisible" [(assignedUsers)]="teamMembers" [availableUsers]="availableUsers"
+    (closeEvent)="closePopup($event)"></kosmos-team-member-popup>

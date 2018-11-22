@@ -1,0 +1,12 @@
+@import 'app-shared';
+
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.name {
+    margin-left: $spacing--5;
+    color: currentColor;
+}

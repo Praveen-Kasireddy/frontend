@@ -1,0 +1,27 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "allowJs": true,
+        "baseUrl": "src",
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "typeRoots": ["node_modules/@types", "typings"],
+        "types": ["node"],
+        "lib": ["es2017", "dom"],
+        "paths": {
+            "@shared/*": ["app/shared/*"],
+            "@core/*": ["app/core/*"],
+            "globalize": ["../node_modules/globalize/dist/globalize"],
+            "globalize/*": ["../node_modules/globalize/dist/globalize/*"],
+            "cldr": ["../node_modules/cldrjs/dist/cldr"],
+            "cldr/*": ["../node_modules/cldrjs/dist/cldr/*"],
+            "zlib": ["../node_modules/browserify-zlib/lib/index.js"]
+        }
+    },
+    "exclude": ["**/assets/drawio/*", "**/node_modules/*"]
+}

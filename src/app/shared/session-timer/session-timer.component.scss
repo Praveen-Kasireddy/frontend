@@ -1,0 +1,41 @@
+@import 'app-shared';
+
+$width: 70px;
+$width--large: 204px;
+$height: 36px;
+
+:host {
+	display: block;
+	height: $height;
+	position: relative;
+	padding: 0 20px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.timercontainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    /* margin: 0 15px 0 20px; */
+    overflow: hidden;
+    font-size: $font-size--small;
+}
+.timermessage {
+    margin: 0 12px 0 0;
+    /* width: 30px; */
+}
+.timertext {
+    display: inline-flex;
+
+    width: 50px;
+
+}
+.standard {
+    color: #a0a8bd;
+}
+.red {
+    color: red;
+}

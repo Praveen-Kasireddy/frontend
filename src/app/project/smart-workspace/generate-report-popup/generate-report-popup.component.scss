@@ -1,0 +1,33 @@
+.form-group {
+    display: block;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 0;
+    width: 100%;
+
+    &.row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        .form-item {
+            flex: 0 1 50%;
+        }
+    }
+
+    .form-item {
+        flex: 0 1 auto;
+        max-width: none;
+        padding: 0;
+    }
+
+    .paging {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        > span {
+            margin: 0 6px;
+        }
+    }
+}

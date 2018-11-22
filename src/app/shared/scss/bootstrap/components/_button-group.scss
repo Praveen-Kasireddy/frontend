@@ -1,0 +1,30 @@
+// Set corners individual because sometimes a single button can be in a .btn-group
+// and we need :first-child and :last-child to both match
+.btn-group > .btn:first-child {
+	margin-left: 0;
+
+	&:not(:last-child):not(.dropdown-toggle) {
+		@include border-right-radius(3);
+	}
+}
+// Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu
+// immediately after it
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .dropdown-toggle:not(:first-child) {
+	@include border-left-radius(3);
+}
+
+.btn-secondary {
+	[class^="kpmg-icon-"],
+	[class*=" kpmg-icon-"] {
+		color: $colour--name-rock-blue;
+	}
+
+	&.active,
+	.active {
+		[class^="kpmg-icon-"],
+		[class*=" kpmg-icon-"] {
+			color: $colour--name-white;
+		}
+	}
+}

@@ -1,0 +1,20 @@
+<a class="inner-button" (click)="showLanguages()">
+    <span class="flag-icon flag-icon-squared flag-icon-{{ currentLanguage.isoCode }}"></span>
+    <span class="menu-text">{{ currentLanguage.name }}</span>
+</a>
+
+<dx-popup class="language-popup" [showTitle]="true" title="CHOOSE LANGUAGE" [width]="300" [height]="300" [dragEnabled]="false"
+    [closeOnOutsideClick]="true" [(visible)]="popupVisible">
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'Done',
+        onClick: closeLanguages
+    }">
+    </dxi-toolbar-item>
+    <div *dxTemplate="let data of 'content'">
+        <ul class="language-list">
+            <li *ngFor="let lang of languages">
+                <a [ngClass]="{'current': lang.id == selectedLanguage.id, 'disabled': !lang.isActive}" (click)="selectLanguage(lang)">{{ lang.name }}</a>
+            </li>
+        </ul>
+    </div>
+</dx-popup>

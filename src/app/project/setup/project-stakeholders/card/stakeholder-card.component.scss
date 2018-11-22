@@ -1,0 +1,109 @@
+@import 'app-shared';
+
+:host {
+    height: 158px;
+    position: relative;
+    max-width: 245px;
+    cursor: pointer;
+
+    &:hover {
+        .close {
+            opacity: 1;
+            transition: opacity $time--shortest $ease-enter;
+        }
+    }
+}
+
+.inner {
+    align-items: flex-start;
+    background-color: $colour--name-white;
+    border-radius: 5px;
+    color: $colour--name-dove-gray;
+    display: flex;
+    height: 100%;
+    padding: 14px;
+    position: relative;
+    width: 100%;
+    border: 1px solid rgba(160, 168, 189, 0.5);
+    transition-timing-function: ease;
+    transition-duration: $time--short;
+    transition-property: border-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: 1px solid $colour--name-rock-blue;
+        top: -2px;
+    }
+}
+
+.content {
+    color: $colour--name-gray;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 14px;
+    max-width: 190px;
+}
+
+p {
+    color: $colour--text--titles-headlines-buttons;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+    opacity: 0.51;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+
+    &.name {
+        opacity: 1;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    span {
+        font-size: 16px;
+    }
+}
+
+footer {
+    margin-top: 12px;
+}
+
+footer p {
+    padding-bottom: 10px;
+}
+
+footer,
+.job-title {
+    font-weight: 900;
+}
+
+.close {
+    cursor: pointer;
+    display: block;
+    opacity: 0;
+    padding: $spacing--5;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    transition: opacity $time--shortest $ease-leave;
+
+    kosmos-svg-icon {
+        color: $colour--name-gray;
+        display: block;
+        height: 9px;
+        transition: color $time--shortest $ease-leave;
+        width: 9px;
+    }
+
+    &:hover,
+    &:focus {
+        kosmos-svg-icon {
+            color: $colour--name-blue;
+            transition: color $time--shortest $ease-enter;
+        }
+    }
+}

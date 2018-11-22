@@ -1,0 +1,13 @@
+@import 'app-shared';
+
+.container {
+    height: 95%;
+    padding: 0px !important;
+    @include scroll-vertical-only();
+    @include use-custom-scrollbars('dark');
+}
+
+.draggable-over-placeholder {
+    height: 20px;
+    border: dashed 1px gray;
+}

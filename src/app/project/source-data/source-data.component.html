@@ -1,0 +1,36 @@
+<div class="container">
+
+
+    <kosmos-header *ngIf="fileModel" [title]="selectedProject?.name" i18n-subtitle="Source data|Source data Subtitle for Header@@project:scope"
+        subtitle={{fileModel.value}}></kosmos-header>
+
+    <div name="bottons" class="menu-buttons">
+
+        <div class="menu-button" (click)="onPreviewClicked()" [ngClass]="{'button-was-selected': doPreview, 'button-not-selected': !doPreview}">
+            <div class="button-text">{{ previewCaption }}</div>
+        </div>
+
+        <div class="menu-button" (click)="onApprovalClicked()" [ngClass]="{'button-was-selected': doApproval, 'button-not-selected': !doApproval, 'menu-button-disabled': !isIngested}">
+            <div class="button-text" [ngClass]="{'button-text-disabled': !isIngested}">{{ approvalCaption }}</div>
+        </div>
+
+        <div class="download">
+            <a href="{{downloadLink}}" class="download-text">Download original</a>
+        </div>
+
+    </div>
+
+    <div class="content">
+        <div *ngIf="isWaiting" class="loading-container">
+            <kosmos-loading-cube></kosmos-loading-cube>
+        </div>
+        <kosmos-preingestion-screen class="approval-container" *ngIf="doPreview" [file]="fileModel">
+        </kosmos-preingestion-screen>
+        <kosmos-approval-screen class="approval-container" *ngIf="doApproval" [file]="fileModel">
+        </kosmos-approval-screen>
+    </div>
+</div>
+<kosmos-source-data-sidebar *ngIf="fileModel" [storageGuid]="this.fileModel.storageId" [isIngested]="isIngested"></kosmos-source-data-sidebar>
+<dx-toast message="The ingest completed successfully" [(visible)]="isIngestSuccessToastVisible" type="Success"></dx-toast>
+<dx-toast message="The ingest failed" [(visible)]="isIngestErrorToastVisible" type="Error"></dx-toast>
+<dx-toast message="Loading the ingested file failed" [(visible)]="isLoadingErrorToastVisible" type="Error"></dx-toast>

@@ -1,0 +1,101 @@
+<dx-popup title="MINI PROJECT START" (onHidden)="popupHidden()" (onShowing)="popupShowing()" (visibleChange)="popupVisibleChanged()"
+    [(visible)]="visible" i18n-title="Name|Name@@project:start" height="630px" width="760px" resizeEnabled="true">
+    <div *dxTemplate="let data of 'content'" class="popup">
+        <dx-validation-group>
+            <div class="form-group">
+                <div class="form-item">
+                    <label i18n-placeholder="Name|Name@@project:start">Project Name</label>
+                    <dx-text-box class="names projectName" [(value)]="project.name" i18n-placeholder="Name|Name@@project:start" placeholder="Project Name"
+                        (onFocusOut)="validateMe($event)" maxLength="200">
+                        <dx-validator>
+                            <dxi-validation-rule type="required"></dxi-validation-rule>
+                        </dx-validator>
+                    </dx-text-box>
+                </div>
+                <div *ngIf="hasToEdit('ClientName')" class="form-item">
+                    <label i18n-placeholder="ClientName|ClientName@@project:start">Client Name</label>
+                    <dx-text-box class="names" [(value)]="project.clientName" i18n-placeholder="ClientName|ClientName@@project:start" placeholder="Client Name"
+                        (onFocusOut)="validateMe($event)" maxLength="200">
+                        <dx-validator>
+                            <dxi-validation-rule type="required"></dxi-validation-rule>
+                        </dx-validator>
+                    </dx-text-box>
+                </div>
+                <div *ngIf="hasToEdit('TargetName')" class="form-item">
+                    <label i18n-placeholder="TargetName|TargetName@@project:start">Target Name</label>
+                    <dx-text-box class="names" [(value)]="project.targetName" i18n-placeholder="TargetName|TargetName@@project:start" placeholder="Target Name"
+                        (onFocusOut)="validateMe($event)" maxLength="200">
+                        <dx-validator>
+                            <dxi-validation-rule type="required"></dxi-validation-rule>
+                        </dx-validator>
+                    </dx-text-box>
+                </div>
+            </div>
+            <div class="form-group">
+                <div *ngIf="hasToEditCommercialActions" class="form-item commercial-actions">
+                    <dx-radio-group [dataSource]="configuration.commercialActions" displayExpr="description" layout="horizontal" [(value)]="project.commercialAction"
+                        (onValueChanged)="validateCommercialActions()" valueExpr="id"></dx-radio-group>
+                    <div *ngIf="showCommercialActionsValidationMessage" class="validation-message" i18n="commercialActionValidation|commercialActionValidation@@project:start:validation-message:commercialAction">
+                        Please add at least one option
+                    </div>
+                </div>
+                <div *ngIf="hasToEdit('StartEndDate')" class="form-item dates">
+                    <div class="startDate">
+                        <label i18n-placeholder="startDate|startDate@@project:start">Est. Start Date</label>
+                        <dx-date-box type="date" [(value)]="project.startDate" [(max)]="project.endDate" (onFocusOut)="validateMe($event)" displayFormat="d-MMM-yyyy"
+                            dateSerializationFormat="yyyy-MM-dd">
+                            <dx-validator>
+                                <dxi-validation-rule type="required"></dxi-validation-rule>
+                            </dx-validator>
+                        </dx-date-box>
+                    </div>
+                    <div class="endDate">
+                        <label i18n-placeholder="endDate|endDate@@project:start">Est. End Date</label>
+                        <dx-date-box type="date" [(value)]="project.endDate" [(min)]="project.startDate" (onFocusOut)="validateMe($event)" displayFormat="d-MMM-yyyy"
+                            dateSerializationFormat="yyyy-MM-dd">
+                            <dx-validator>
+                                <dxi-validation-rule type="required"></dxi-validation-rule>
+                            </dx-validator>
+                        </dx-date-box>
+                    </div>
+                </div>
+                <div *ngIf="hasToEditFees" class="form-item fees">
+                    <label i18n-placeholder="fees|fees@@project:start">Project Fees (est.)</label>
+                    <dx-select-box [dataSource]="configuration.fees" displayExpr="description" [(value)]="project.fees" valueExpr="id"></dx-select-box>
+                    <div *ngIf="showFeesValidationMessage" class="validation-message" i18n="feesValidation|feesValidation@@project:start:validation-message:fees">
+                        Please select an option
+                    </div>
+                </div>
+            </div>
+            <div class="form-group briefing">
+                <div *ngIf="hasToDAContact" class="form-item">
+                    <label>DA Contacts</label>
+                    <dx-autocomplete class="names" placeholder="Insert DA Contact" [dataSource]="configuration.availableUsers" (onItemClick)="addDAContact()"
+                        [(selectedItem)]="daContactToAdd" valueExpr="fullName" i18n-placeholder="DAContacts|DAContacts@@project:start">
+                    </dx-autocomplete>
+                    <div class="da-contacts">
+                        <div class="da-contact" *ngFor="let user of project.daContacts">
+                            <div class="da-contact-name">{{ user.fullName }}</div>
+                            <div class="kpmg-icon-remove delete-button" (click)="deleteDAContact(user)"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div *ngIf="showDaContactsValidationMessage" class="validation-message" i18n="daContactsValidation|daContactsValidation@@project:start:validation-message:daContacts">
+                        Please add at least one DA contact
+                    </div>
+                </div>
+                <div *ngIf="hasToEdit('Briefing')" class="form-item">
+                    <label i18n-placeholder="briefing|briefing@@project:start">Your Briefing</label>
+                    <dx-text-area [(value)]="project.briefing" class="briefing" maxLength="1000"></dx-text-area>
+                </div>
+            </div>
+        </dx-validation-group>
+    </div>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+         text: 'Start project',
+         elementAttr: { id: 'startProject' },
+         onClick: validateAndSubmitForm
+    }">
+    </dxi-toolbar-item>
+</dx-popup>
+<dx-toast message="Project was successfully added" [(visible)]="isToastVisible" type="Success" i18n-message="toastMessage|toastMessage@@project:start:toast-message"></dx-toast>

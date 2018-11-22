@@ -1,0 +1,5 @@
+{
+    "globalDependencies": {
+        "webix": "registry:dt/webix#4.2.0+20170223145009"
+    }
+}

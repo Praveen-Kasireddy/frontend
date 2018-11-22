@@ -1,0 +1,16 @@
+<dx-popup title="WARNING" [(visible)]="visible" height="300px" width="450px">
+    <div *dxTemplate="let data of 'content'">
+        <div *ngIf="!expired">
+            <span>Your session will timeout </span>
+            <span class="red">{{ message }}</span>
+            <span>.</span><br /><br />
+        </div>
+        <span *ngIf="!expired">{{ messageText }}</span>
+        <span *ngIf="expired">{{ expiredMessageText }}</span>
+    </div>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+        disabled: expired,
+        text: 'Extend',
+        onClick: confirmed}">
+    </dxi-toolbar-item>
+</dx-popup>

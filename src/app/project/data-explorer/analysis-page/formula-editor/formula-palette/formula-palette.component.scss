@@ -1,0 +1,29 @@
+.addConstant {
+    padding: 10px;
+}
+
+.addConstant::before {
+    padding-left: 10px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.constantContainer {
+    height: 50px;
+    padding: 10px;
+}
+
+.constantValue {
+    float: left;
+}
+
+.item {
+    cursor: pointer;
+    width: 100%;
+}
+
+.paletteContainer {
+    height: 90%;
+}

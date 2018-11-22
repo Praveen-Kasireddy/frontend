@@ -1,0 +1,43 @@
+#prototype_dashboard {
+    table {
+        border: 1px solid #eee;
+        width: 100%;
+
+        thead {
+            font-weight: bold;
+            background-color: #eee;
+        }
+
+        td {
+            padding: 5px 10px;
+
+            &:nth-child(1) {
+                color: #888;
+            }
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        img,
+        ._video {
+            margin: 0 5px 0 0;
+            border: 1px solid #ddd;
+            border-radius: $border-radius-small;
+            vertical-align: middle;
+        }
+
+        img {
+            max-width: 80px;
+        }
+
+        ._video {
+            font-size: 20px;
+            width: 80px;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+        }
+    }
+}

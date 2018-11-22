@@ -1,0 +1,124 @@
+<div class="inner">
+    <div></div>
+    <header>
+        <img class="logo" src="assets/images/logo.svg" width="35" alt="KPMG Cosmos" />
+        <div class="content">
+            <div class="title">{{ selectedProject?.name }}</div>
+            <div class="subtitle">{{ selectedProject?.projectSummary }}</div>
+        </div>
+    </header>
+
+    <nav *ngIf="!selectedProject">
+        <kosmos-main-nav-item
+            id="Home"
+            [icon]="'kpmg-icon-menu-home'"
+            url="/"
+            i18n="Navbar|My Projects Link@@main-nav:My Projects"
+            >My Projects
+        </kosmos-main-nav-item>
+    </nav>
+
+    <nav *ngIf="selectedProject">
+        <span class="separator"></span>
+        <kosmos-main-nav-item
+            id="TaskList"
+            [kosmosCheckRights]="RIGHTS.ACCESS_TASK_LIST"
+            [hide]="true"
+            [icon]="'kpmg-icon-menu-tasks'"
+            url="/projects/{{ projectGuid }}/tasks"
+            i18n="Task
+        List|My Projects Link@@main-nav:Tasks List"
+            >Task List
+        </kosmos-main-nav-item>
+        <kosmos-main-nav-item
+            id="SourceData"
+            [kosmosCheckRights]="RIGHTS.ACCESS_SOURCE_DATA"
+            [hide]="true"
+            [icon]="'kpmg-icon-menu-project-data'"
+            url="/projects/{{ projectGuid }}/datasources"
+            i18n="Source Data|My Projects Link@@main-nav:Source Data"
+            >Source Data
+        </kosmos-main-nav-item>
+        <kosmos-main-nav-item
+            id="DataExplorer"
+            [kosmosCheckRights]="RIGHTS.ACCESS_DATA_EXPLORER"
+            [hide]="true"
+            [icon]="'kpmg-icon-menu-data-explorer'"
+            url="/projects/{{ projectGuid }}/data-explorer"
+            i18n="Data Explorer|My Projects Link@@main-nav:Data Explorer"
+            >Data Explorer
+        </kosmos-main-nav-item>
+        <kosmos-main-nav-item
+            id="DataOverview"
+            [kosmosCheckRights]="RIGHTS.ACCESS_DATA_OVERVIEW"
+            [hide]="true"
+            [icon]="'kpmg-icon-menu-data-structure'"
+            url="/projects/{{ projectGuid }}/data-overview"
+            i18n="Data Overview|My Projects Link@@main-nav:Data Overview"
+            >Data Overview</kosmos-main-nav-item
+        >
+        <kosmos-main-nav-item
+            id="DataFile"
+            [kosmosCheckRights]="RIGHTS.ACCESS_SOURCE_DATA"
+            [hide]="true"
+            [icon]="'kpmg-icon-menu-project-data'"
+            url="/projects/{{ projectGuid }}/datafiles"
+            i18n="Source Data|My Projects Link@@main-nav:Source Data"
+            >DropBox
+        </kosmos-main-nav-item>
+        <span class="separator"></span>
+        <kosmos-main-nav-item
+            id="SetupButton"
+            [kosmosCheckRights]="RIGHTS.ACCESS_PROJECT_SETUP"
+            [hide]="true"
+            [icon]="'kpmg-icon-menu-project-setup'"
+            url="/projects/{{ projectGuid }}/setup"
+            i18n="Navbar|My Projects Link@@main-nav:Project Setup"
+            >Project Setup
+        </kosmos-main-nav-item>
+        <kosmos-main-nav-item
+            id="ScopeButton"
+            [kosmosCheckRights]="RIGHTS.ACCESS_PROJECT_SCOPE"
+            [hide]="true"
+            [icon]="'kpmg-icon-menu-project-scope'"
+            url="/projects/{{ projectGuid }}/scope"
+            i18n="Navbar|My Projects Link@@main-nav:Project Scope"
+            >Project Scope
+        </kosmos-main-nav-item>
+        <kosmos-main-nav-item
+            id="Home"
+            class="align-bottom"
+            [icon]="'kpmg-icon-menu-home'"
+            url="/home"
+            i18n="Navbar|My Projects Link@@main-nav:My Projects"
+            >My Projects
+        </kosmos-main-nav-item>
+    </nav>
+
+    <footer>
+        <kosmos-session-timer></kosmos-session-timer>
+        <div *ngIf="currentUser?.isAdmin">
+            <kosmos-main-nav-item
+                id="Management"
+                [icon]="'kpmg-icon-menu-data-structure'"
+                url="/management"
+                i18n="Navbar|Management Link@@main-nav:Management"
+            >
+                Management
+            </kosmos-main-nav-item>
+        </div>
+        <kosmos-main-nav-item-language id="Language"></kosmos-main-nav-item-language>
+        <kosmos-main-nav-item
+            id="UserLogout"
+            [icon]="'kpmg-icon-menu-logout'"
+            url="/user-logout"
+            i18n="Navbar|UserLogout@@main-nav:UserLogout"
+        >
+            Logout
+        </kosmos-main-nav-item>
+        <div class="user-version-container">
+            <kosmos-user [user]="currentUser"></kosmos-user>
+            <kosmos-version></kosmos-version>
+        </div>
+    </footer>
+</div>

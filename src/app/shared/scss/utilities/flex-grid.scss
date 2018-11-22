@@ -1,0 +1,27 @@
+/** Usage example:
+	.container {
+		display: flex;
+		flex: 1;
+		flex-wrap: wrap;
+		margin-top: -20px;
+	}
+
+	.item {
+		@include flex-grid(4, 20px);
+
+		display: flex;
+		flex: 0 0 auto;
+	}
+ */
+
+@mixin flex-grid($columns, $gap) {
+	$totalGaps: $gap * ($columns - 1);
+
+	width: calc((100% - #{$totalGaps}) / #{$columns});
+	margin-bottom: $gap;
+	margin-left: $gap;
+
+	&:nth-child(#{$columns}n+1) {
+		margin-left: 0;
+	}
+}

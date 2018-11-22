@@ -1,0 +1,96 @@
+@import 'app-shared';
+
+$menu-separator-colour: #a0a8bd;
+$menu-border-colour: #c4c9d6;
+
+:host {
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 3px 23px 0 rgba(160, 168, 189, 0.3), 0 1px 0 0 rgba(160, 168, 189, 0.5);
+    box-sizing: content-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 5px 15px 0 15px;
+    z-index: 100;
+}
+
+::ng-deep {
+    .analysis-toolbar {
+        .toolbar-group {
+            &.toolbar-group-icons {
+                kosmos-menu {
+                    ::ng-deep .items {
+                        top: calc(100% + 6px);
+                    }
+                }
+            }
+        }
+
+        .toolbar-button {
+            @include button-reset();
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 18px;
+
+            &:hover {
+                background-color: #e6e6e6;
+            }
+        }
+
+        .kosmos-toolbar-page-add {
+            kosmos-menu-item {
+                width: 50%;
+                max-width: 50%;
+                display: block;
+                flex: 1 50%;
+                flex-direction: column;
+                cursor: pointer;
+
+                > .button {
+                    padding: 0 10px;
+                    overflow: hidden;
+                }
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    max-height: 128px;
+                    border: 1px solid $menu-border-colour;
+                    border-radius: 3px;
+                }
+
+                .description {
+                    padding: 5px 0 20px;
+                    white-space: normal;
+                    text-align: left;
+                }
+
+                &:nth-last-child(-n + 2) {
+                    .description {
+                        padding: 5px 0;
+                    }
+                }
+
+                &.content-template {
+                    img {
+                        box-sizing: border-box;
+                        padding: 10px;
+
+                        &.error {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+
+            ::ng-deep .items {
+                max-width: 400px;
+                width: 400px;
+                flex-wrap: wrap;
+                display: flex;
+            }
+        }
+    }
+}

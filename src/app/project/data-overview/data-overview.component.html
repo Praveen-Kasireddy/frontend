@@ -1,0 +1,20 @@
+<div class="container">
+    <kosmos-header [title]="selectedProject?.name" i18n-subtitle="Data Overview|Data Overview subtitle@@project:data-overview"
+        subtitle="Data Overview"></kosmos-header>
+    <div class="content">
+        <dx-data-grid id="gridContainer" class="grid-component" allowColumnReordering="true" allowColumnResizing="true" columnAutoWidth="true"
+            cellHintEnabled="true" [dataSource]="data" hoverStateEnabled="true" showRowLines="true">
+            <dxo-column-chooser enabled="true" mode="select"></dxo-column-chooser>
+            <dxo-filter-panel visible="true"></dxo-filter-panel>
+            <dxo-filter-row visible="true"></dxo-filter-row>
+            <dxo-grouping contextMenuEnabled="true"></dxo-grouping>
+            <dxo-group-panel visible="true"></dxo-group-panel>
+            <dxo-header-filter allowSearch="true" visible="true"></dxo-header-filter>
+            <dxo-load-panel enabled="true"></dxo-load-panel>
+            <dxo-pager showInfo="true" showNavigationButtons="true" showPageSizeSelector="true" visible="true"></dxo-pager>
+            <dxo-scrolling showScrollbar="onHover"></dxo-scrolling>
+            <dxo-search-panel searchVisibleColumnsOnly="true" visible="true"></dxo-search-panel>
+            <dxo-sorting mode="multiple"></dxo-sorting>
+        </dx-data-grid>
+    </div>
+</div>

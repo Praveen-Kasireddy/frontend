@@ -1,0 +1,27 @@
+<ng-progress></ng-progress>
+<div class="app">
+    <kosmos-main-nav></kosmos-main-nav>
+    <main class="app-main">
+        <router-outlet></router-outlet>
+    </main>
+</div>
+
+<dx-popup class="popup" [width]="generalPopup.width" [height]="generalPopup.height" [showTitle]="generalPopup.showTitle"
+    [title]="generalPopup.title" [dragEnabled]="generalPopup.dragEnabled" [closeOnOutsideClick]="generalPopup.closeOnOutsideClick"
+    [(visible)]="generalPopup.visible">
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: generalPopup.buttonText,
+        onClick: hideMainPopup
+    }">
+    </dxi-toolbar-item>
+
+    <div *dxTemplate="let data of 'content'">
+        <p>
+            <span>{{ generalPopup.content }}</span>
+        </p>
+    </div>
+
+
+</dx-popup>
+<kosmos-ping-on-action></kosmos-ping-on-action>
+<kosmos-unsaved-changes-popup></kosmos-unsaved-changes-popup>

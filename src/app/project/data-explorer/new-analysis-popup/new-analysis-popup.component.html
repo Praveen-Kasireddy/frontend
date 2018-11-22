@@ -1,0 +1,26 @@
+<dx-popup title="CREATE NEW ANALYSIS" i18n-title="Title|Title@@data-explorer::new-analysis-popup" height="250px" width="420px"
+    resizeEnabled="true">
+    <div *dxTemplate="let data of 'content'" class="popup">
+        <dx-validation-group>
+            <div class="form-group">
+                <div class="form-item">
+                    <label i18n-placeholder="Title|Title@@data-explorer:new-analysis">Title</label>
+                    <dx-text-box class="title" [(value)]="name" i18n-placeholder="enterTitle|enterTitle@@data-explorer:new-analysis" placeholder="Enter Title"
+                        (onFocusOut)="validateMe($event)">
+                        <dx-validator>
+                            <dxi-validation-rule type="required"></dxi-validation-rule>
+                        </dx-validator>
+                    </dx-text-box>
+                    <div *ngIf="showExistsMessage" class="validation-message" i18n="existsValidation|existsValidation@@data-explorer:new-analysis">
+                        The title already exists
+                    </div>
+                </div>
+            </div>
+        </dx-validation-group>
+    </div>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'Done',
+        onClick: validateAndSubmitForm
+   }">
+    </dxi-toolbar-item>
+</dx-popup>

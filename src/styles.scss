@@ -1,0 +1,158 @@
+/* You can add global styles to this file, and also import other style files */
+
+$flag-icon-css-path: '~flag-icon-css/flags' !default;
+@import '~flag-icon-css/sass/flag-icon';
+
+@import 'app-shared';
+
+body {
+    -moz-font-feature-settings: 'liga', 'kern';
+    -moz-font-feature-settings: 'liga=1, kern=1';
+    -ms-font-feature-settings: 'liga', 'kern';
+    -o-font-feature-settings: 'liga', 'kern';
+    -webkit-font-feature-settings: 'liga', 'kern';
+    font-feature-settings: 'liga', 'kern';
+}
+
+.fl-left {
+    float: left;
+}
+
+.fl-right {
+    float: right;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.content {
+    @include use-custom-scrollbars();
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+}
+
+.content-inner {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    padding: $spacing--1 $spacing--2;
+}
+
+.floating-form {
+    @include clearfix;
+}
+
+.form-group {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -$spacing--3;
+
+    .form-item {
+        flex: 0 0 25%;
+        max-width: 25%;
+        padding-left: $spacing--3;
+
+        @media only screen and (max-width: 960px) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        @media only screen and (max-width: 640px) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        &.medium {
+            flex: 0 0 50%;
+            max-width: 50%;
+
+            @media only screen and (max-width: 640px) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        &.large {
+            flex: 0 0 75%;
+            max-width: 75%;
+
+            @media only screen and (max-width: 640px) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        &.xlarge {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        label,
+        .label {
+            color: rgba($colour--name-dark-gray, 0.77);
+            display: block;
+            font-family: $font-family--default;
+            font-size: $font-size--small;
+            line-height: 1.4;
+            margin: $spacing--3 0 $spacing--5;
+        }
+
+        .validation-message {
+            color: $colour--status-error;
+            margin-top: $spacing--6;
+        }
+    }
+}
+
+ul {
+    &.item-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        > li {
+            margin: 0;
+            display: block;
+            position: relative;
+            word-break: keep-all;
+            border: 1px solid rgba(160, 168, 189, 0.5);
+            opacity: 1;
+            border-radius: 3px;
+            background-color: #f6f7f9;
+            margin: 5px 16px;
+            padding: 5px 24px 5px 15px;
+
+            > .btn-remove-item {
+                display: none;
+                position: absolute;
+                right: 4px;
+                top: 4px;
+                width: 16px;
+                text-align: center;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            &:hover {
+                opacity: 1;
+                background-color: #fff;
+
+                .btn-remove-item {
+                    display: block;
+                }
+            }
+        }
+    }
+}

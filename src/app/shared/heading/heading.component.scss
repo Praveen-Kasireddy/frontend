@@ -1,0 +1,66 @@
+@import "app-shared";
+
+// @TODO: Double check heights before replace web font.
+
+:host {
+	display: block;
+
+	/deep/ h1,
+	/deep/ h2,
+	/deep/ h3,
+	/deep/ h4,
+	/deep/ h5,
+	/deep/ p {
+		padding: 0;
+		margin: 0;
+		font-weight: normal;
+		line-height: 1;
+		color: $colour--name-dark-gray;
+	}
+
+	/deep/ h1 {
+		font-size: $font-size--h1;
+	}
+
+	/deep/ h2 {
+		font-size: $font-size--h2;
+	}
+
+	/deep/ h3 {
+		font-size: $font-size--h3;
+	}
+
+	/deep/ h4 {
+		font-size: $font-size--h4;
+	}
+
+	/deep/ h5 {
+		font-size: 14px;
+		line-height: 1.25;
+		font-weight: 900;
+	}
+
+	/deep/ p {
+		font-size: 10px;
+	}
+
+	/deep/ em {
+		margin-left: $spacing--5;
+		font-style: normal;
+		color: $colour--name-blue;
+	}
+}
+
+/**
+ * Modifier: no-wrap
+ *
+ * Prevents long text from wrapping, truncates with an ellipses
+ */
+
+:host(.-no-wrap) {
+	/deep/ h5 {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}

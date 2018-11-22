@@ -1,0 +1,30 @@
+<div class="kpmg-header" #headerElementRef>
+    <div class="header-info">
+        <div class="header-title">{{ title }}</div>
+        <div class="header-subtitle" *ngIf="!isEditing" [ngClass]="{'hover': editable}" (click)="onClick($event)">
+            {{ subtitle }}</div>
+        <dx-text-box class="header-subtitle" *ngIf="isEditing" [(value)]="subtitle" [showClearButton]="true">
+            <dx-validator (onValidated)="onSubtitleValidated($event)">
+                <dxi-validation-rule type="required" message="The title is required"></dxi-validation-rule>
+                <dxi-validation-rule type="custom" [validationCallback]="subtitleValidationCallback"></dxi-validation-rule>
+            </dx-validator>
+        </dx-text-box>
+        <div class="header-info" *ngIf="info">{{ info }}</div>
+    </div>
+    <div class="header-buttons" #headerRightSideContainerElementRef>
+        <div class="actions-container">
+            <ng-content select="[actions]"></ng-content>
+        </div>
+        <div class="buttons-container" #buttonsContainerElementRef>
+            <ng-content select="[buttons]"></ng-content>
+        </div>
+        <div class="header-actions-show-more" [ngClass]="{'visible': displayShowMoreButton}">
+            <button *ngIf="displayShowMoreButton" class="show-more-button" (click)="showMoreVisible = true">
+            </button>
+            <div #menuItems class="show-more-menu" [ngClass]="{'visible': showMoreVisible}" (click)="showMoreVisible = false">
+                <ng-content select="[show-more]"></ng-content>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-content select="[toolbar-content]"></ng-content>

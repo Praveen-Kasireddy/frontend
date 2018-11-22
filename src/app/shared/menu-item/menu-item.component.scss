@@ -1,0 +1,23 @@
+@import 'app-shared';
+
+:host {
+    display: block;
+    position: relative;
+}
+
+.button {
+    color: $colour--name-black;
+    position: relative;
+
+    ::ng-deep span {
+        display: block;
+        line-height: 1;
+        text-align: center;
+        transition: color $time--shortest ease-in-out;
+        white-space: nowrap;
+    }
+
+    &:hover {
+        color: $colour--name-blue;
+    }
+}

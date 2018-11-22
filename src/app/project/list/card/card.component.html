@@ -1,0 +1,44 @@
+<div class="inner" (click)="cardClicked($event)" [ngClass]="{'-is-loading': isLoading}">
+    <div class="loading" [ngClass]="{'hidden': !isLoading }">
+        <kosmos-loading-bar *ngIf="isLoading && !isCreating"></kosmos-loading-bar>
+        <div class="creating" *ngIf="isLoading && isCreating">
+            <kosmos-loading-cube></kosmos-loading-cube>
+            <div class="info">
+                {{ project?.name != undefined ? project.name : 'The project' }} is being created
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <h2 class="company-name">{{ project?.client?.name }}</h2>
+        <h1 class="project-name">{{ project?.name }}</h1>
+    </div>
+    <div class="progress">
+        <div class="status">
+            <div class="badge">Done</div>
+            <span class="due-date">
+                <span class="kpmg-icon-calendar"></span>
+                <span>
+                    <span class="due-text" i18n="Project Card|project due date@@project:list:card:duespan">Due</span>
+                    <span>&nbsp;</span>
+                    <span>{{ project?.dueDate | date:"dd MMMM yyyy" }}</span>
+                </span>
+            </span>
+        </div>
+        <span class="progress__label">
+            <span class="kpmg-icon-toolbar-list-view"></span>
+            <span>
+                <span class="progress__count">
+                    {{ project?.scopeItemSummary?.completed }}/{{ project?.scopeItemSummary?.total }}
+                </span>
+                <span>&nbsp;</span>
+                <span i18n="Project Card|items done@@project:list:card:done">items done</span>
+            </span>
+        </span>
+        <kosmos-progress class="progress_bar" [value]="project?.scopeItemSummary?.completed" [max]="project?.scopeItemSummary?.total"></kosmos-progress>
+    </div>
+
+</div>
+<div class="cards-effect">
+    <div class="card"></div>
+    <div class="card"></div>
+</div>

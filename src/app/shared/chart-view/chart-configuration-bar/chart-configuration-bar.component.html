@@ -1,0 +1,29 @@
+<div class="chart-settings-bar">
+    <div class="chart-display-mode-buttons">
+        <kosmos-tab-button caption="Normal" [isLargeButton]="true" [isSelected]="isNormal" (click)="setChartDisplayMode(chartDisplayMode.NORMAL, true)"
+            i18n-text="Analysis chart|Normal@@analysis:chart:button:normal">
+        </kosmos-tab-button>
+        <kosmos-tab-button caption="Stacked" [isLargeButton]="true" [isSelected]="isStacked" (click)="setChartDisplayMode(chartDisplayMode.STACKED, true)"
+            i18n-text="Analysis chart|Stacked@@analysis:chart:button:stacked" [isDisabled]="!isStackedAllowed">
+        </kosmos-tab-button>
+        <kosmos-tab-button caption="Percentage" [isLargeButton]="true" [isSelected]="isPercentage" (click)="setChartDisplayMode(chartDisplayMode.PERCENTAGE, true)"
+            i18n-text="Analysis chart|Percentage@@analysis:chart:button:percentage">
+        </kosmos-tab-button>
+    </div>
+    <div name="bottons" class="chart-type-buttons">
+        <kosmos-tab-button icon="kpmg-icon-chart-bar" caption="Bar" [isLargeButton]="false" [isSelected]="isBarType"
+            (click)="setChartType(chartType.BAR, true)" i18n-text="Analysis chart|Bar@@analysis:chart:button:bar">
+        </kosmos-tab-button>
+        <kosmos-tab-button icon="kpmg-icon-chart-column" caption="Col." [isLargeButton]="false" [isSelected]="isColType"
+            (click)="setChartType(chartType.COL, true)" i18n-text="Analysis chart|Col@@analysis:chart:button:col">
+        </kosmos-tab-button>
+        <kosmos-tab-button icon="kpmg-icon-chart-line" caption="Line" [isLargeButton]="false" [isSelected]="isLineType"
+            (click)="setChartType(chartType.LINE, true)" i18n-text="Analysis chart|Line@@analysis:chart:button:line">
+        </kosmos-tab-button>
+        <kosmos-tab-button icon="kpmg-icon-chart-bar" caption="Area" [isLargeButton]="false" [isSelected]="isAreaType"
+            (click)="setChartType(chartType.AREA, true)" i18n-text="Analysis chart|Area@@analysis:chart:button:area">
+        </kosmos-tab-button>
+        <kosmos-tab-button icon="kpmg-icon-chart-pie" caption="Pie" [isLargeButton]="false" [isSelected]="isPieType"
+            (click)="setChartType(chartType.PIE, true)" i18n-text="Analysis chart|Pie@@analysis:chart:button:pie">
+        </kosmos-tab-button>
+    </div>

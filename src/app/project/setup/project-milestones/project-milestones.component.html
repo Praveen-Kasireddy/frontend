@@ -1,0 +1,33 @@
+<div>
+    <div class="floating-form">
+        <dx-validation-group>
+            <div class="fl-right">
+                <dx-button [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" (onClick)="onSubmit()" text="+"></dx-button>
+            </div>
+            <div class="form-group">
+                <div class="form-item date">
+                    <dx-date-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" type="date" [(value)]="newMilestone.date" name="milestoneDate" id="milestoneDate"
+                        displayFormat="d-MMM-yyyy">
+                        <dx-validator>
+                            <dxi-validation-rule type="required"></dxi-validation-rule>
+                        </dx-validator>
+                    </dx-date-box>
+                </div>
+                <div class="form-item large">
+                    <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [(value)]="newMilestone.description" name="milestoneName" id="milestoneName">
+                        <dx-validator>
+                            <dxi-validation-rule type="required"></dxi-validation-rule>
+                        </dx-validator>
+                    </dx-text-box>
+                </div>
+            </div>
+        </dx-validation-group>
+    </div>
+    <ul class="item-list">
+        <li *ngFor="let milestone of milestones; let i=index" class="flex-item">
+            <span class="date">{{ milestone.date | date:"dd MMM yyyy" }}</span>
+            <span class="name">{{ milestone.description }}</span>
+            <span class="btn-remove-item" (click)="remove(i)">x</span>
+        </li>
+    </ul>
+</div>

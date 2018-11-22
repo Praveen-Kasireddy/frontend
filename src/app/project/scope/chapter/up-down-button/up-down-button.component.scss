@@ -1,0 +1,30 @@
+.chapterUpDownEnabled {
+    font-size: 14px;
+    font-weight: bold;
+    border: thin solid rgba(160, 168, 189, 0.5);
+    background: white;
+    padding-left: 8px;
+    padding-top: 6px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    left: -35px;
+    top: -19px;
+    cursor: pointer;
+}
+
+.chapterUpDownDisabled {
+    font-size: 14px;
+    font-weight: normal;
+    border: thin solid rgba(160, 168, 189, 0.5);
+    background: white;
+    padding-left: 8px;
+    padding-top: 6px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    left: -35px;
+    top: -19px;
+    cursor: default;
+    color: gray;
+}

@@ -1,0 +1,46 @@
+@import 'sidebars/help-sidebars';
+@import 'app-shared';
+@import '../../../../../../../../assets/styles/themes/material/colours';
+
+.clickable {
+    cursor: pointer;
+}
+
+.container {
+    padding-right: 0px;
+    padding-left: 0px;
+    display: block;
+}
+
+.content {
+    margin: 5px;
+    border: solid 1px $colour--background--mid-grey;
+}
+
+.draggable-over-me {
+    height: 10px;
+}
+
+.percent-disabled {
+    color: $colour--background--mid-grey;
+    cursor: pointer;
+}
+
+.percent-enabled {
+    color: white;
+    cursor: pointer;
+}
+
+.placeholder {
+    background-color: $colour--name-sidebar-gray;
+}
+
+.show-border {
+    border: solid 1px $colour--background--mid-grey;
+}
+
+.filter-badges {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}

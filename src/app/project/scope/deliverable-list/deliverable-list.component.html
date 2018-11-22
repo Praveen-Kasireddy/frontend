@@ -1,0 +1,18 @@
+<dx-popup #popup [(visible)]="isVisible" draggable="false" width="350" height="500" title="CHOOSE DELIVERABLES" i18n-title="DELIVERABLES| add deliverables@@project:scope:deliverables:title">
+    <div *dxTemplate="let data of 'content'" class="popup">
+        <dx-tree-view #treeView id="treeView" [dataSource]="productTreeItems" keyExpr="id" displayExpr="name" itemsExpr="children"
+            searchEnabled="true" searchMode="contains" width="100%" height="100%" expandAllEnabled="true" expandedExpr="isExpanded"
+            selectionMode="multiple" showCheckBoxesMode="none" selectByClick="true" (onItemClick)="itemClick($event)" itemTemplate="itemTemplate">
+            <div *dxTemplate="let item of 'itemTemplate'">
+                <span [ngClass]="{'kpmg-icon-check selected': item.isSelected, 'not-selected': !item.isSelected}"></span>
+                <span>{{ item.name }}</span>
+            </div>
+        </dx-tree-view>
+    </div>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+         text: 'Done',
+         elementAttr: { id: 'doneDeliv' },
+         onClick: closePopup
+    }">
+    </dxi-toolbar-item>
+</dx-popup>

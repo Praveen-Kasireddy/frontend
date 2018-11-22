@@ -1,0 +1,25 @@
+{
+	"name": "kpmg-kosmos-e2e-Testing",
+	"version": "0.2.2",
+	"description": "KPMG KOSMOS e2e Testing",
+	"scripts": {
+		"start": "webdriver-manager update --ie & webdriver-manager start --detach",
+		"e2e:ie": "yarn install & yarn outdated & yarn start & protractor protractor.conf.js --suite workflow \"--capabilities.browserName=internet explorer\" --capabilities.version=10 --capabilities.platform=ANY --verbose & yarn shutdown",
+		"e2e:edge": "yarn install & yarn outdated & yarn start & protractor protractor.conf.js --suite workflow --capabilities.browserName=MicrosoftEdge --verbose & yarn shutdown",
+		"e2e:chrome": "yarn install & yarn outdated & yarn start & protractor protractor.conf.js --suite workflow --capabilities.browserName=chrome --capabilities.chromeOptions.args=--window-size=1600,900 --capabilities.chromeOptions.args=--incognito & yarn shutdown",
+		"e2e:chrome-headless": "yarn install & yarn outdated & yarn start & protractor protractor.conf.js --suite workflow --capabilities.browserName=chrome --capabilities.chromeOptions.args=--headless  --capabilities.chromeOptions.args=--disable-gpu --capabilities.chromeOptions.args=--window-size=1600,900 & yarn shutdown",
+		"shutdown": "@powershell -NoProfile -ExecutionPolicy Unrestricted -command (Stop-Process -id (Get-NetTCPConnection -LocalPort 4444).OwningProcess[0])"
+	},
+	"private": true,
+	"devDependencies": {
+		"@types/jasmine": "^2.8.8",
+		"@types/node": "~10.9.4",
+		"fs": "^0.0.1-security",
+		"jasmine-spec-reporter": "~4.2.1",
+		"jasmine-tfs-reporter": "^1.0.2",
+		"protractor": "~5.4.0",
+		"timeunit": "^1.1.1",
+		"ts-node": "~5.0.1",
+		"typescript": "3.0.3"
+	}
+}

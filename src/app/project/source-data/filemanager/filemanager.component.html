@@ -1,0 +1,7 @@
+<div class="container">
+    <kosmos-header [title]="selectedProject?.name" i18n-subtitle="Source Data|Source Data Subtitle for Header@@project:Source Data"
+        subtitle="Source Data"></kosmos-header>
+    <div #filesview style="height: calc(100vh - 110px)"></div>
+    <kosmos-message-box Title="Warning" showDoneButton="true" showCloseButton="true"></kosmos-message-box>
+    <dx-toast [message]="toastMessage" [(visible)]="isToastVisible" type="Error"></dx-toast>
+</div>

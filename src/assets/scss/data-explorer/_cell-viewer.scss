@@ -1,0 +1,12 @@
+#dataExplorerFormulaCellViewer {
+    i {
+        padding: 5px;
+        margin: -5px 0;
+        cursor: pointer;
+        border-radius: 6px;
+
+        &:hover {
+            background: rgba(#000, 0.33);
+        }
+    }
+}

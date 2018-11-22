@@ -1,0 +1,16 @@
+{
+    // See http://go.microsoft.com/fwlink/?LinkId=827846
+    // for the documentation about the extensions.json format
+    "recommendations": [
+        // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+        "Angular.ng-template",
+        "msjsdiag.debugger-for-chrome",
+        "eamodio.gitlens",
+        "oderwat.indent-rainbow",
+        "esbenp.prettier-vscode",
+        "2gua.rainbow-brackets",
+        "robinbentley.sass-indented",
+        "yzhang.markdown-all-in-one",
+        "EditorConfig.editorconfig"
+    ]
+}

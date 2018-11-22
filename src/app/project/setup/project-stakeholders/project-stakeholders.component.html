@@ -1,0 +1,7 @@
+<kosmos-stakeholder-card *ngFor="let stakeholder of stakeholders" [stakeholder]="stakeholder" (clickHandler)="openStakeholder($event)"
+    (deleteEvent)="delete($event)"></kosmos-stakeholder-card>
+<kosmos-new-stakeholder id="addStakeholder" [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" (click)="openPopup()" [@fadeIn]></kosmos-new-stakeholder>
+<kosmos-stakeholder-popup title="ADD STAKEHOLDER" [isEditMode]="false" [(visible)]="isAddPopupVisible" (addEvent)="addOrUpdate($event)"
+    (closeEvent)="closePopup()"></kosmos-stakeholder-popup>
+<kosmos-stakeholder-popup title="EDIT STAKEHOLDER" [isEditMode]="true" [stakeholder]="editableStakeholder" [(visible)]="isEditPopupVisible"
+    (addEvent)="addOrUpdate($event)" (closeEvent)="closePopup()"></kosmos-stakeholder-popup>

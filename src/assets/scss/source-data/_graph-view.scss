@@ -1,0 +1,67 @@
+#graph_view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .wj-combobox {
+        width: 150px
+    }
+
+    ._checkbox_container {
+        label {
+            display: inline-block;
+            border: 1px solid $color-light-gray;
+            border-radius: $border-radius-base;
+            padding: 0 0 0 10px;
+            margin: 0 10px 10px 0;
+
+            > * {
+                vertical-align: middle;
+            }
+
+            input {
+                margin: 0 10px 0 0;
+            }
+
+            span {
+                width: 20px;
+                height: 30px;
+                display: inline-block;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    ._row2 {
+        margin: 12px 0 0 1px;
+
+        label,
+        input {
+            margin: 0;
+        }
+    }
+
+    ._row3 {
+        margin: 12px 0 0 1px;
+    }
+
+    ._graph {
+        display: flex;
+        flex: 1;
+        border: 1px solid $color-light-gray;
+
+        .vis-network {
+            flex: 1;
+        }
+    }
+
+    ._graph-progress {
+        position: absolute;
+        background: $color-gray;
+        color: $color-white;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 5px 10px;
+        display: block;
+    }
+}

@@ -1,0 +1,436 @@
+@import 'app-shared';
+
+$menu-separator-colour: #a0a8bd;
+$menu-border-colour: #c4c9d6;
+
+:host {
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 3px 23px 0 rgba(160, 168, 189, 0.3), 0 1px 0 0 rgba(160, 168, 189, 0.5);
+    box-sizing: content-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 5px 15px 0 15px;
+    z-index: 100;
+}
+
+::ng-deep {
+    .smart-workspace-toolbar {
+        .toolbar-group {
+            min-height: 30px;
+
+            &:not([toolbar-right]) {
+                border-right: 1px solid $menu-border-colour;
+            }
+
+            > * {
+                margin-left: 3px;
+                margin-right: 3px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            > kosmos-menu {
+                ::ng-deep .menu-content {
+                    top: calc(100% + 5px);
+                }
+            }
+
+            > kosmos-segmented-button {
+                ::ng-deep .items {
+                    top: calc(100% + 5px);
+                    left: calc(100% - 32px);
+                }
+            }
+
+            ::ng-deep {
+                .dx-button-has-text,
+                .dx-button-has-icon {
+                    .dx-button-content {
+                        .kpmg-icon-delete-page {
+                            color: $colour--secondary--red;
+                        }
+                    }
+                }
+
+                .dx-button-has-icon:not(.dx-button-has-text) {
+                    border: 0 none;
+                }
+
+                .dx-switch {
+                    height: auto !important;
+                    .dx-switch-container {
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                    }
+                }
+
+                label {
+                    display: flex;
+                    align-items: center;
+                }
+
+                // settings for layout select box
+
+                .dx-texteditor {
+                    width: 40px;
+                    border: none;
+                }
+
+                .custom-item {
+                    position: relative;
+                    min-height: 30px;
+                }
+
+                .custom-item .product-name {
+                    display: inline-block;
+                    padding-left: 45px;
+                    text-indent: 0;
+                    line-height: 30px;
+                    font-size: 15px;
+                    width: 100%;
+                }
+
+                .custom-item > img {
+                    left: 5px;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -15px;
+                    height: 30px;
+                }
+
+                .current-value {
+                    padding: 10px 0;
+                }
+
+                .current-value > span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .toolbar-group-icons {
+            padding: 0 8px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+
+        .toolbar-button {
+            @include button-reset();
+            padding: 5px 8px 5px;
+            height: 100%;
+            box-sizing: border-box;
+            border-radius: 4px;
+            font-size: 14px;
+
+            &:hover {
+                background-color: #e6e6e6;
+            }
+
+            &.toolbar-icon-button {
+                font-size: 18px;
+                padding: 8px;
+            }
+        }
+
+        kosmos-menu {
+            &.kosmos-toolbar-menu-task-state {
+                .btn-set-state {
+                    display: flex;
+                    align-items: center;
+                    width: 195px;
+
+                    > .label {
+                        margin: 0 5px;
+                        color: $colour--name-darker-blue;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        text-align: left;
+                        flex-basis: 80%;
+                        padding: 3px 0;
+                    }
+
+                    > .kpmg-icon {
+                        color: $colour--name-rock-blue;
+                    }
+
+                    &:hover {
+                        > .kpmg-icon {
+                            color: $colour--name-darker-blue;
+                        }
+                    }
+                }
+
+                kosmos-menu-item {
+                    cursor: pointer;
+
+                    > .button {
+                        display: flex;
+                        align-items: center;
+                        padding: 7px 10px;
+
+                        &:hover {
+                            background-color: #e6e6e6;
+                            color: inherit;
+                        }
+
+                        > span {
+                            margin-left: 5px;
+                            display: block;
+                            line-height: 1;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            padding: 3px 0;
+                        }
+                    }
+                }
+
+                ::ng-deep .menu-content {
+                    padding-top: 3px;
+                }
+            }
+
+            &.kosmos-toolbar-menu-page-add {
+                kosmos-menu-item {
+                    width: 50%;
+                    max-width: 50%;
+                    display: block;
+                    flex: 1 50%;
+                    flex-direction: column;
+                    cursor: pointer;
+
+                    > .button {
+                        padding: 0 10px;
+                        overflow: hidden;
+                    }
+
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                        max-height: 128px;
+                        border: 1px solid $menu-border-colour;
+                        border-radius: 3px;
+                    }
+
+                    .description {
+                        padding: 5px 0 20px;
+                        white-space: normal;
+                        text-align: left;
+                    }
+
+                    &:nth-last-child(-n + 2) {
+                        .description {
+                            padding: 5px 0;
+                        }
+                    }
+
+                    &.content-template {
+                        img {
+                            box-sizing: border-box;
+
+                            &.error {
+                                padding: 0;
+                            }
+                        }
+
+                        .template-images {
+                            &:hover,
+                            &:focus {
+                                .delete,
+                                .download {
+                                    opacity: 1;
+                                    transition: opacity $time--shortest $ease-enter;
+                                }
+                            }
+
+                            .delete,
+                            .download {
+                                cursor: pointer;
+                                display: block;
+                                opacity: 0;
+                                padding: $spacing--5;
+                                position: absolute;
+                                top: 7px;
+                                transition: opacity $time--shortest $ease-leave;
+                                background: #fff;
+
+                                kosmos-svg-icon {
+                                    color: $colour--name-gray;
+                                    display: block;
+                                    transition: color $time--shortest $ease-leave;
+                                }
+
+                                &:hover,
+                                &:focus {
+                                    kosmos-svg-icon {
+                                        color: $colour--name-blue;
+                                        transition: color $time--shortest $ease-enter;
+                                    }
+                                }
+                            }
+
+                            .delete {
+                                right: 15px;
+
+                                kosmos-svg-icon {
+                                    height: 9px;
+                                    width: 9px;
+                                }
+                            }
+
+                            .download {
+                                left: 15px;
+
+                                kosmos-svg-icon {
+                                    height: 14px;
+                                    width: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                ::ng-deep .menu-content {
+                    max-width: 400px;
+                    width: 400px;
+                    .items {
+                        flex-wrap: wrap;
+                        display: flex;
+                    }
+                }
+            }
+
+            &.kosmos-toolbar-menu-analysis {
+                kosmos-menu-item {
+                    width: 400px;
+
+                    kosmos-tab-button {
+                        > .tab-button {
+                            margin-top: 5px;
+                            margin-bottom: 5px;
+                            width: 80px;
+                        }
+                    }
+
+                    > .button {
+                        display: flex;
+                        align-items: center;
+                        padding: 7px 10px;
+
+                        > p {
+                            color: #11151e;
+                            font-size: 14px;
+                            line-height: 16px;
+                            margin: 0;
+                            opacity: 0.51;
+                            padding: 0;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            width: 100%;
+
+                            &.analysis-name {
+                                opacity: 1;
+                                font-weight: 600;
+                                margin-bottom: 5px;
+
+                                > span {
+                                    display: inline;
+                                }
+                            }
+
+                            &.analysis-creator {
+                                font-weight: 900;
+                            }
+                        }
+                    }
+
+                    &.analysis-filter {
+                        > .button {
+                            flex-direction: row;
+                        }
+                    }
+
+                    &.analysis {
+                        cursor: pointer;
+
+                        > .button {
+                            flex-direction: column;
+
+                            &:hover {
+                                background-color: #e6e6e6;
+                                color: inherit;
+                            }
+                        }
+                    }
+                }
+
+                ::ng-deep .menu-content {
+                    max-width: 400px;
+                    width: 400px;
+
+                    .items {
+                        flex-wrap: wrap;
+                        display: flex;
+                    }
+                }
+            }
+        }
+
+        kosmos-segmented-button {
+            &.kosmos-toolbar-segmented-button-save {
+                kosmos-menu-item {
+                    cursor: pointer;
+
+                    > .button {
+                        display: block;
+                        align-items: center;
+
+                        &:hover {
+                            background-color: inherit;
+                            color: inherit;
+                        }
+
+                        ::ng-deep > button {
+                            @include button-reset();
+                            padding: 10px;
+                            font-size: 14px;
+                            display: block;
+                            text-align: left;
+                            color: $colour--name-darker-blue;
+                            width: 100%;
+                            box-sizing: border-box;
+
+                            &:hover {
+                                background-color: #e6e6e6;
+                                color: inherit;
+                            }
+                        }
+                    }
+                }
+
+                ::ng-deep .items {
+                    padding-top: 3px;
+                }
+            }
+
+            ::ng-deep .items {
+                max-width: 180px;
+                width: 180px;
+                display: block;
+            }
+        }
+    }
+}

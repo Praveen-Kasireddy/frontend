@@ -1,0 +1,25 @@
+@import 'app-shared';
+
+.group {
+    margin-top: 20px;
+    margin-bottom: 7px;
+    border: 1px solid threedface;
+    border-color: $colour--background--mid-grey;
+    padding: 10px;
+}
+
+.group-header {
+    float: left;
+    margin: -1.7em 0 0;
+    background: #fff;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.draggable-over-me {
+    margin-top: 30px;
+}
+
+.draggable-over-placeholder {
+    height: 20px;
+}

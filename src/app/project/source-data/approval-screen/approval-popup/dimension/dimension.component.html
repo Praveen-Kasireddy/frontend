@@ -1,0 +1,39 @@
+<div class="dimension">
+    <div class="firstRow">
+        <div *ngIf="!isExpanded" class="material-icons toggle" (click)="expand()">keyboard_arrow_right</div>
+        <div *ngIf="isExpanded" class="material-icons toggle" (click)="collapse()">keyboard_arrow_down</div>
+        <div class="name">{{ dimension?.name }}</div>
+        <div *ngIf="canAdd && !this.isEditorOpen" class="material-icons add" (click)="onAddCharacteristic()" id="addButton">add_circle</div>
+        <div *ngIf="hasOnlyOne && !isExpanded" id="characteristicInFirstRow">
+            <div class="characteristic" [ngClass]="{'old': !dimension?.values[0].isNew, 'new': dimension?.values[0].isNew }">
+                <div class="label">{{ dimension?.values[0]?.name }}</div>
+                <div class="material-icons close" (click)="onRemoveCharacteristic(dimension?.values[0])">close</div>
+            </div>
+        </div>
+        <div *ngIf="showAssignmentCounter" class="counter" id="cellCounter">{{ numberOfAssignmentItems }}</div>
+    </div>
+    <div *ngIf="isExpanded" class="secondRow">
+        <div *ngFor="let characteristic of dimension.values" class="characteristic" [ngClass]="{'old': !characteristic.isNew, 'new': characteristic.isNew }"
+            id="characteristicInSecondRow">
+            <div class="label">{{ characteristic?.name }}</div>
+            <div *ngIf="showCellCounter" class="counter">{{ characteristic?.counter }}</div>
+            <div class="material-icons close" (click)="onRemoveCharacteristic(characteristic)">close</div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isEditorOpen" class="editor" id="characteristicEditor">
+    <div>
+        <dx-text-box class="characteristicFreeText" id="characteristicFreeText" *ngIf="dimension.freeTextType == FreeTextType.ALPHA_NUMERIC"
+            showClearButton="true" (onValueChanged)="onValueChanged($event)" (onKeyUp)="onKeyUp($event)" (onEnterKey)="onEnterFreeText($event)"></dx-text-box>
+        <dx-number-box class="characteristicFreeText" id="characteristicFreeNumber" *ngIf="dimension.freeTextType == FreeTextType.POSITIVE_INTEGERS_ONLY"
+            showClearButton="true" [value]="1" [min]="1" (onValueChanged)="onValueChanged($event)" (onKeyUp)="onKeyUp($event)"
+            (onEnterKey)="onEnterFreeText($event)"></dx-number-box>
+    </div>
+    <div>
+        <ul>
+            <li *ngFor="let item of availableCharacteristics; trackBy: trackCharacteristics" (click)="onSelectCharacteristic(item)">
+                {{ item.name }}</li>
+        </ul>
+    </div>
+</div>

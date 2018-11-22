@@ -1,0 +1,80 @@
+@import "app-shared";
+
+[class^="btn-after-icon-"],
+[class*=" btn-after-icon-"] {
+	position: relative;
+	margin-right: 25px;
+
+	color: $colour--name-dark-gray;
+	background-color: transparent;
+	border-color: transparent;
+	font-weight: bold;
+
+	&::after {
+		color: $colour--name-light-gray;
+		font-family: $font-family--kosmos !important;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		position: absolute;
+		border: 0 !important;
+		font-size: 20px;
+		width: 0;
+		height: 0;
+	}
+
+	&:hover,
+	&:focus,
+	&.focus,
+	&.active {
+		color: $colour--name-near-white;
+		background-color: $colour--name-black;
+	}
+
+	&:hover::after,
+	&:focus::after,
+	&.focus::after,
+	&.active::after {
+		color: $colour--name-dark-gray;
+	}
+
+	&.dropdown-toggle {
+		padding: 2px 4px !important;
+	}
+}
+
+.btn-after-icon-caret::after {
+	content: "\e900";
+	color: $colour--name-mischka-dropdown;
+	font-size: 18px;
+}
+
+.btn-dropdown-black {
+	color: $colour--name-dark-gray;
+	background-color: transparent;
+	&:hover,
+	&:focus,
+	&.focus,
+	&.active {
+		color: $colour--name-near-white;
+		background-color: $colour--name-black;
+	}
+}
+
+.btn-after-icon-refresh::after {
+	content: "\e91d";
+}
+
+._axis-1,
+._axis-2 {
+	opacity: 1;
+}
+
+._axis-0 {
+	opacity: 0.4;
+}

@@ -1,0 +1,20 @@
+@import 'sidebars/help-sidebars';
+@import 'app-shared';
+@import '../../../../../../assets/styles/themes/material/colours';
+
+:host {
+    text-align: center;
+}
+
+.selected {
+    background-color: $colour--name-white;
+    color: $colour--name-sidebar-gray;
+}
+
+.content {
+    border-color: #63697a;
+    border-style: solid;
+    border-width: thin;
+    padding: 10px;
+    cursor: pointer;
+}

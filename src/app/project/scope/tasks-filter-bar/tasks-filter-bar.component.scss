@@ -1,0 +1,43 @@
+@import 'app-shared';
+
+.filter-bar {
+    display: flex;
+}
+
+.filter-button-with-caption {
+    margin-top: -17px;
+}
+
+.filter-bar-start {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+}
+
+.tasks-filter-area {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.status-filter-area {
+    display: flex;
+}
+
+.buttons-area {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.task-filter-caption {
+    display: flex;
+    font-weight: bold;
+    padding-top: 20px;
+}

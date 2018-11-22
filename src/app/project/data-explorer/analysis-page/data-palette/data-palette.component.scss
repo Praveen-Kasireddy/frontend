@@ -1,0 +1,96 @@
+@import 'app-shared';
+:host {
+    float: right;
+}
+
+.close-button {
+    cursor: pointer;
+    padding: 10px;
+    width: 30px;
+}
+
+.container {
+    background-color: white;
+    border: solid 1px;
+    height: 100%;
+}
+
+.dx-treeview {
+    background-color: white;
+    /deep/ {
+        .dx-scrollable-content {
+            background-color: transparent;
+        }
+        .dx-scrollable-container {
+            padding-left: 10px;
+        }
+        .dx-treeview-item {
+            min-height: auto;
+            padding-bottom: 3px;
+            padding-top: 3px;
+        }
+        .dx-treeview-node-container {
+            @include font-smoothing();
+            font-family: 'UniversLTPro-45Light';
+            font-size: 14px;
+        }
+        .dx-texteditor {
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-width: thin;
+        }
+        .dx-texteditor-input {
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .dx-state-focused {
+            background: transparent;
+            font-weight: normal;
+            color: $colour--primary--kosmos-black;
+        }
+        .dx-state-hover {
+            background: transparent;
+            font-weight: $colour--primary--kosmos-black;
+        }
+        .dx-state-selected {
+            background: transparent;
+            color: $colour--primary--kosmos-black;
+        }
+        .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-selected > .dx-treeview-item,
+        .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-focused > .dx-treeview-item,
+        .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-hover > .dx-treeview-item,
+        .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-selected > .dx-treeview-item *,
+        .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-focused > .dx-treeview-item *,
+        .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-hover > .dx-treeview-item * {
+            background: transparent;
+            color: $colour--primary--kosmos-black;
+        }
+    }
+}
+
+.group {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.selected {
+    margin-right: 0;
+}
+
+.not-selected {
+    margin-right: 18px;
+}
+
+label {
+    @include font-smoothing();
+    font-family: 'UniversLTPro-45Light';
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+    border: 0;
+    cursor: pointer;
+}

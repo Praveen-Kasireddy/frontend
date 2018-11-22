@@ -1,0 +1,90 @@
+@import 'app-shared';
+
+:host {
+    max-width: 245px;
+    height: 70px;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        .close {
+            opacity: 1;
+            transition: opacity $time--shortest $ease-enter;
+        }
+    }
+}
+
+.inner {
+    align-items: center;
+    background-color: $colour--name-white;
+    border: thin solid rgba(160, 168, 189, 0.5);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    line-height: 1.7;
+    padding: 14px;
+    transition-timing-function: ease;
+    transition-duration: $time--short;
+    transition-property: border-color;
+    position: relative;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: thin solid $colour--name-rock-blue;
+        top: -2px;
+    }
+}
+
+.content {
+    flex: 1;
+    display: block;
+    padding: 0 14px;
+}
+
+p {
+    color: $colour--text--titles-headlines-buttons;
+    line-height: 1.5;
+    margin: 0 0 4px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 900;
+    font-size: $font-size--small;
+}
+
+select {
+    font-size: $font-size--small;
+    font-family: 'UniversLTPro-45Light';
+    margin: 0;
+    width: 100%;
+    display: block;
+}
+
+.close {
+    cursor: pointer;
+    display: block;
+    opacity: 0;
+    padding: $spacing--5;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    transition: opacity $time--shortest $ease-leave;
+
+    kosmos-svg-icon {
+        color: $colour--name-gray;
+        display: block;
+        height: 9px;
+        transition: color $time--shortest $ease-leave;
+        width: 9px;
+    }
+
+    &:hover,
+    &:focus {
+        kosmos-svg-icon {
+            color: $colour--name-blue;
+            transition: color $time--shortest $ease-enter;
+        }
+    }
+}

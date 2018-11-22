@@ -1,0 +1,35 @@
+<div>
+    <div class="floating-form">
+        <dx-validation-group>
+            <div class="fl-right add-button">
+                <dx-button [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" (onClick)="onSubmit()" text="+"></dx-button>
+            </div>
+            <div class="form-group">
+                <div class="form-item large">
+                    <label>Company Name</label>
+                    <div>
+                        <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [(value)]="newLegalEntity.companyName" name="companyName" id="companyName">
+                            <dx-validator>
+                                <dxi-validation-rule type="required"></dxi-validation-rule>
+                            </dx-validator>
+                        </dx-text-box>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>Abbreviation</label>
+                    <div>
+                        <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [(value)]="newLegalEntity.abbreviation" name="abbreviation" id="abbreviation">
+                        </dx-text-box>
+                    </div>
+                </div>
+            </div>
+        </dx-validation-group>
+    </div>
+    <ul class="item-list">
+        <li *ngFor="let legalEntity of legalEntities; let i=index" class="flex-item">
+            <span class="name">{{ legalEntity.companyName }}</span>
+            <span class="abbreviation">{{ legalEntity.abbreviation }}</span>
+            <span class="btn-remove-item" (click)="remove(i)">x</span>
+        </li>
+    </ul>
+</div>

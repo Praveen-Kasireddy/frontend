@@ -1,0 +1,10 @@
+<div class="info-sippet-list">
+    <div *ngFor="let snippet of infoSnippets$ | async" class="info-sippet">
+        <button (click)="setSelectedSnippet(snippet)" class="info-text">{{ snippet.contentHtml }}</button>
+    </div>
+    <div *ngIf="(infoSnippets$ | async)?.length == 0">
+        <div class="info-sippet">
+            <button disabled="disabled" class="info-text" i18n="Info Snippet List|No Snippets found@@smartworkspace:snippet:list:no-snippets">No suggested snippets available</button>
+        </div>
+    </div>
+</div>

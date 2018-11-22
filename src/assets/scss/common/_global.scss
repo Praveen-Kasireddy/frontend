@@ -1,0 +1,48 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+._show-loading {
+    display: none;
+    background: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+
+    svg {
+        color: $colour--name-blue;
+        animation-name: spin;
+        animation-duration: 1000ms;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+    }
+}
+
+.ui-draggable-handle {
+    cursor: move;
+}
+
+.wj-listbox {
+    max-height: 300px !important;
+
+    .wj-listbox-item {
+        min-height: 25px
+    }
+}
+
+// Change background color for greater visibility when filters are on.
+.wj-cell.wj-header.wj-filter-on {
+    background-color: $colour--kpmg-10-yellow;
+}

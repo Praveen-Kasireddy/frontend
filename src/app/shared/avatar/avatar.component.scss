@@ -1,0 +1,117 @@
+@import "app-shared";
+
+$size--xs-small: 16px;
+$size--small: 24px;
+$size--medium: 32px;
+$size--large: 66px;
+
+:host {
+	border-radius: 50%;
+	display: flex;
+	flex: 0 0 auto; /* prevent avatar shrink */
+	font-family: $font-family--kpmg-web;
+	height: $size--medium;
+	overflow: hidden;
+	position: relative;
+	width: $size--medium;
+}
+
+.image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	border: 0;
+}
+
+.initials {
+	align-items: center;
+	background-color: #4a5769;
+	color: $colour--name-white;
+	display: flex;
+	flex: 1;
+	font-size: 10px;
+	font-family: $font-family--univers;
+	font-weight: 400;
+	justify-content: center;
+	letter-spacing: 0;
+	transition: color $time--short, background-color $time--short;
+
+	abbr {
+		display: block;
+		position: relative;
+		text-decoration: none;
+		z-index: $depth--1;
+	}
+}
+
+.svg-icon {
+	height: $size--medium;
+	line-height: $size--medium;
+	width: $size--medium;
+}
+
+/**
+ * Modifier: xs-small
+ */
+
+:host(.-xs-small) {
+	font-size: 0.4em;
+	height: $size--xs-small;
+	width: $size--xs-small;
+
+	.svg-icon {
+		height: $size--xs-small;
+		line-height: $size--xs-small;
+	}
+}
+
+/**
+ * Modifier: small
+ */
+
+:host(.-small) {
+	font-size: 0.6em;
+	height: $size--small;
+	width: $size--small;
+
+	.svg-icon {
+		height: $size--small;
+		line-height: $size--small;
+	}
+}
+
+/**
+ * Modifier: medium
+ */
+
+:host(.-medium) {
+	height: $size--medium;
+	width: $size--medium;
+}
+
+/**
+ * Modifier: large
+ */
+
+:host(.-large) {
+	font-size: 1.7em;
+	height: $size--large;
+	width: $size--large;
+
+	.svg-icon {
+		height: $size--large;
+		line-height: $size--large;
+	}
+}
+
+/**
+* Modifier: inverted
+*/
+
+:host(.-theme--inverted) {
+	.initials {
+		color: $colour--name-blue;
+		background-color: $colour--name-white;
+	}
+}

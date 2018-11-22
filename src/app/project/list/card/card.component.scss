@@ -1,0 +1,228 @@
+@import 'app-shared';
+
+:host {
+    height: 200px;
+    max-width: 250px;
+    position: relative;
+    width: 100%;
+    border-radius: 3px;
+    .cards-effect {
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        .card {
+            position: relative;
+            height: 6px;
+            border-left: 1px solid rgba(160, 168, 189, 0.5);
+            border-right: 1px solid rgba(160, 168, 189, 0.5);
+            border-bottom: 1px solid rgba(160, 168, 189, 0.5);
+            border-radius: 3px;
+            top: 0;
+            background-color: $colour--name-white;
+            &:nth-child(1) {
+                margin: -3px 5px;
+                z-index: 4;
+            }
+            &:nth-child(2) {
+                margin: -3px 10px;
+                z-index: 3;
+            }
+        }
+    }
+
+    &:not(.-is-loading) {
+        &:hover,
+        &:focus,
+        &:active {
+            opacity: 1;
+            transform: translate(0, -5px);
+            transition: 0.2s $ease-enter;
+            box-shadow: 0 10px 20px 0 rgba(48, 48, 48, 0.1);
+            .cards-effect {
+                .card {
+                    border-color: $colour--name-rock-blue;
+                }
+            }
+        }
+    }
+}
+
+.inner {
+    position: relative;
+    z-index: 2;
+    background-color: $colour--name-white;
+    border: thin solid rgba(160, 168, 189, 0.5);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    line-height: 1.7;
+    padding: $spacing--3;
+    transition: border-color $time--short ease;
+
+    &:not(.-is-loading) {
+        cursor: pointer;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: $colour--name-rock-blue;
+        }
+    }
+}
+
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $depth--1;
+    background: #fff;
+    opacity: 1;
+    transition: opacity $time--long $ease-enter;
+    padding: $spacing--3;
+
+    &.hidden {
+        opacity: 0;
+    }
+
+    > .creating {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .info {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+    }
+}
+
+.body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.progress {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-name,
+.project-name {
+    line-height: 1.2;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+[class^='kpmg-icon-'] {
+    font-size: 16px;
+}
+
+.company-name {
+    @include font-smoothing();
+    color: $colour--name-sidebar-gray;
+    font-size: 12px;
+}
+
+.project-name {
+    @include font-smoothing();
+    color: $colour--name-sidebar-gray;
+    font-size: 18px;
+    line-height: 26px;
+    padding-top: 15px;
+}
+
+.status {
+    margin: auto 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-bottom: 6px;
+    .badge {
+        font-size: 8px;
+        color: $colour--name-white;
+        background-color: $colour--name-keppel;
+        align-self: flex-start;
+        display: none;
+        padding: 4px 3px;
+        border-radius: 2px;
+        line-height: 6px;
+        vertical-align: middle;
+        text-transform: uppercase;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+kosmos-status-badge {
+    @include font-smoothing();
+    bottom: 2px;
+}
+
+.due-date {
+    color: $colour--name-rock-blue;
+    display: flex;
+    font-size: 12px;
+    .due-text {
+        padding-left: 2px;
+    }
+}
+
+.progress__label {
+    color: $colour--name-rock-blue;
+    font-size: 12px;
+    line-height: 18px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.progress__count {
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+/**
+ * Modifier: has-progress
+ */
+
+:host(.-has-progress) {
+    .progress__label {
+        color: $colour--name-rock-blue;
+    }
+}
+
+/**
+ * Modifier: selected, new
+ */
+
+:host(.-is-selected) {
+    .inner {
+        border-color: $colour--name-blue;
+    }
+}
+
+/**
+ * Modifier: project completed
+ */
+
+:host(.-is-completed) {
+    .progress__label {
+        color: $colour--name-keppel;
+    }
+    .due-date {
+        display: none;
+    }
+    .status {
+        .badge {
+            display: flex;
+        }
+    }
+}

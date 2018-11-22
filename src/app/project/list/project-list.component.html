@@ -1,0 +1,55 @@
+<div class="container">
+    <kosmos-header i18n-subtitle="Project Card|List Title for Headerk@@project:list" title="&nbsp;" subtitle="My Projects"></kosmos-header>
+
+    <div class="items -has-projects">
+        <ng-container>
+
+            <kosmos-new-project-card id="createNewProject" *ngIf="showNewProjectCard$" [hasProjects]="hasProjects$"
+                (clickHandler)="handleAddProject()" [@fadeIn]></kosmos-new-project-card>
+            <kosmos-new-deactivated-project-card *ngIf="!showNewProjectCard$" [hasProjects]="hasProjects$" [@fadeIn]></kosmos-new-deactivated-project-card>
+
+            <kosmos-project-card *ngFor="let project of projects; trackBy: trackById" [project]="project" (loaded)="projectLoaded($event)"
+                (error)="projectLoadError($event)" (selected)="projectSelected(project)" [@fadeIn]></kosmos-project-card>
+
+        </ng-container>
+    </div>
+</div>
+
+<kosmos-sidebar>
+    <span class="sidebar-title" i18n="Project List Sidebar| Title@@project:list:sidebar:title">My Projects</span>
+    <div class="sidebar-content">
+        <h2>INTRODUCTION</h2>
+        <p>
+            Welcome to KPMG Cosmos. The platform has been designed as a modern web application with the following core
+            structure:
+        </p>
+        <ul>
+            <li>
+                The <strong>navigation menu</strong> is located on <strong>the left sidebar</strong>. In addition, the
+                user ID and system language are displayed at the bottom of the left sidebar. The sidebar expands to
+                display the name of the icons in KPMG Cosmos when you hover your mouse over the sidebar.
+            </li>
+            <li>
+                Being a web application, KPMG Cosmos sessions <strong>timeout</strong> after 15 minutes of inactivity.
+                The remaining time of an active session is displayed in the left sidebar. It is therefore necessary to
+                <strong>save</strong> your work regularly.
+            </li>
+            <li>
+                <strong>Guidance</strong> is provided in the <strong>right sidebar</strong>.
+            </li>
+        </ul>
+        <h2>MY PROJECTS OVERVIEW</h2>
+        <p>
+            The dashboard displays all projects on which you are a team member. In addition to the client, project name
+            and due date, the project status (based on the number of completed task) is presented in the overview.
+        </p>
+        <p>
+            Select <strong>Create new project</strong> to start with the project setup.
+        </p>
+        <p>
+            Select a card in the dashboard to <strong>enter an existing</strong> project.
+        </p>
+    </div>
+</kosmos-sidebar>
+
+<kosmos-project-start id="closeProject" [(visible)]="isPopupVisible" (closeEvent)="closePopup()" (projectCreated)="projectCreated($event)"></kosmos-project-start>

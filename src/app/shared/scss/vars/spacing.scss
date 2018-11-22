@@ -1,0 +1,17 @@
+/**
+ * DO NOT ADD MORE LEVELS
+ *
+ * The reason is simple: to keep the design consistency across the app.
+ * If for some reason you find a design with a size that doesn't match
+ * one of these list, please pick the near value but do not add more levels.
+ */
+$spacing--1: 40px;
+$spacing--2: 30px;
+$spacing--3: 20px;
+$spacing--4: 15px;
+$spacing--5: 7px;
+$spacing--6: 4px;
+$spacing--7: 10px;
+$spacing--8: 8px;
+
+$spacing--default: $spacing--3;

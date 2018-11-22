@@ -1,0 +1,16 @@
+<dx-popup title="WARNING" (visibleChange)="popupVisibleChanged()" [(visible)]="visible" height="300px" width="450px">
+    <div *dxTemplate="let data of 'content'">
+        <p *ngIf="!deleteChapter && !deleteTask">All changes are going to be deleted. Do you want to continue?</p>
+        <p *ngIf="deleteChapter || deleteTask">Are you sure you want to delete this {{ deleteChapter ? 'chapter' : deleteTask
+            ? 'task': '' }}? All changes will be irretrievable.
+        </p>
+    </div>
+    <dxi-toolbar-item widget="dxButton" location="before" toolbar="bottom" [options]="{
+    text: 'No',
+    onClick: cancel}">
+    </dxi-toolbar-item>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+    text: 'Yes',
+    onClick: confirmed}">
+    </dxi-toolbar-item>
+</dx-popup>

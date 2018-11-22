@@ -1,0 +1,16 @@
+<div *ngIf="visible" class="container">
+    <div class="kpmg-icon-remove close-button" (click)="hide()"></div>
+    <dx-tree-view #treeView id="treeView" [dataSource]="treeItems" keyExpr="id" displayExpr="name" itemsExpr="children" searchEnabled="true"
+        searchMode="contains" height="100%" width="250px" expandAllEnabled="true" expandedExpr="isExpanded" selectionMode="multiple"
+        showCheckBoxesMode="none" selectByClick="true" itemTemplate="itemTemplate">
+        <div *dxTemplate="let item of 'itemTemplate'">
+            <span [ngClass]="{'kpmg-icon-check selected': item.isSelected, 'not-selected': !item.isSelected}"></span>
+            <span *ngIf="!item.isExpanded" class="{{ item.cssClass }} {{itemHelper.reference(item)}}" draggable="true">
+                {{ item.name }}
+            </span>
+            <span *ngIf="item.isExpanded" class="{{ item.cssClass }}" draggable="false">
+                {{ item.name }}
+            </span>
+        </div>
+    </dx-tree-view>
+</div>

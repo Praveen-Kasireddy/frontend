@@ -1,0 +1,10 @@
+@import 'app-shared';
+div {
+    width: 100%;
+    height: 100%;
+}
+
+/deep/ .webix_view {
+    font-family: $font-family--univers-light;
+    font-size: 14px;
+}

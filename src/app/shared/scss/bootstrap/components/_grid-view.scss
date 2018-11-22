@@ -1,0 +1,65 @@
+@import "app-shared";
+
+.grid-view {
+	align-content: flex-start;
+	display: flex;
+	flex-grow: 1;
+	flex-wrap: wrap;
+
+	&.--is-empty {
+		.grid-view-item {
+			margin: 0;
+			flex: 1 1 100%;
+			height: auto;
+		}
+	}
+}
+
+.grid-view-item {
+	position: relative;
+	flex: 0 0 200px;
+	margin-bottom: $spacing--4;
+	margin-right: $spacing--4;
+	height: 135px;
+
+	background-color: $colour--name-white;
+	border: 1px solid #ced2dd;
+	border-radius: 3px;
+	transition: 0.2s cubic-bezier(0.7, 0, 0.3, 1);
+	transition-property: top, opacity, box-shadow;
+	box-shadow: none;
+	opacity: 1;
+	top: 0;
+
+	&:hover,
+	&:focus {
+		top: -5px;
+		box-shadow: 0 7px 25px 4px rgba($colour--name-black, 0.15);
+	}
+
+	.inner {
+		display: flex;
+		border-radius: 3px;
+		cursor: pointer;
+		height: 100%;
+		padding: $spacing--4;
+	}
+
+	&.--as-new {
+		opacity: 0.5;
+		background-color: transparent;
+		border: 1px dashed #83868b;
+
+		&:hover,
+		&:focus {
+			top: 0;
+			opacity: 1;
+			box-shadow: none;
+		}
+
+		.inner {
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}

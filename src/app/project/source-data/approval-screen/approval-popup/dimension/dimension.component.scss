@@ -1,0 +1,129 @@
+@import 'app-shared';
+
+.dimension {
+    font-size: 14px;
+    border-top: 1px solid $colour--name-aluminium;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    & .firstRow {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+
+        & .name {
+            padding-right: 5px;
+            font-weight: bold;
+            color: $colour--name-aluminium;
+        }
+
+        & .counter {
+            margin-left: auto;
+            padding-left: 2px;
+            padding-right: 2px;
+            font-weight: bold;
+            color: $colour--name-aluminium;
+        }
+
+        & #characteristicInFirstRow {
+            min-width: 0;
+            margin-left: auto;
+            margin-right: 5px;
+        }
+
+        & .add {
+            cursor: pointer;
+            font-size: 19px;
+        }
+    }
+
+    & .secondRow {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        & .add {
+            cursor: pointer;
+            font-size: 19px;
+        }
+    }
+
+    & .toggle {
+        cursor: pointer;
+        padding-right: 5px;
+        font-weight: bold;
+        font-size: 16px;
+        color: $colour--name-aluminium;
+        vertical-align: sub;
+        line-height: 20px;
+    }
+}
+
+.characteristic {
+    cursor: default;
+    display: flex;
+    flex-direction: row;
+    border-radius: 7px;
+    font-weight: normal;
+    padding-left: 7px;
+    font-size: 14px;
+    padding-right: 7px;
+    max-width: 100%;
+    min-width: 0;
+    height: 21px;
+    line-height: 21px;
+    margin-bottom: 1px;
+    margin-right: 1px;
+    color: $colour--name-white;
+
+    &.old {
+        background-color: $colour--name-aluminium;
+    }
+
+    &.new {
+        background-color: $colour--name-green; // #76dcc2
+    }
+
+    & .label {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    & .counter {
+        padding-left: 4px;
+
+        &::before {
+            padding-right: 2px;
+            content: '|';
+        }
+    }
+
+    & .close {
+        cursor: pointer;
+        font-size: 11px;
+        margin-left: 2px;
+        margin-top: 5px;
+    }
+}
+
+.editor {
+    overflow-x: hidden;
+    background-color: $colour--background--lightest-athens-grey;
+
+    & ul {
+        list-style-type: none;
+        -webkit-padding-start: 0;
+        -webkit-margin-before: 0;
+
+        & li {
+            cursor: pointer;
+            white-space: nowrap;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}

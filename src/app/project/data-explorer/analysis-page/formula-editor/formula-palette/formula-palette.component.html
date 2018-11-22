@@ -1,0 +1,21 @@
+<dx-popup [height]="500" [width]="300" [shading]="false" [dragEnabled]="false" [resizeEnabled]="true" [showTitle]="false">
+    <dxo-position my="left top" at="left bottom" of="#formulaPaletteAnchor"></dxo-position>
+    <div *dxTemplate="let data of 'content'">
+        <div class="paletteContainer">
+            <dx-tree-view [dataSource]="items" keyExpr="id" displayExpr="caption" searchEnabled="true" searchMode="contains"
+                height="100%" width="100%" showCheckBoxesMode="none" selectByClick="true" itemTemplate="itemTemplate"
+                (onItemSelectionChanged)="onItemSelected($event)" selectionMode="single">
+                <div *dxTemplate="let item of 'itemTemplate'">
+                    <div class="item">{{ item.gridLabel }} {{ item.caption }}</div>
+                </div>
+            </dx-tree-view>
+            <div class="constantContainer">
+                <div *ngIf="constantAllowed">
+                    <dx-number-box class="constantValue" [(value)]="constant" i18n-placeholder="Constant|Constant@@data-explorer:formula-palette:constant"
+                        placeholder="Enter constant"></dx-number-box>
+                    <div class="kpmg-icon-add clickable addConstant" (click)="addConstant()"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</dx-popup>

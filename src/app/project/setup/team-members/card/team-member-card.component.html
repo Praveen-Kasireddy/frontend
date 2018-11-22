@@ -1,0 +1,14 @@
+<div class="inner" [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT">
+    <kosmos-avatar [name]="assignedUser?.fullName"></kosmos-avatar>
+    <div class="content" [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT">
+        <p>{{ assignedUser?.fullName }}</p>
+        <select [(ngModel)]="assignedUser.roleId" [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT">
+            <option *ngFor="let role of roles" [value]="role.id" [selected]="role.id == assignedUser?.roleId">
+                {{ role.name }}
+            </option>
+        </select>
+    </div>
+    <a class="close" (click)="delete()" [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT">
+        <kosmos-svg-icon [icon]="SvgIcons.CLOSE" width="10" height="10"></kosmos-svg-icon>
+    </a>
+</div>

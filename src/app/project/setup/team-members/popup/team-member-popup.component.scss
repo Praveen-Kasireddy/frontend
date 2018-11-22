@@ -1,0 +1,36 @@
+.button.dx-button {
+    margin: 4px;
+    background-color: #282c37;
+    // color: white;
+    color: #f5f7fa;
+    float: right;
+}
+.buttonRow {
+    padding-top: 30px;
+    margin-right: 2px;
+    display: inline-block;
+    width: 100%;
+}
+.form {
+    flex: auto;
+    max-width: 100%;
+}
+.icon {
+    background-color: #f0f1f5;
+    padding: 8px;
+}
+.icon::before {
+    color: #4a5769;
+    font-size: 15pt;
+    vertical-align: middle;
+}
+.row,
+.rowWithIcon {
+    padding: 8px;
+}
+.rowWithIcon {
+    display: flex;
+}
+#gridContainer {
+    height: 336px;
+}

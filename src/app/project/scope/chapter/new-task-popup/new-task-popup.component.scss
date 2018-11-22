@@ -1,0 +1,21 @@
+.form-group {
+    display: block;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    float: left;
+    margin-left: 0px;
+    width: 100%;
+    .form-item {
+        flex: 0 1 auto;
+        max-width: none;
+        padding-right: 20px;
+    }
+}
+
+.name {
+    width: 100%;
+}
+
+.dropzone-width {
+    margin-left: 35px;
+}

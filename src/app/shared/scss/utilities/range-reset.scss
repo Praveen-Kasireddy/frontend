@@ -1,0 +1,30 @@
+@mixin range-reset() {
+	appearance: none;
+	background: transparent;
+	width: 100%;
+
+	&:focus {
+		outline: none;
+	}
+
+	&::-webkit-slider-thumb {
+		appearance: none;
+	}
+
+	&::-ms-thumb {
+		appearance: none;
+		border: 0;
+	}
+
+	&::-ms-track {
+		background: transparent;
+		border-color: transparent;
+		color: transparent;
+		cursor: pointer;
+		width: 100%;
+	}
+
+	&::-ms-tooltip {
+		display: none;
+	}
+}

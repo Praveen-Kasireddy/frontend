@@ -1,0 +1,20 @@
+@import 'app-shared';
+
+$icon-size: 14px;
+$icon-size-medium: 20px;
+
+:host {
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid #fefefe;
+    flex: 0 0 auto;
+    display: block;
+    height: $icon-size;
+    position: relative;
+    width: $icon-size;
+}
+
+:host(.-size-medium) {
+    height: $icon-size-medium;
+    width: $icon-size-medium;
+}

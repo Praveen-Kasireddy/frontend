@@ -1,0 +1,62 @@
+@import "app-shared";
+
+$width: 70px;
+$width--large: 204px;
+$height: 46px;
+$icon-size: 26px;
+
+:host {
+	display: block;
+	height: $height;
+	position: relative;
+	padding: 0 10px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.inner-button {
+	width: 100%;
+	height: 100%;
+	display: inline-flex;
+	align-items: center;
+	color: #a0a8bd;
+	text-decoration: none;
+	font-size: $font-size--small;
+	padding: 0 12px;
+	transition: $time--short $ease-leave;
+	transition-property: color, background-color;
+	overflow: hidden;
+	white-space: nowrap;
+	border-radius: 3px;
+
+	&:hover {
+		color: $colour--name-white;
+		transition-timing-function: $ease-enter;
+	}
+
+	&.-is-active {
+		background-color: rgba(118, 124, 141, 0.3);
+	}
+}
+
+.menu-text {
+	flex-shrink: 0;
+	margin-left: 15px;
+}
+
+/**
+ * Modifier: align-bottom
+ */
+
+:host(.align-bottom) {
+	margin-top: auto;
+}
+
+[class^="kpmg-icon-menu"],
+[class*=" kpmg-icon-menu-"] {
+	display: inline-block;
+	flex-shrink: 0;
+	width: $icon-size;
+	height: $icon-size;
+	font-size: 25px;
+}

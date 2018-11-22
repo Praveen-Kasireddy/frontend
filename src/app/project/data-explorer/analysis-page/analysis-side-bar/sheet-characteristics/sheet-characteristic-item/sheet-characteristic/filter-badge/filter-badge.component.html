@@ -1,0 +1,7 @@
+<div class="badge-div" draggable="true" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
+    <div [ngClass]="{'draggable-over-me': draggableOverMe}"></div>
+    <div class="badge-body">
+        <div class="caption">{{ caption }}</div>
+        <div class="close-button" (click)="remove()">x</div>
+    </div>
+</div>

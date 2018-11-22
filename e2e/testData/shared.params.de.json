@@ -1,0 +1,59 @@
+{
+    "left": {
+        "description": "Standard text",
+        "input": "Meine Projekte",
+        "expectedOutput": "Hello World!"
+    },
+    "middle": {
+        "description": "Standard text",
+        "input": "Meine Projekte",
+        "expectedOutput": "Hello World!"
+    },
+    "right": {
+        "description": "Standard text",
+        "input": "Meine Projekte",
+        "expectedOutput": "Hello World!"
+    },
+    "main nav": {
+        "description": "Standard text",
+        "input": "My Projects",
+        "expectedOutput": "Hello World!"
+    },
+    "projectList": {
+        "headline": "My Projects",
+        "cardAction": "Create new project"
+    },
+    "miniProject": {
+        "toolbar": "MINI PROJECT START",
+        "projectNameLabel": "Project Name",
+        "projectNamePlH": "Project Name",
+        "clientNameLabel": "Client Name",
+        "clientNamePlH": "Client Name",
+        "targetNameLabel": "Target Name",
+        "targetNamePlH": "Target Name",
+        "da_contactsLabel": "DA contacts",
+        "your_briefingLabel": "Your Briefing",
+        "sellSideLabel": "Sell Side",
+        "buySideLabel": "Buy Side",
+        "otherSideLabel": "Other",
+        "startDateLabel": "Est. Start Date",
+        "endDateLabel": "Est. End Date",
+        "projectFeesLabel": "Project Fees (est.)",
+        "projectNameTxtbox": "1001",
+        "clientNameTxtbox": "Test Client",
+        "targetNameTxtbox": "any",
+        "da_contactsTxtbox": "TestKOSMOS1",
+        "yourBriefingTxtarea": "This is a test project"
+    },
+    "Stakeholder": {
+        "lastNameTxTbox": "Nachname",
+        "jobtitleTxTbox": "Consultant",
+        "companyName": "Testing Company GmbH",
+        "companyDescription": "This is a test descrption...",
+        "emailAddressTxTbox": "Vorname.Nachname@Company.eu",
+        "phoneNumberTxTbox": "0171 987654321"
+    },
+    "FileManager": {
+        "headline": "File manager"
+    }
+}

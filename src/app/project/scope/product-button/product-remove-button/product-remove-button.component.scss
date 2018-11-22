@@ -1,0 +1,13 @@
+@import 'app-shared';
+
+:host {
+    cursor: pointer;
+    border: none;
+
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+        color: $colour--name-flamingo;
+    }
+}

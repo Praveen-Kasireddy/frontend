@@ -1,0 +1,7 @@
+<div *ngIf='project'>
+    <h2>{{ project.name }}</h2>
+    <span>User: {{ project.user }}</span>
+</div>
+<div>
+    <a [routerLink]="['/projects']">Back</a>
+</div>

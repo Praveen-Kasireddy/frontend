@@ -1,0 +1,24 @@
+<div>
+    <div class="floating-form">
+        <dx-validation-group>
+            <div class="fl-right">
+                <dx-button [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" (onClick)="onSubmit()" text="+"></dx-button>
+            </div>
+            <div class="form-group">
+                <div class="form-item xlarge">
+                    <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [(value)]="newValue.description" name="newValue" id="newValue">
+                        <dx-validator>
+                            <dxi-validation-rule type="required"></dxi-validation-rule>
+                        </dx-validator>
+                    </dx-text-box>
+                </div>
+            </div>
+        </dx-validation-group>
+    </div>
+    <ul class="item-list">
+        <li *ngFor="let objective of objectives; let i=index">
+            <span class="objective-item">{{ objective.description }}</span>
+            <span class="btn-remove-item" (click)="remove(i)">x</span>
+        </li>
+    </ul>
+</div>

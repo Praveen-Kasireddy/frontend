@@ -1,0 +1,6 @@
+<div class="timercontainer" [ngClass]="{'standard': !warning, 'red': warning}">
+    <span class="timermessage">{{ message }}</span>
+    <span class="timertext">{{ sessiontext }}</span>
+</div>
+
+<kosmos-warning-popup [expired]="expired" [visible]="isPopupVisible" [message]='message'></kosmos-warning-popup>

@@ -1,0 +1,37 @@
+<div class="filter-bar">
+    <div class="filter-bar-start"></div>
+    <div class="status-filter-area">
+        <div class="buttons-area">
+            <div class="task-filter-caption" i18n="Project scope|Status@@project:scope:status">STATUS</div>
+            <div class="filter-buttons">
+                <kosmos-tab-button *ngFor="let button of filterButtonInfos" [caption]="button.caption" [isLargeButton]="true" 
+                    (click)="toggleStateFilter(button.id)" [isSelected]="button.isActive"
+                    class="filter-button-with-caption">
+                </kosmos-tab-button>
+            </div>
+        </div>
+    </div>
+    <div class="tasks-filter-area">
+        <div class="buttons-area">
+            <div class="task-filter-caption" i18n="Project scope|Tasks@@project:scope:tasks">TASKS</div>
+            <div class="filter-buttons">
+                <kosmos-tab-button caption="All" [isLargeButton]="false" i18n-text="Project scope|All@@project:scope:filter:all"
+                    (click)="setFilterType(tasksFilterType.Active)" [isSelected]="activeTypeFilter == tasksFilterType.Active"
+                    class="filter-button-with-caption">
+                </kosmos-tab-button>
+                <kosmos-tab-button caption="My" [isLargeButton]="false" i18n-text="Project scope|My@@project:scope:filter:my"
+                    (click)="setFilterType(tasksFilterType.My)" [isSelected]="activeTypeFilter == tasksFilterType.My"
+                    class="filter-button-with-caption">
+                </kosmos-tab-button>
+                <kosmos-tab-button caption="Assigned" [isLargeButton]="true" i18n-text="Project scope|Assigned@@project:scope:filter:assigned"
+                    (click)="setFilterType(tasksFilterType.Assigned)" [isSelected]="activeTypeFilter == tasksFilterType.Assigned"
+                    class="filter-button-with-caption">
+                </kosmos-tab-button>
+                <kosmos-tab-button caption="Unassigned" [isLargeButton]="true" i18n-text="Project scope|Unassigned@@project:scope:filter:unassigned"
+                    (click)="setFilterType(tasksFilterType.UnassignedActive)" [isSelected]="activeTypeFilter == tasksFilterType.UnassignedActive"
+                    class="filter-button-with-caption">
+                </kosmos-tab-button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+@import 'app-shared';
+@import 'sidebars/help-sidebars';
+@include help-contents();
+@import '../../shared/sidebar/sidebar.component';
+@include sidebar-styles();
+
+:host {
+    background: $colour--name-catskill-white;
+    display: flex;
+    overflow: hidden;
+}
+
+.padding {
+    padding-left: 12px;
+}
+
+section {
+    &:not(:first-child) {
+        border-top: 1px solid $colour--name-iron;
+        margin-top: $spacing--1;
+        padding-top: $spacing--1;
+    }
+}
+
+.validation-message {
+    color: #e95252;
+    margin-top: 4px;
+}
+
+h3 {
+    color: rgba(#303030, 0.8);
+    font-size: 18px;
+    margin: 0;
+}

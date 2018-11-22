@@ -1,0 +1,82 @@
+@import 'app-shared';
+
+:host {
+    background: $colour--name-catskill-white;
+    display: flex;
+    overflow: hidden;
+}
+
+.new-button {
+    display: inline-block;
+    padding-bottom: 10px;
+    padding-top: 0px;
+    vertical-align: middle;
+}
+
+section {
+    &:not(:first-child) {
+        border-top: 1px solid $colour--name-iron;
+        margin-top: $spacing--1;
+        padding-top: $spacing--1;
+    }
+}
+
+h3 {
+    color: rgba(#303030, 0.8);
+    font-size: 18px;
+    margin: 0;
+}
+
+.productButtons {
+    margin-top: 10px;
+    margin-left: 38px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-flow: row wrap;
+}
+
+.content-inner {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.filter-button {
+    margin-top: -65px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: thin solid $colour--name-rock-blue;
+        top: -2px;
+    }
+}
+
+.filter-button-selected {
+    color: white;
+    background-color: $colour--name-steel-grey;
+}
+
+.filter-button-not-selected {
+    color: $colour--name-steel-grey;
+    background-color: $colour--name-light-gray;
+}
+
+.filter-icon {
+    padding-top: 10px;
+}

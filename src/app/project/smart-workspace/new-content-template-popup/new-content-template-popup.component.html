@@ -1,0 +1,20 @@
+<dx-popup title="TEMPLATE NAME" (onHidden)="popupHidden()" (onShowing)="popupShowing()" (visibleChange)="popupVisibleChanged()"
+    [(visible)]="visible" i18n-title="Name|Name@@new-content-template:popup" height="auto" width="450px" resizeEnabled="true">
+    <div *dxTemplate="let data of 'content'" class="popup">
+        <dx-validation-group>
+            <div class="form-group">
+                <div class="form-item">
+                    <label i18n-placeholder="Name|Name@@new-content-template:popup">Name</label>
+                    <dx-text-box class="name" [(value)]="name" i18n-placeholder="enter-name|enter-name@@new-content-template:popup" placeholder="Enter Name"
+                        (onFocusOut)="validateMe($event)">
+                        <dx-validator>
+                            <dxi-validation-rule type="required"></dxi-validation-rule>
+                        </dx-validator>
+                    </dx-text-box>
+                </div>
+            </div>
+        </dx-validation-group>
+    </div>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{ text: 'Done',  onClick: add }">
+    </dxi-toolbar-item>
+</dx-popup>

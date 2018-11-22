@@ -1,0 +1,186 @@
+$base-padding: 5px;
+
+@mixin table-theme($color, $color-selected-border: $colour--name-mandy) {
+    @include table-header-background($color);
+    @include table-border-color($color, $color-selected-border);
+}
+
+@mixin table-header-background($color) {
+    th {
+        background-color: $color;
+        text-align: left;
+    }
+}
+
+@mixin table-border-color($color, $color-selected: $colour--name-mandy) {
+    th,
+    td {
+        border-color: $color;
+    }
+}
+
+@mixin froala-cell-selection-highlight($color-selected: $colour--name-mandy) {
+    th,
+    td {
+        &.fr-selected-cell {
+            border-color: $color-selected !important;
+            border-width: 1px !important;
+            border-style: double !important;
+        }
+    }
+}
+
+_:-ms-fullscreen,
+:root table {
+    &.kpmg-table {
+        width: calc(100% - 1px) !important;
+    }
+}
+
+_:-ms-lang(x),
+_:-webkit-full-screen,
+table {
+    &.kpmg-table {
+        width: calc(100% - 1px) !important;
+    }
+}
+
+table {
+    &.addAnalysis {
+        border-color: transparent;
+        border-spacing: 0;
+        border-collapse: collapse;
+
+        th,
+        td {
+            border-collapse: collapse;
+            line-height: 1.35715;
+            padding: $base-padding;
+        }
+
+        th {
+            background-color: transparent;
+            font-family: 'Arial';
+            font-size: 12px;
+            text-align: left;
+            font-weight: bold;
+            color: $colour--name-prussian-blue !important;
+        }
+    }
+    &.kpmg-table {
+        border-color: transparent;
+        border-spacing: 0;
+        border-collapse: collapse;
+
+        th,
+        td {
+            border-width: 1px;
+            border-style: solid;
+            border-collapse: collapse;
+            line-height: 1.35715;
+            padding: $base-padding;
+        }
+
+        th {
+            color: $colour--name-white !important;
+            background-color: $colour--name-prussian-blue;
+            text-align: left;
+            > h1,
+            h2,
+            h3,
+            p,
+            blockquote {
+                color: $colour--name-white !important;
+            }
+        }
+
+        @include froala-cell-selection-highlight();
+
+        .cell-padding-medium {
+            padding-left: $base-padding + 10px;
+            padding-right: $base-padding + 10px;
+        }
+
+        .cell-padding-large {
+            padding-left: $base-padding + 20px;
+            padding-right: $base-padding + 20px;
+        }
+
+        &.default,
+        &.kpmg-blue {
+            @include table-theme($colour--name-prussian-blue);
+        }
+
+        &.kpmg-medium-blue {
+            @include table-theme($colour--name-endeavour);
+        }
+
+        &.kpmg-light-blue {
+            @include table-theme(#0091da);
+        }
+
+        &.kpmg-violet {
+            @include table-theme(#483698);
+        }
+
+        &.kpmg-purple {
+            @include table-theme(#470a68);
+        }
+
+        &.kpmg-light-purple {
+            @include table-theme($colour--name-light-purple);
+        }
+
+        &.kpmg-green {
+            @include table-theme(#00a3a1);
+        }
+
+        &.kpmg-green-haze {
+            @include table-theme(#009a44);
+        }
+
+        &.kpmg-apple {
+            @include table-theme(#43b02a);
+        }
+
+        &.kpmg-web-orange {
+            @include table-theme(#eaaa00);
+        }
+
+        &.kpmg-sea-buckthorn {
+            @include table-theme(#f68d2e);
+        }
+
+        &.kpmg-maroon-flush {
+            @include table-theme(#bc204b);
+        }
+
+        &.kpmg-lipstick {
+            @include table-theme(#c6007e);
+        }
+
+        &.kpmg-alto {
+            @include table-theme(#d9d9d9);
+        }
+
+        &.kpmg-walnut {
+            @include table-theme(#753f19);
+        }
+
+        &.kpmg-paarl {
+            @include table-theme(#9b642e);
+        }
+
+        &.kpmg-gurkha {
+            @include table-theme(#909375);
+        }
+
+        &.kpmg-carissma {
+            @include table-theme(#e38c9f);
+        }
+
+        &.kpmg-sunglo {
+            @include table-theme(#e36877);
+        }
+    }
+}

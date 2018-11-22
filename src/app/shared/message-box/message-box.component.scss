@@ -1,0 +1,24 @@
+.form-group {
+    display: block;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    .form-item {
+        flex: 0 1 auto;
+        max-width: none;
+    }
+}
+
+.title {
+    width: 100%;
+}
+
+.message {
+    font-size: 12px;
+}
+
+.template {
+    overflow: auto;
+}

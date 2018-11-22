@@ -1,0 +1,8 @@
+<span *ngIf="showInitials" class="initials" [ngStyle]="{'background-color':background != '' ? background : ''}">
+    <abbr [title]="avatarName">{{ initials }}</abbr>
+</span>
+
+<div *ngIf="showDefaultIcon" class="svg-icon">
+    <kosmos-svg-icon icon="user" viewBox="0 0 36 36" [width]="avatarSize" [height]="avatarSize" fill="#c0d2e8">
+    </kosmos-svg-icon>
+</div>

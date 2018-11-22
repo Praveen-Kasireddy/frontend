@@ -1,0 +1,9 @@
+<a
+	class="inner-button"
+	[routerLink]="url"
+	routerLinkActive="-is-active"
+	[routerLinkActiveOptions]="{exact: routerLinkActiveExact}"
+>
+	<span [ngClass]="icon"></span>
+	<span class="menu-text"><ng-content></ng-content></span>
+</a>

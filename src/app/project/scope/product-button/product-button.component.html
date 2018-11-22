@@ -1,0 +1,4 @@
+<div class="product-button" (click)="onClicked($event)" [ngClass]="{'button-was-selected': wasSelected == true, 'button-not-selected': wasSelected == false}">
+    <div class="product-name" [title]="product?.path">{{ product?.name }}</div>
+    <kosmos-product-remove-button *ngIf="canBeDeleted" class="delete-button" (removeEvent)="onRemove()"></kosmos-product-remove-button>
+</div>

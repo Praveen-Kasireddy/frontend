@@ -1,0 +1,60 @@
+<!-- <div class="container"> -->
+<!-- Attension! Using the div-container with classes content and content-inner creates problems in IE. But they are necessary for scrolling.-->
+<!-- <div class="content"> -->
+<!--  <div class="content-inner"> -->
+<h1 class="headline">User Management</h1>
+<div class="buttons">
+    <dx-button text="Add new user" [visible]="currentUser?.isAdmin" (onClick)="addUser()" style="margin-left: 40px; margin-bottom: 20px; width: 250px;"></dx-button>
+    <div class="button dx-button" *ngIf="currentUser?.isAdmin" role="button">
+        <span>Import users</span>
+        <input type="file" id="userFile" (change)="importUsers($event.target.files)" />
+    </div>
+    <div class="loader" *ngIf="isImporting">
+        <kosmos-loading-cube></kosmos-loading-cube>
+    </div>
+</div>
+<dx-data-grid id="gridContainer" class="grid-component" [dataSource]="users" keyExpr="gpid" [hoverStateEnabled]="true"
+    [showBorders]="true">
+
+    <dxo-header-filter [visible]="showHeaderFilter"></dxo-header-filter>
+    <dxo-search-panel [visible]="true" [width]="240" placeholder="Search..."></dxo-search-panel>
+    <dxo-sorting mode="multiple"></dxo-sorting>
+    <dxo-paging [pageSize]="10"></dxo-paging>
+    <dxo-selection mode="single"></dxo-selection>
+    <!-- dxo-pager can't be used because right now the page is not scrollable. -->
+    <dxo-pager [showPageSizeSelector]="false" [allowedPageSizes]="[5, 10, 20]" [showInfo]="true"></dxo-pager>
+    <dxi-column dataField="salutation">
+        <dxi-validation-rule type="required"></dxi-validation-rule>
+    </dxi-column>
+    <dxi-column dataField="lastName" sortOrder="asc" sortIndex="0">
+        <dxi-validation-rule type="required"></dxi-validation-rule>
+    </dxi-column>
+    <dxi-column dataField="firstName" sortOrder="asc" sortIndex="1">
+        <dxi-validation-rule type="required"></dxi-validation-rule>
+    </dxi-column>
+    <dxi-column dataField="email">
+        <dxi-validation-rule type="required"></dxi-validation-rule>
+        <dxi-validation-rule type="email"></dxi-validation-rule>
+    </dxi-column>
+    <dxi-column [visible]="currentUser?.isAdmin" dataField="isActive"></dxi-column>
+    <dxi-column [visible]="currentUser?.isAdmin" dataField="isAdmin"></dxi-column>
+    <dxi-column dataField="isAllowCreateProject" [visible]="false"></dxi-column>
+    <dxi-column [visible]="currentUser?.isAdmin" name="command-editing" [allowFiltering]="false" [allowSorting]="false"
+        cellTemplate="cellTemplate">
+        <div *dxTemplate="let data of 'cellTemplate'" style="text-align: center;">
+            <a class="dx-link dx-link-edit" (click)="editUser(data, $event)">Edit</a>
+            <!-- <a class="dx-link dx-link-edit" (click)="deleteUser(data, $event)">Delete</a> -->
+        </div>
+    </dxi-column>
+</dx-data-grid>
+
+<kosmos-add-user (done)="addDoneHandler($event)"></kosmos-add-user>
+<kosmos-edit-user [selectedUser]="editSelectedUser" (done)="editDoneHandler($event)"></kosmos-edit-user>
+<kosmos-message-box showDoneButton="true" showCloseButton="true"></kosmos-message-box>
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+
+<dx-toast message="The user with given KPMG GPID already exists!" [(visible)]="showExistsMessage" type="Error"
+    i18n-message="toastMessage|toastMessage@@userlist:editError:toast-message"></dx-toast>
+<dx-toast message="User successfully added" [(visible)]="showSuccessMessage" type="Success" i18n-message="toastMessage|toastMessage@@userlist:editSuccess:toast-message"></dx-toast>

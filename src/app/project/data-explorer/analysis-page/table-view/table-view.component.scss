@@ -1,0 +1,171 @@
+.daex-table {
+    border-spacing: 0;
+    max-width: 100%;
+    min-width: 50%;
+    padding-left: 1px;
+    padding-right: 1px;
+    table-layout: auto;
+}
+
+.daex-header {
+    height: 19.6pt;
+    background-color: #00338d;
+    color: white;
+    font-family: 'Arial';
+    font-size: 8pt;
+    padding: 1pt;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.daex-column-header {
+    height: 12pt;
+    background-color: #ffffff;
+    border-bottom: 1pt solid #00338d;
+    color: #00338d;
+    font-family: 'Arial';
+    font-size: 8pt;
+    font-weight: bold;
+    padding: 1pt;
+    text-align: right;
+    width: 70px;
+    vertical-align: bottom;
+}
+
+.daex-column-header-blank {
+    height: 12pt;
+    background-color: #ffffff;
+    border-bottom: 1pt solid #00338d;
+    color: #00338d;
+    font-family: 'Arial';
+    font-size: 8pt;
+    font-weight: bold;
+    font-style: italic;
+    padding: 1pt;
+    text-align: right;
+    width: 70px;
+    vertical-align: bottom;
+}
+
+.daex-formula-column-header {
+    height: 12pt;
+    background-color: #ffffff;
+    border-bottom: 1pt solid #00338d;
+    color: #00338d;
+    font-family: 'Arial';
+    font-size: 8pt;
+    font-weight: bold;
+    padding: 1pt;
+    text-align: right;
+    width: 70px;
+    vertical-align: bottom;
+}
+
+.daex-first-column-header {
+    height: 12pt;
+    background-color: #ffffff;
+    border-bottom: 1pt solid #00338d;
+    color: #00338d;
+    font-family: 'Arial';
+    font-size: 8pt;
+    font-weight: bold;
+    padding: 1pt;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.daex-formula-row-header {
+    height: 12pt;
+    background-color: #ffffff;
+    border-top: 0.5pt solid #00338d;
+    font-family: 'Arial';
+    font-size: 8pt;
+    font-weight: bold;
+    padding: 1pt;
+    text-align: left;
+}
+
+.daex-group-row-header {
+    height: 12pt;
+    background-color: #ffffff;
+    border-top: 0.5pt solid #173710;
+    font-family: 'Arial';
+    font-size: 8pt;
+    font-weight: bold;
+    padding: 1pt;
+    text-align: left;
+}
+
+.daex-percent-cell {
+    font-style: italic;
+}
+
+.daex-row-header {
+    height: 12pt;
+    background-color: #ffffff;
+    font-family: 'Arial';
+    font-size: 8pt;
+    padding: 1pt;
+    text-align: left;
+}
+
+.daex-row-header-blank {
+    height: 12pt;
+    background-color: #ffffff;
+    font-family: 'Arial';
+    color: #00338d;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 8pt;
+    padding: 1pt;
+    text-align: left;
+}
+
+.daex-cell {
+    background-color: #ffffff;
+    font-family: 'Arial';
+    font-size: 8pt;
+    text-align: right;
+    width: 70px;
+    max-width: 70px;
+    word-break: break-all;
+}
+
+.daex-row-formula-cell {
+    font-weight: bold;
+    border-top: 0.5pt solid #00338d;
+}
+
+.daex-row-group-cell {
+    border-top: 0.5px solid #173710;
+}
+
+.daex-first-column-cell {
+    border-left: 0.5pt solid #00338d;
+    width: auto;
+}
+
+.daex-last-column-cell {
+    border-right: 0.5pt solid #00338d;
+}
+
+.daex-last-row-cell {
+    border-bottom: 1.5pt solid #00338d;
+}
+
+.daex-first-grid-cell {
+    background-color: transparent;
+    border-right: 1pt solid #e7e9ef;
+    border-bottom: 1pt solid #e7e9ef;
+    font-weight: bold;
+    text-align: center;
+    width: 20px;
+}
+
+.daex-grid-cell {
+    background-color: transparent;
+    border-right: 1pt solid #e7e9ef;
+    border-bottom: 1pt solid #e7e9ef;
+    font-weight: bold;
+    text-align: center;
+}

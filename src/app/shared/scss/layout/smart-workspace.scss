@@ -1,0 +1,240 @@
+$color-h1: #00338d;
+$color-h2: #00338d;
+$color-h3: #00338d;
+$color-p: #000;
+$color-blockquote: #000;
+$color-table: #000;
+$color-cover: #00338d;
+$line-space: 8px;
+$intro-column-space: 6px;
+
+@mixin reset {
+    border: 0 none;
+    margin: 0 0 $line-space;
+    padding: 0;
+}
+
+@mixin smart-workspace-default {
+    h1,
+    h2,
+    h3,
+    p,
+    li,
+    blockquote,
+    pre,
+    th,
+    h1cover,
+    h2cover,
+    h3cover,
+    pcover,
+    td {
+        line-height: 1.2;
+        font-feature-settings: 'liga', 'kern';
+        word-wrap: normal;
+    }
+
+    h1 {
+        @include reset();
+        font-family: KPMG Web, sans-serif;
+        color: $color-h1;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    // Cover heading - large
+    h1cover {
+        @include reset();
+        font-family: KPMG Web, sans-serif;
+        color: $color-cover;
+        font-size: 146px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    h2 {
+        @include reset();
+        font-family: UniversLTStd-65Bold, sans-serif;
+        color: $color-h2;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    // Cover heading - small
+    h2cover {
+        @include reset();
+        font-family: KPMG Web, sans-serif;
+        color: $color-cover;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    // Cover paragraph
+    pcover {
+        @include reset();
+        font-family: Arial, sans-serif;
+        color: $color-cover;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    // Cover sub-title
+    h3cover {
+        @include reset();
+        font-family: Arial, sans-serif;
+        color: $color-cover;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: bold;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        @include reset();
+        font-family: UniversLTStd-55Roman, sans-serif;
+        color: $color-h3;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    p,
+    li {
+        @include reset();
+        font-family: Arial, sans-serif;
+        color: $color-p;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    blockquote,
+    pre {
+        @include reset();
+        font-family: Arial, sans-serif;
+        color: $color-blockquote;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    th,
+    td {
+        font-family: Arial, sans-serif;
+        color: $color-table;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    span.current {
+        color: $colour--name-blue;
+    }
+}
+
+@mixin intro-column-default($color: $colour--name-white) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    h1cover,
+    h2cover,
+    h3cover,
+    pcover,
+    p,
+    li,
+    blockquote,
+    pre,
+    th,
+    td {
+        &.intro-column {
+            color: $color;
+            font-weight: 600;
+            padding: 0 $intro-column-space 0 $intro-column-space;
+
+            &:first-child {
+                padding-top: $intro-column-space;
+            }
+
+            &:last-child {
+                padding-bottom: $intro-column-space;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li,
+    blockquote,
+    pre,
+    th,
+    td {
+        &.intro-column {
+            font-family: UniversLTStd-65Bold, sans-serif;
+        }
+    }
+}
+
+@mixin intro-column-reset() {
+    h1 {
+        &.intro-column {
+            color: $color-h1;
+        }
+    }
+
+    h2 {
+        &.intro-column {
+            color: $color-h2;
+        }
+    }
+
+    h1cover,
+    h2cover,
+    h3cover,
+    pcover {
+        &.intro-column {
+            color: $color-cover;
+        }
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        &.intro-column {
+            color: $color-h3;
+        }
+    }
+
+    p,
+    li {
+        &.intro-column {
+            color: $color-p;
+        }
+    }
+
+    blockquote,
+    pre {
+        &.intro-column {
+            color: $color-blockquote;
+        }
+    }
+
+    th,
+    td {
+        &.intro-column {
+            color: $color-table;
+        }
+    }
+}

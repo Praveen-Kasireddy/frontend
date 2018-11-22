@@ -1,0 +1,17 @@
+[
+    {
+        "configGuid": 1,
+        "name": "Config Template 1",
+        "configDescription": "/assets/pdf/1.pdf"
+    },
+    {
+        "configGuid": 2,
+        "name": "Config Template 2",
+        "configDescription": "/assets/pdf/2.pdf"
+    },
+    {
+        "configGuid": 3,
+        "name": "Config Template 3",
+        "configDescription": "/assets/pdf/3.pdf"
+    }
+]

@@ -1,0 +1,16 @@
+<div class="header">
+    <div class="label">{{ label }}</div>
+    <input class="caption" type="text" #box (focusout)="edited(box.value)" (keydown.enter)="edited(box.value)" [value]="characteristicCaption">
+    <div class="headerButtons">
+        <div></div>
+        <div class="header-button kpmg-icon-close" (click)="remove()"></div>
+        <div [id]="chartButtonId" [ngClass]="{'button-disabled': !showInChartEnabled, 'button-active': isRemovedFromChart}" class="header-button kpmg-icon-graph"
+            (click)="toggleChart()" tooltip="chartTooltip"></div>
+        <dx-tooltip [target]="chartButtonTarget" showEvent="dxhoverstart" hideEvent="dxhoverend">
+            <div *dxTemplate="let data of 'content'">
+                <p>{{ chartTooltip }}</p>
+            </div>
+        </dx-tooltip>
+    </div>
+
+</div>

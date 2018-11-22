@@ -1,0 +1,11 @@
+<kosmos-header i18n-subtitle="User Management|List Title for Headerk@@user-management:userlist" subtitle="KPMG Cosmos Management System"></kosmos-header>
+<dx-tabs [dataSource]="tabs" [selectedIndex]="selectedTab" (onItemClick)="selectTab($event)"></dx-tabs>
+<div [ngSwitch]="selectedTab">
+    <div *ngSwitchCase="0">
+        <kosmos-userlist></kosmos-userlist>
+    </div>
+    <div *ngSwitchCase="1">
+        <kosmos-master-data></kosmos-master-data>
+    </div>
+    <div *ngSwitchDefault></div>
+</div>

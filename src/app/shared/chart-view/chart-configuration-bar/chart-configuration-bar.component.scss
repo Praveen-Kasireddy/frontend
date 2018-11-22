@@ -1,0 +1,22 @@
+@import 'app-shared';
+
+.chart-settings-bar {
+    display: flex;
+    border-top: thin solid $colour--borders--separator;
+}
+
+.chart-display-mode-buttons {
+    width: 50%;
+    margin-left: 15px;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+}
+
+.chart-type-buttons {
+    width: 50%;
+    margin-right: 50px;
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: row nowrap;
+}

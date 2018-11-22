@@ -1,0 +1,225 @@
+@import 'app-shared';
+
+$table-of-content--background: $colour--name-white;
+$table-of-content--foreground: #11151e;
+$table-of-content-product--font-size: 16px;
+$table-of-content-chapter--font-size: 12px;
+$table-of-content-task--font-size: 12px;
+$table-of-content-width: 315px;
+$table-of-content-shadow-width: 25px;
+$page-element-height: 28px;
+$opacity-none: 0;
+$opacity-medium: 0.3;
+$opacity-high: 1;
+
+@mixin table-of-content-highlight-line() {
+    > .highlight-line {
+        border-right: solid 6px $table-of-content--background;
+        position: relative;
+
+        &:hover {
+            background-color: $colour--name-white-smoke;
+            border-color: $colour--name-white-smoke;
+
+            > .page-button {
+                opacity: $opacity-medium;
+                &:hover {
+                    opacity: $opacity-high;
+                }
+            }
+        }
+
+        &.selected {
+            border-color: $table-of-content--foreground;
+        }
+    }
+}
+
+@mixin table-of-content-button-design($padding-left) {
+    @include button-reset();
+    flex-grow: 1;
+    padding: 6px 56px 6px $padding-left;
+    display: block;
+    text-align: left;
+    position: relative;
+    width: 100%;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    .page-number {
+        position: absolute;
+        top: 6px;
+        right: 9px;
+        text-indent: 0;
+    }
+}
+
+:host {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    width: $table-of-content-width;
+    flex-basis: $table-of-content-width;
+    overflow: hidden;
+    background-color: $colour--name-white;
+    z-index: $depth--2;
+    box-shadow: 1px 0 0 0 rgba(160, 168, 189, 0.5), 5px 0 $table-of-content-shadow-width 0 rgba(40, 44, 55, 0.3);
+    left: -($table-of-content-width + $table-of-content-shadow-width);
+    transition: left 0.35s $ease-enter;
+
+    &.open {
+        left: 0;
+        transition-timing-function: $ease-leave;
+    }
+}
+
+.table-of-content--header {
+    margin: 16px 10px;
+    font-size: $table-of-content-product--font-size;
+    color: $table-of-content--foreground;
+
+    > .close {
+        cursor: pointer;
+    }
+}
+
+.table-of-content {
+    background-color: $colour--name-white;
+
+    &:hover {
+        @include scroll-vertical-only();
+        @include use-custom-scrollbars('dark');
+    }
+
+    .product {
+        > .product-title {
+            background: $table-of-content--foreground;
+            font-size: $table-of-content-product--font-size;
+            color: $colour--name-white;
+            margin: 0 10px 20px;
+            border-radius: 2px;
+            padding: 6px 24px 6px 10px;
+            position: relative;
+            cursor: pointer;
+
+            > .product-collapse {
+                position: absolute;
+                top: 8px;
+                right: 5px;
+            }
+        }
+    }
+
+    .chapters {
+        @include ul-reset();
+        counter-reset: item;
+        overflow: hidden;
+        color: $table-of-content--foreground;
+        height: 0;
+
+        &.is-collpased {
+            height: auto;
+        }
+
+        > .chapter {
+            margin-bottom: 30px;
+
+            > .chapter-title {
+                font-size: $table-of-content-chapter--font-size;
+                font-weight: 600;
+                padding: 0 $spacing--3;
+                margin: 0;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                width: 100%;
+                display: inline-block;
+                overflow: hidden;
+
+                &::before {
+                    counter-increment: item;
+                    content: counter(item) '. ';
+                }
+            }
+        }
+    }
+
+    .tasks {
+        @include ul-reset();
+        margin: 0 0 $spacing--4;
+        counter-reset: item;
+
+        > .task {
+            font-size: $table-of-content-task--font-size;
+            position: relative;
+            margin-left: 26px;
+            margin-right: 10px;
+
+            &:focus {
+                outline: none;
+            }
+
+            @include table-of-content-highlight-line();
+
+            .task-title {
+                text-indent: -30px;
+                @include table-of-content-button-design(53px);
+
+                &::before {
+                    background-color: inherit;
+                    content: counters(item, '.') ' ';
+                    counter-increment: item;
+                    display: inline-block;
+                    margin-right: 10px;
+                    text-indent: 2px;
+                    width: 16px;
+                }
+            }
+
+            .task-status {
+                position: absolute;
+                top: $spacing--5;
+                left: 7px;
+            }
+
+            .page-button {
+                @include button-reset();
+                position: absolute;
+                top: 5px;
+                right: 28px;
+                opacity: $opacity-none;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .task-pages {
+        @include ul-reset();
+        margin: 0 0 0 28px;
+
+        > .task-page {
+            font-size: $table-of-content-task--font-size;
+            padding-left: 10px;
+
+            &:focus {
+                outline: none;
+            }
+
+            @include table-of-content-highlight-line();
+
+            .page-title {
+                @include table-of-content-button-design(15px);
+            }
+
+            .page-button {
+                &.kpmg-icon-delete-x {
+                    color: #f00;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@import 'app-shared';
+@import '../../../assets/styles/themes/material/colours.scss';
+
+:host {
+    background: #edf0f4;
+    border-radius: 2px;
+    border: 1px solid $colour--borders--mischka;
+    display: block;
+    list-style: none;
+    margin-top: $spacing--5;
+    padding: $spacing--5;
+}
+
+ul {
+    &.item-list {
+        > li {
+            margin: $spacing--5 0 0;
+
+            &:first-child {
+                margin-top: $spacing--4;
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+@import 'sidebars/help-sidebars';
+@import 'app-shared';
+@import '../../../../../../../assets/styles/themes/material/colours';
+
+.clickable {
+    cursor: pointer;
+}
+
+.container {
+    display: block;
+}
+
+.content {
+    margin: 5px;
+    border: solid 1px $colour--background--mid-grey;
+}
+
+.draggableOverMe {
+    height: 10px;
+}
+
+.placeholder {
+    background-color: $colour--name-sidebar-gray;
+}
+
+.showBorder {
+    border: solid 1px $colour--background--mid-grey;
+}
+
+.filterBadges {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}

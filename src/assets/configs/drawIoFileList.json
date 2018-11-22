@@ -1,0 +1,683 @@
+[
+    {
+        "file": "assets/drawio/js/diagramly/Init.js"
+    },
+    {
+        "file": "assets/drawio/js/mxgraph/Init.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/mxClient.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxLog.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxObjectIdentity.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxDictionary.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxResources.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxPoint.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxRectangle.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxEffects.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxUtils.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxConstants.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxEventObject.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxMouseEvent.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxEventSource.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxEvent.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxXmlRequest.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxClipboard.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxWindow.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxForm.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxImage.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxDivResizer.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxDragSource.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxToolbar.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxUndoableEdit.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxUndoManager.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxUrlConverter.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxPanningManager.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxPopupMenu.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxAutoSaveManager.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxAnimation.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxMorphing.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxImageBundle.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxImageExport.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxAbstractCanvas2D.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxXmlCanvas2D.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxSvgCanvas2D.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxVmlCanvas2D.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/util/mxGuide.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxStencil.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxShape.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxStencilRegistry.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxMarker.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxActor.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxCloud.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxRectangleShape.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxEllipse.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxDoubleEllipse.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxRhombus.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxPolyline.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxArrow.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxArrowConnector.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxText.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxTriangle.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxHexagon.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxLine.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxImageShape.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxLabel.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxCylinder.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxConnector.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/shape/mxSwimlane.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/mxGraphLayout.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/mxStackLayout.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/mxPartitionLayout.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/mxCompactTreeLayout.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/mxRadialTreeLayout.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/mxFastOrganicLayout.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/mxCircleLayout.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/mxParallelEdgeLayout.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/mxCompositeLayout.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/mxEdgeLabelLayout.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/hierarchical/model/mxGraphAbstractHierarchyCell.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/hierarchical/model/mxGraphHierarchyNode.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/hierarchical/model/mxGraphHierarchyEdge.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/hierarchical/model/mxGraphHierarchyModel.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/hierarchical/model/mxSwimlaneModel.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/hierarchical/stage/mxHierarchicalLayoutStage.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/hierarchical/stage/mxMedianHybridCrossingReduction.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/hierarchical/stage/mxMinimumCycleRemover.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/hierarchical/stage/mxCoordinateAssignment.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/hierarchical/stage/mxSwimlaneOrdering.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/hierarchical/mxHierarchicalLayout.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/layout/hierarchical/mxSwimlaneLayout.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/model/mxGraphModel.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/model/mxCell.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/model/mxGeometry.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/model/mxCellPath.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxPerimeter.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxPrintPreview.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxStylesheet.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxCellState.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxGraphSelectionModel.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxCellEditor.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxCellRenderer.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxEdgeStyle.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxStyleRegistry.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxGraphView.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxGraph.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxCellOverlay.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxOutline.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxMultiplicity.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxLayoutManager.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxSwimlaneManager.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxTemporaryCellStates.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxCellStatePreview.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/view/mxConnectionConstraint.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxGraphHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxPanningHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxPopupMenuHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxCellMarker.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxSelectionCellsHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxConnectionHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxConstraintHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxRubberband.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxHandle.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxVertexHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxEdgeHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxElbowEdgeHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxEdgeSegmentHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxKeyHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxTooltipHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxCellTracker.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/handler/mxCellHighlight.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/editor/mxDefaultKeyHandler.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/editor/mxDefaultPopupMenu.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/editor/mxDefaultToolbar.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/editor/mxEditor.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxCodecRegistry.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxObjectCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxCellCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxModelCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxRootChangeCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxChildChangeCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxTerminalChangeCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxGenericChangeCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxGraphCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxGraphViewCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxStylesheetCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxDefaultKeyHandlerCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxDefaultToolbarCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxDefaultPopupMenuCodec.js"
+    },
+    {
+        "file": "assets/drawio/javascript/src/js/io/mxEditorCodec.js"
+    },
+    {
+        "file": "assets/drawio/js/spin/spin.min.js"
+    },
+    {
+        "file": "assets/drawio/js/deflate/pako.min.js"
+    },
+    {
+        "file": "assets/drawio/js/deflate/base64.js"
+    },
+    {
+        "file": "assets/drawio/js/jscolor/jscolor.js"
+    },
+    {
+        "file": "assets/drawio/js/sanitizer/sanitizer.min.js"
+    },
+    {
+        "file": "assets/drawio/js/mxgraph/Editor.js"
+    },
+    {
+        "file": "assets/drawio/js/mxgraph/EditorUi.js"
+    },
+    {
+        "file": "assets/drawio/js/mxgraph/Sidebar.js"
+    },
+    {
+        "file": "assets/drawio/js/mxgraph/Graph.js"
+    },
+    {
+        "file": "assets/drawio/js/mxgraph/Format.js"
+    },
+    {
+        "file": "assets/drawio/js/mxgraph/Shapes.js"
+    },
+    {
+        "file": "assets/drawio/js/mxgraph/Actions.js"
+    },
+    {
+        "file": "assets/drawio/js/mxgraph/Menus.js"
+    },
+    {
+        "file": "assets/drawio/js/mxgraph/Toolbar.js"
+    },
+    {
+        "file": "assets/drawio/js/mxgraph/Dialogs.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Advanced.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Android.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-ArchiMate.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-ArchiMate3.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Arrows2.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Atlassian.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-AWS.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-AWS3.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-AWS3D.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Azure.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Basic.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Bootstrap.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-BPMN.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Cabinet.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-CiscoSafe.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Citrix.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-EIP.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Electrical.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-ER.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Floorplan.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Flowchart.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-GCP.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Gmdl.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-IBM.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Ios.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Ios7.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-LeanMapping.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Mockup.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-MSCAE.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Network.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Office.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-PID.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Rack.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Sitemap.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Sysml.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-Veeam.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/sidebar/Sidebar-WebIcons.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/util/mxJsCanvas.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/util/mxAsyncCanvas.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/DrawioFile.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/LocalFile.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/LocalLibrary.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/StorageFile.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/StorageLibrary.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/Dialogs.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/Editor.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/EditorUi.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/Settings.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/DrawioClient.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/DrawioUser.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/UrlLibrary.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/DriveRealtime.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/RealtimeMapping.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/DriveFile.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/DriveLibrary.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/ChatWindow.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/App.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/Menus.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/Pages.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/Trees.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/DevTools.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/vsdx/VsdxExport.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/vsdx/mxVsdxCanvas2D.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/vsdx/bmpDecoder.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/vsdx/importer.js"
+    },
+    {
+        "file": "assets/drawio/js/jszip/jszip.min.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/ruler/mxRuler.js"
+    },
+    {
+        "file": "assets/drawio/js/diagramly/graphml/mxGraphMlCodec.js"
+    }
+]

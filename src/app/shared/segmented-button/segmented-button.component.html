@@ -1,0 +1,11 @@
+<div class="segmented-button" [ngClass]="{'has-items': hasMenuItems}">
+    <ng-content>
+    </ng-content>
+    <div class="button icon-button" (click)="toggle()">
+        <i class="kpmg-icon kpmg-icon-arrow-down"></i>
+    </div>
+</div>
+
+<div class="items" *ngIf="isActive" [@fadeInOut] (click)="close($event)">
+    <ng-content select="kosmos-menu-item"></ng-content>
+</div>

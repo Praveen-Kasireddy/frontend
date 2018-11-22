@@ -1,0 +1,16 @@
+<div class="inner">
+    <kosmos-avatar [name]="stakeholder.firstName + ' ' +  stakeholder.lastName"></kosmos-avatar>
+    <div class="content">
+        <p class="name">{{ stakeholder.firstName }} {{ stakeholder.lastName }}</p>
+        <p *ngIf="stakeholder.jobTitle" class="job-title">{{ stakeholder.jobTitle }}</p>
+        <footer>
+            <p *ngIf="stakeholder.companyName"><span class="kpmg-icon-office icon"></span> {{ stakeholder.companyName }}</p>
+            <p *ngIf="stakeholder.phoneNumber"><span class="kpmg-icon-phone icon"></span> {{ stakeholder.phoneNumber }}</p>
+            <p *ngIf="stakeholder.email"><span class="kpmg-icon-mail icon"></span> {{ stakeholder.email }}</p>
+        </footer>
+    </div>
+
+    <a class="close" (click)="delete()">
+        <kosmos-svg-icon [icon]="SvgIcons.CLOSE" width="10" height="10"></kosmos-svg-icon>
+    </a>
+</div>

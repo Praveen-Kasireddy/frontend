@@ -1,0 +1,40 @@
+@import "colours";
+
+$typography--font-family--light: "UniversLTPro-45Light";
+$typography--font-family--roman: "UniversLTStd-55Roman";
+$typography--font-family--bold: "UniversLTStd-65Bold";
+
+@mixin apply-colour-family($color: $colour--primary--kosmos-black, $font-family: $typography--font-family--light) {
+	color: $color;
+	font-family: $font-family;
+}
+
+@mixin typography--heading-h1() {
+	@include apply-colour-family($colour--primary--kosmos-black, $typography--font-family--light);
+	font-size: 24px;
+	line-height: 32px;
+}
+
+@mixin typography--heading-h2() {
+	@include apply-colour-family($colour--primary--kosmos-black, $typography--font-family--light);
+	font-size: 18px;
+	line-height: 26px;
+}
+
+@mixin typography--heading-h3() {
+	@include apply-colour-family($colour--primary--kosmos-black, $typography--font-family--bold);
+	font-size: 14px;
+	line-height: 22px;
+}
+
+@mixin typography--body-text() {
+	@include apply-colour-family($colour--primary--kosmos-black, $typography--font-family--roman);
+	font-size: 14px;
+	line-height: 20px;
+}
+
+@mixin typography--small-text() {
+  @include apply-colour-family($colour--primary--kosmos-black, $typography--font-family--roman);
+  font-size: 12px;
+  line-height: 14px;
+}

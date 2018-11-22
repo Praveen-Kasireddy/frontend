@@ -1,0 +1,28 @@
+@import "app-shared";
+
+/*
+ * 1. Remove whitespace from bottom of SVG which is added when aligned `baseline`. This is so that
+ *    elements can tightly wrap the SVGs.
+ */
+
+:host {
+	line-height: 0;
+	transition-duration: $time--default;
+	transition-property: fill, color;
+}
+
+svg {
+	vertical-align: middle;  /* 1 */
+	fill: currentColor;
+}
+
+/**
+ * Modifier: darkgray
+ *
+ */
+
+:host(.-darkgray) {
+	/deep/ path {	/* stylelint-disable-line selector-max-compound-selectors */
+		fill: $colour--name-dark-gray;
+	}
+}

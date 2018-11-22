@@ -1,0 +1,28 @@
+@import 'app-shared';
+:host {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    width: 100%;
+}
+
+.padding {
+    padding-left: 12px;
+}
+
+.inner {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+kosmos-stakeholder-card,
+kosmos-new-stakeholder {
+    flex: 0 0 270px;
+    margin: 0 0 16px 20px;
+}

@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    align-items: center;
+    position: relative;
+    vertical-align: middle;
+    margin: 0 0 5px;
+}
+
+:host([toolbar-right]) {
+    padding-left: 0;
+    margin-left: auto;
+}
+
+:host([hidden]) {
+    display: none !important;
+}

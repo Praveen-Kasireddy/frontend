@@ -1,0 +1,41 @@
+{
+    "defaultEnvironment": "nightly",
+    "siteBaseUrl": {
+        "local": "http://localhost:4200/",
+        "nightly": "https://kosmos-qa.kpmg.de/nightly",
+        "dev": "https://kosmos-qa.kpmg.de/dev",
+        "test": "https://kosmos-qa.kpmg.de/test",
+        "prEnv": "https://kosmos-qa.kpmg.de/env4"
+    },
+
+    "executionTimeouts": {
+        "allScriptsTimeout": {
+            "ms": 1200000,
+            "Description": "is a timeout from jasmine for each it to not make test run forever or very"
+        },
+        "setScriptTimeout": {
+            "ms": 120000,
+            "Description": "Sets the amount to wait for an asyn script to finish execution before throwing an error."
+        },
+        "pageLoadTimeout": {
+            "ms": 60000,
+            "Description": "Sets the amount of time to wait for a page load to complete before throwing an "
+        },
+        "jasminTestTimeout": {
+            "ms": 120000,
+            "Description": "is a timeout from jasmine for each it to not make test run forever or very "
+        },
+        "implicitlyWait": {
+            "ms": 20000,
+            "Description": "defaultTimeoutInterval is a timeout from jasmine for each it to not make test run forever or very "
+        },
+        "searchElementTimeout": {
+            "ms": 9000,
+            "Description": "defaultTimeoutInterval is a timeout from jasmine for each it to not make test run forever or very "
+        },
+        "defaultWaitTime": {
+            "ms": 1000,
+            "Description": "defaultWaitTime Sets the default amount to wait. This value is implemented in the root page object "
+        }
+    }
+}

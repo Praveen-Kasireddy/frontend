@@ -1,0 +1,17 @@
+.form-group {
+    display: block;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 0;
+    width: 100%;
+
+    .form-item {
+        flex: 0 1 auto;
+        max-width: none;
+        padding: 0;
+    }
+}
+
+.name {
+    width: 100%;
+}

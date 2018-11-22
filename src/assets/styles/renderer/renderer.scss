@@ -1,0 +1,7 @@
+@import '../../../app/shared/scss/vars/colour';
+@import '../../../app/shared/scss/layout/smart-workspace';
+
+@include smart-workspace-default();
+@include intro-column-default();
+
+@import '../../../app/shared/scss/layout/table';

@@ -1,0 +1,33 @@
+<dx-popup #dxPopup title="{{ title }}" i18n-title="Title|Title@@data-approval::approval-popup" [minHeight]="150"
+    [minWidth]="200" [height]="250" [width]="400" [shading]="false" [dragEnabled]="false" [resizeEnabled]="true"
+    [closeOnOutsideClick]="false" [showCloseButton]="showCloseButton" (onTitleRendered)="titleRendered($event)">
+
+    <div *dxTemplate="let data of 'content'" class="template">
+        <p *ngFor="let message of messages">{{ message }}</p>
+    </div>
+
+    <dxi-toolbar-item *ngIf="showNoButton" widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'Cancel', onClick: no }">
+    </dxi-toolbar-item>
+
+    <dxi-toolbar-item *ngIf="showCancelButton" widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'Cancel', onClick: cancel }">
+    </dxi-toolbar-item>
+
+    <dxi-toolbar-item *ngIf="showYesButton" widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'Cancel', onClick: yes }">
+    </dxi-toolbar-item>
+
+    <dxi-toolbar-item *ngIf="showApplyButton" widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'Cancel', onClick: apply }">
+    </dxi-toolbar-item>
+
+    <dxi-toolbar-item *ngIf="showOkButton" widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'Ok', onClick: ok}">
+    </dxi-toolbar-item>
+
+    <dxi-toolbar-item *ngIf="showDoneButton" widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'Done', onClick: done}">
+    </dxi-toolbar-item>
+
+</dx-popup>

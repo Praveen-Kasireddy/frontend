@@ -1,0 +1,40 @@
+@import '../../shared/scss/vars/colour';
+
+.button {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 7px 18px 8px;
+    position: relative;
+    width: 250px;
+
+    & input#userFile {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        font-size: 20px;
+        cursor: pointer;
+        filter: alpha(opacity=0);
+    }
+}
+
+.buttons {
+    display: flex;
+}
+
+.headline {
+    margin: 40px;
+}
+
+.grid-component {
+    padding: 15px;
+    background-color: white;
+}
+
+.loader {
+    height: 32px;
+    width: 32px;
+    margin: 11px;
+}

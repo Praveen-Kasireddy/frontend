@@ -1,0 +1,217 @@
+@import 'app-shared';
+@import 'sidebars/help-sidebars';
+@import '../../shared/scss/layout/smart-workspace';
+@include help-contents();
+@import '../../shared/sidebar/sidebar.component';
+@include sidebar-styles();
+
+$menu-separator-colour: #a0a8bd;
+$menu-border-colour: #c4c9d6;
+
+:host {
+    background: $colour--name-catskill-white;
+    display: flex;
+    overflow: hidden;
+}
+
+.padding {
+    padding-left: 12px;
+}
+
+section {
+    &:not(:first-child) {
+        border-top: 1px solid $colour--name-iron;
+        margin-top: $spacing--1;
+        padding-top: $spacing--1;
+    }
+}
+
+.validation-message {
+    color: #e95252;
+    margin-top: 4px;
+}
+
+#geInfo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    width: 200px;
+    margin-left: -100px;
+    margin-top: -50px;
+
+    > #geStatus {
+        color: #303030;
+    }
+}
+
+h3 {
+    color: rgba(#303030, 0.8);
+    font-size: 18px;
+    margin: 0;
+}
+
+.template {
+    font-size: 18px;
+    margin-top: 7px;
+}
+
+::ng-deep {
+    .dx-popup-wrapper {
+        &.delete-page-popup {
+            .dx-popup-content {
+                p {
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+            }
+
+            .dx-toolbar {
+                .dx-button {
+                    min-width: 0;
+                }
+
+                .dx-toolbar-after {
+                    .dx-button {
+                        &.dx-button-normal {
+                            background-color: #f5f7fa;
+                            border: solid 1px #282c37;
+                            color: #282c37;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.froala-popup {
+            overflow: auto;
+
+            .dx-overlay-content {
+                transform: translate(94px, 54px) !important;
+
+                .dx-popup-content {
+                    .dx-template-wrapper {
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.froala-container {
+    float: left;
+}
+
+.snippet-container2 {
+    padding-left: 5px;
+    float: right;
+    width: 210px;
+}
+
+::ng-deep {
+    .fr-table-colors {
+        .fr-command {
+            &.fr-selected-color {
+                border: solid 2px #282c37;
+            }
+        }
+    }
+
+    .froala-container,
+    .fr-popup {
+        [class*=' fa-'] {
+            color: inherit !important;
+        }
+    }
+
+    .fr-box.fr-basic .fr-element.fr-view {
+        padding: 0;
+        word-wrap: normal;
+    }
+}
+
+/* Styling */
+//
+::ng-deep {
+    .sm-container {
+        @include smart-workspace-default();
+        @include intro-column-default();
+    }
+
+    .fr-element,
+    .fr-dropdown-list li {
+        @include smart-workspace-default();
+        @include intro-column-reset();
+        > h1cover {
+            font-size: 36px !important;
+        }
+        > h2cover {
+            font-size: 30px !important;
+        }
+    }
+
+    .geToolbarMenu table.mxPopupMenu td.mxPopupMenuItem {
+        @include smart-workspace-default();
+    }
+
+    .snippet-container {
+        @include smart-workspace-default();
+        position: absolute;
+        z-index: 2;
+        width: auto;
+        right: 0;
+
+        .snippet-scroll-view {
+            position: absolute;
+            bottom: 0;
+            height: auto;
+            top: 30px;
+        }
+    }
+}
+
+::ng-deep .sidebar-snippets {
+    margin-top: 10px;
+
+    .info-sippet-list {
+        .info-sippet {
+            .info-text {
+                margin-top: 1px;
+                margin-bottom: 1px;
+                padding: 10px;
+                background: $colour--name-catskill-white;
+                color: $colour--name-black;
+                border: thin solid rgba(160, 168, 189, 0.5);
+                border-radius: 5px;
+                text-align: left;
+                font-size: 0.9em;
+                display: block;
+                width: 100%;
+                cursor: pointer;
+
+                &:active {
+                    background: $colour--name-aluminium;
+                    color: $colour--name-catskill-white;
+                }
+                &:hover {
+                    background: $colour--name-aluminium;
+                    color: $colour--name-catskill-white;
+                }
+            }
+        }
+    }
+}
+
+::ng-deep .sidebar-snippets-footer {
+    height: 10px;
+}
+
+*[contenteditable='true'] {
+    display: inline-block;
+}
+
+div[contenteditable='true'] > div {
+    padding: 0;
+}

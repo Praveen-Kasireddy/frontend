@@ -1,0 +1,147 @@
+@import '../../../assets/styles/themes/material/typography.scss';
+@import 'app-shared';
+$default_margin: 40px;
+$title-margin-top: 17px;
+
+.kpmg-header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background-color: #fff;
+
+    padding: {
+        left: $default_margin;
+        right: $default_margin;
+    }
+
+    border-bottom: 1px solid $colour--borders--separator;
+
+    .header-info {
+        min-width: calc(51% - 2 * #{$default_margin});
+
+        .header-title {
+            margin-top: $title-margin-top;
+            @include typography--small-text();
+            color: $colour--borders--cadet-blue;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .header-subtitle {
+            @include typography--heading-h1();
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: auto;
+
+            &.hover:hover {
+                display: flex;
+                flex: 1;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                border-bottom: 1px dashed $colour--borders--cadet-blue;
+                cursor: pointer;
+
+                &:after {
+                    justify-items: flex-end;
+                    content: 'edit';
+                    font-family: 'Material Icons';
+                    font-size: 18px;
+                    color: $colour--borders--cadet-blue;
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .header-info {
+            @include typography--small-text();
+            color: $colour--borders--cadet-blue;
+        }
+    }
+
+    .header-buttons {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
+
+        .header-actions-show-more {
+            overflow: visible;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.visible {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .show-more-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        color: $colour--borders--cadet-blue;
+        border: 1px solid $colour--borders--cadet-blue;
+        border-radius: 2px;
+        background-color: #fff;
+        background-image: url('/assets/images/show-more-menu.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: background-image 0.2s, border-color 0.2s, background-color 0.2s;
+
+        &:hover {
+            border: 1px solid #000;
+            background-image: url('/assets/images/show-more-menu-selected.svg');
+        }
+
+        &:active {
+            background-color: #000;
+            background-image: url('/assets/images/show-more-menu-active.svg');
+        }
+
+        &.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+    }
+
+    .show-more-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        border: 1px solid rgba(156, 164, 184, 0.5);
+        border-radius: 2px;
+        background-color: #fff;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s;
+        box-shadow: 0 10px 23px 0 rgba(17, 21, 30, 0.1);
+
+        &.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* stylelint-disable selector-max-compound-selectors */
+        /deep/ .show-more-button-item-default {
+            display: flex;
+            width: 100%;
+            padding: 15px;
+            border: 0;
+            background-color: transparent;
+        }
+
+        /* stylelint-enable selector-max-compound-selectors */
+    }
+}

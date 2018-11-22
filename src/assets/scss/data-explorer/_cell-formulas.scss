@@ -1,0 +1,37 @@
+#output_table {
+    ._formula-cell-editor {
+        background-color: transparent;
+        padding: 10px 20px;
+        margin: 0 -15px;
+        border-bottom: 1px solid rgba(160, 168, 189, 0.5);
+        outline: none;
+
+        i {
+            padding: 5px;
+            margin: -5px 0;
+            cursor: pointer;
+            border-radius: $border-radius-base;
+
+            &:hover {
+                background: rgba(#000, 0.33);
+            }
+        }
+
+        &._active {
+            background: #fff;
+        }
+    }
+
+    tbody td {
+        &._active {
+            background: lightblue;
+        }
+    }
+
+    ._formula-cell-editor-query {
+        position: absolute;
+        right: 25px;
+        top: 12px;
+        cursor: pointer;
+    }
+}

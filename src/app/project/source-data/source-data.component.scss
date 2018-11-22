@@ -1,0 +1,50 @@
+@import 'app-shared';
+
+:host {
+    background: $colour--name-catskill-white;
+    display: flex;
+    overflow: hidden;
+}
+
+.download {
+    margin-top: 0px;
+    margin-left: 20px;
+    background-color: $colour--name-white;
+    color: $colour--name-black;
+    border: solid 1px $colour--name-black;
+    border-radius: 4px;
+    height: 35px;
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.download-text {
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 8px;
+}
+
+.approval-container {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.loading-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(17, 21, 30, 0.50);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}

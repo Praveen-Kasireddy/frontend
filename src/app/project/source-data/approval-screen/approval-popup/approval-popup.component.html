@@ -1,0 +1,36 @@
+<dx-popup title="DATA APPROVAL" i18n-title="Title|Title@@data-approval::approval-popup" [minHeight]="600" [minWidth]="320"
+    [height]="popupHeight" [width]="300" [shading]="false" [dragEnabled]="false" [resizeEnabled]="true"
+    [closeOnOutsideClick]="true" [showCloseButton]="true" (onTitleRendered)="titleRendered($event)" class="data-approval-popup">
+    <div *dxTemplate="let data of 'content'">
+        <dx-validation-group>
+            <span class="value">
+                {{ displayCellValue }}
+            </span>
+            <p>
+                <span>{{ displayCellName }}</span>
+            </p>
+            <p *ngIf="isSeveralDataTypesSelected">
+                <span class="message">Several data types are selected. Changes will only affect the Data Points.</span>
+            </p>
+            <p>
+                <dx-radio-group #typeRadioGroup [dataSource]="typeOptions" displayExpr="text" valueExpr="value" layout="horizontal"
+                    [disabled]="isTypeSelectionDisabled" (click)="onIngestionTypeClicked($event)">
+                    <dx-validator #validator>
+                        <dxi-validation-rule type="required"></dxi-validation-rule>
+                    </dx-validator>
+                </dx-radio-group>
+            </p>
+        </dx-validation-group>
+
+        <dx-scroll-view *ngIf="isDataPoint" height="325">
+            <kosmos-dimension *ngFor="let dimension of displayedDimensions; let i = index; trackBy: trackDimensionChange"
+                [dimension]="dimension" [dataCells]="dataCells"></kosmos-dimension>
+        </dx-scroll-view>
+    </div>
+
+    <dxi-toolbar-item widget="dxCheckBox" location="before" toolbar="bottom" [disabled]="includeInRangeCheckBoxDisabled"
+        [options]="inRangeCheckBoxOptions"></dxi-toolbar-item>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [disabled]="isSaveButtonDisabled" [options]="{ text: 'Apply', onClick: validateAndSubmitForm }">
+    </dxi-toolbar-item>
+
+</dx-popup>

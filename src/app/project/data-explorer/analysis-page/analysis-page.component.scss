@@ -1,0 +1,177 @@
+@import 'app-shared';
+
+$menu-border-colour: #c4c9d6;
+
+:host {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    z-index: $depth--0;
+    background: $colour--name-catskill-white;
+}
+
+.inner-container {
+    height: 100%;
+    overflow: auto;
+}
+
+.padding {
+    padding-left: 12px;
+}
+
+section {
+    &:not(:first-child) {
+        border-top: 1px solid $colour--name-iron;
+        margin-top: $spacing--1;
+        padding-top: $spacing--1;
+    }
+}
+
+.toolbar-group {
+    min-height: 35px;
+
+    &:not([toolbar-right]) {
+        border-right: 1px solid $menu-border-colour;
+    }
+
+    > * {
+        margin-left: 3px;
+        margin-right: 3px;
+        height: 35px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    ::ng-deep {
+        .dx-button-has-text,
+        .dx-button-has-icon {
+            .dx-button-content {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+
+                .kpmg-icon-delete-page {
+                    color: $colour--secondary--red;
+                }
+            }
+        }
+
+        .dx-button-has-icon:not(.dx-button-has-text) {
+            border: 0 none;
+        }
+
+        .dx-switch {
+            height: auto !important;
+            .dx-switch-container {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+        }
+
+        // settings for layout select box
+
+        .custom-item {
+            position: relative;
+            min-height: 30px;
+        }
+
+        .custom-item .product-name {
+            display: inline-block;
+            padding-left: 45px;
+            text-indent: 0;
+            line-height: 30px;
+            font-size: 15px;
+            width: 100%;
+        }
+
+        .custom-item > img {
+            left: 5px;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            height: 30px;
+        }
+
+        .current-value {
+            padding: 10px 0;
+        }
+
+        .current-value > span {
+            font-weight: bold;
+        }
+    }
+}
+
+.toolbar-group-icons {
+    padding: 0 8px;
+
+    &:first-child {
+        padding-left: 0;
+    }
+}
+
+.tabs {
+    flex-direction: column;
+    flex: 1;
+}
+
+.last {
+    width: 100%;
+}
+
+.left {
+    float: left;
+    width: 33%;
+}
+
+dx-drop-down-box#ScaleDropDown {
+    border: 0;
+
+    &.dx-state-hover,
+    &.dx-dropdowneditor-active {
+        ::ng-deep {
+            .dx-texteditor-input {
+                background-color: $colour--name-black;
+                color: $colour--name-catskill-white;
+            }
+
+            .dx-dropdowneditor-button {
+                background-color: $colour--name-black;
+            }
+
+            .dx-dropdowneditor-icon {
+                background-color: $colour--name-black;
+                color: $colour--name-catskill-white;
+            }
+        }
+    }
+
+    ::ng-deep {
+        .dx-texteditor-input {
+            text-align: right;
+        }
+    }
+}
+
+dx-list#ScalesList {
+    ::ng-deep {
+        .dx-list-item {
+            border: 0;
+
+            .dx-list-item-content {
+                text-align: right;
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+<div class="tab-button" [ngClass]="{'tab-button-large': isLargeButton, 'tab-button-small': !isLargeButton,
+'button-was-selected': isSelected, 'button-not-selected': !isSelected, 'tab-disabled': isDisabled}">
+    <span class="{{ icon }} button-icon "></span>
+    <div class="button-text ">{{ caption }}</div>
+</div>

@@ -1,0 +1,10 @@
+$font-family--helvetica: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+$font-family--fallback: $font-family--helvetica;
+$font-family--univers: "UniversLTStd-55Roman", #{$font-family--fallback};
+$font-family--univers-light: "UniversLTPro-45Light", #{$font-family--fallback};
+$font-family--univers-bold: "UniversLTPro-45Bold", #{$font-family--fallback};
+$font-family--univers-condensed: "Univers Light Condensed", #{$font-family--fallback};
+$font-family--kpmg-web: "KPMG Web", #{$font-family--fallback};
+$font-family--giorgio-sans: "Giorgio Sans", #{$font-family--fallback};
+$font-family--default: $font-family--univers;
+$font-family--kosmos: "kosmos-icons", #{$font-family--fallback};

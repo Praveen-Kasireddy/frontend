@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "url": "https://kosmos-qa.kpmg.de/env4",
+    "urlNightly": "https://kosmos-qa.kpmg.de/nightly",
+    "daytimeStart": 19,
+    "daytimeEnd": 20,
+    "countryCode": "UK"
+  },
+    "fileUpload": {
+        "uploadExePath": ".\\files\\fileUpload.exe",
+        "MBuploadExePath": "C:\\DEV\\Git\\Kosmos\\Frontend\\e2e\\files\\fileUpload.exe",
+        "RKuploadExePath": "C:\\Users\\rkroll\\Source\\Repos\\Kosmos6\\Frontend\\e2e\\files\\fileUpload.exe",
+        "filePath": "002_Beispiel_1.xlsx",
+        "MBfilePath": "C:\\Dev\\Git\\Kosmos\\Frontend\\e2e\\files\\002_Beispiel_1.xlsx",
+        "RKfilePath": "C:\\Users\\rkroll\\Source\\Repos\\Kosmos6\\Frontend\\e2e\\files\\002_Beispiel_1.xlsx"
+    }
+}

@@ -1,0 +1,30 @@
+@import 'app-shared';
+
+.badgeBody {
+    margin: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 1.2rem !important;
+    background: $colour--background--mid-grey;
+    border-radius: 13px;
+    display: flex;
+    max-width: 208px;
+}
+
+.draggableOverMe {
+    margin-left: 5px;
+}
+
+.caption {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.closeButton {
+    padding-left: 5px;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}

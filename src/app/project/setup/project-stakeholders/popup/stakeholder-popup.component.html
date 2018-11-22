@@ -1,0 +1,83 @@
+<dx-popup [title]="title" (visibleChange)="popupVisibleChanged()" (onHidden)="onHidden()" [(visible)]="visible" height="auto"
+    width="300px">
+    <div *dxTemplate="let data of 'content'">
+        <dx-validation-group>
+            <div class="form-group">
+                <div class="form-item form">
+                    <div class="form-input row">
+                        <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [(value)]="stakeholder.firstName" class="stakeholder-firstname" name="stakeholderFirstName" i18n-placeholder="First name|First name@@project:create:stakeholders:popup"
+                            placeholder="First name" (onFocusOut)="validateMe($event)">
+                            <dx-validator>
+                                <dxi-validation-rule type="required"></dxi-validation-rule>
+                            </dx-validator>
+                        </dx-text-box>
+                    </div>
+                    <div class="form-input row">
+                        <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [(value)]="stakeholder.lastName" class="stakeholder-lastname" name="stakeholderLastName" i18n-placeholder="Last name|Last name@@project:create:stakeholders:popup"
+                            placeholder="Last name" (onFocusOut)="validateMe($event)">
+                            <dx-validator>
+                                <dxi-validation-rule type="required"></dxi-validation-rule>
+                            </dx-validator>
+                        </dx-text-box>
+                    </div>
+                    <div class="form-input row">
+                        <div class="form-input">
+                            <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [(value)]="stakeholder.jobTitle" class="stakeholder-jobtitle" name="stakeholderJobTitle" i18n-placeholder="JobTitle|Job title@@project:create:stakeholders:popup"
+                                placeholder="Job title" (onFocusOut)="validateMe($event)">
+                                <dx-validator>
+                                    <dxi-validation-rule type="required"></dxi-validation-rule>
+                                </dx-validator>
+                            </dx-text-box>
+                        </div>
+                    </div>
+                    <div class="rowWithIcon">
+                        <div class="kpmg-icon-office icon"></div>
+                        <div class="form-input inputAfterIcon">
+                            <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [(value)]="stakeholder.companyName" class="stakeholder-company" name="StakeholderCompany" i18n-placeholder="Company|Company@@project:create:stakeholders:popup"
+                                placeholder="Company" (onFocusOut)="validateMe($event)">
+                                <dx-validator>
+                                    <dxi-validation-rule type="required"></dxi-validation-rule>
+                                </dx-validator>
+                            </dx-text-box>
+                        </div>
+                    </div>
+                    <div class="rowWithIcon">
+                        <div class="kpmg-icon-mail icon"></div>
+                        <div class="form-input inputAfterIcon">
+                            <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [(value)]="stakeholder.email" class="stakeholder-email" name="StakeholderEmail" i18n-placeholder="Email|Email address@@project:create:stakeholders:popup"
+                                placeholder="Email address" (onFocusOut)="validateMe($event)">
+                                <dx-validator>
+                                    <dxi-validation-rule type="required"></dxi-validation-rule>
+                                    <dxi-validation-rule type="email"></dxi-validation-rule>
+                                </dx-validator>
+                            </dx-text-box>
+                        </div>
+                    </div>
+                    <div class="rowWithIcon">
+                        <div class="kpmg-icon-phone icon"></div>
+                        <div class="form-input inputAfterIcon">
+                            <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [(value)]="stakeholder.phoneNumber" class="stakeholder-phone" name="StakeholderPhone" i18n-placeholder="Phone|Phone number@@project:create:stakeholders:popup"
+                                placeholder="Phone number" (onFocusOut)="validateMe($event)">
+                                <dx-validator>
+                                    <dxi-validation-rule type="required"></dxi-validation-rule>
+                                </dx-validator>
+                            </dx-text-box>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dx-validation-group>
+    </div>
+    <dxi-toolbar-item *ngIf="!isEditMode" widget="dxButton" location="before" toolbar="bottom" [options]="{
+        text: 'Add another',
+        elementAttr: { id: 'anotherSth' },
+        onClick: add
+    }">
+    </dxi-toolbar-item>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'Done',
+        elementAttr: { id: 'doneSth' },
+        onClick: addAndClosePopup
+    }">
+    </dxi-toolbar-item>
+</dx-popup>

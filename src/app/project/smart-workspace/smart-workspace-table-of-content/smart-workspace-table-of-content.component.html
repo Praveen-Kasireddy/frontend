@@ -1,0 +1,60 @@
+<div class="table-of-content--header">
+    <i class="close kpmg-icon-remove" (click)="onClose()"></i>
+</div>
+<div class="table-of-content">
+    <ng-container *ngFor="let product of tableOfContent; trackBy: trackById">
+        <section class="product">
+            <h2 class="product-title" (click)="onCollapse(product)">
+                {{ product?.title }}
+                <i class="product-collapse dx-icon" [ngClass]="{'dx-icon-chevrondown': product.isCollapsed, 'dx-icon-chevronright': !product.isCollapsed}"></i>
+            </h2>
+            <ol class="chapters" [ngClass]="{'is-collpased': product.isCollapsed}">
+                <ng-container *ngFor="let chapter of product.children; trackBy: trackById">
+                    <li class="chapter">
+                        <h4 class="chapter-title">{{ chapter.title }}</h4>
+
+                        <ol class="tasks">
+                            <ng-container *ngFor="let task of chapter.children; trackBy: trackById">
+                                <li class="task">
+                                    <div class="highlight-line" [ngClass]="{'selected': isSelected(task)}">
+                                        <button class="task-title" (click)="onSelect(task, $event)">
+                                            {{ task.title }}
+                                            <strong *ngIf="task.type == pageType.COVER">&nbsp;(C)</strong>
+                                            <span class="page-number" *ngIf="task.pageNumber != null">
+                                                {{ task.pageNumber }}
+                                            </span>
+                                        </button>
+                                        <div class="task-status">
+                                            <kosmos-task-progress-state [stateId]="task.progressStateId"></kosmos-task-progress-state>
+                                        </div>
+                                        <button class="page-button kpmg-icon-add" (click)="onAddPage(task)">
+                                        </button>
+                                    </div>
+                                    <ul class="task-pages" *ngIf="hasChildren(task)">
+                                        <ng-container *ngFor="let page of task.children; let i = index; trackBy: trackById">
+                                            <li class="task-page">
+                                                <div class="highlight-line" [ngClass]="{'selected': isSelected(page)}">
+                                                    <button class="page-title" (click)="onSelect(page, $event)">
+                                                        Page {{ i + 1 }}
+                                                        <strong *ngIf="page.type == pageType.COVER">&nbsp;(C)</strong>
+                                                        <span class="page-number" *ngIf="page.pageNumber != null">
+                                                            {{ page.pageNumber }}
+                                                        </span>
+                                                    </button>
+                                                    <button *ngIf="task.children.length > 1" class="page-button kpmg-icon-delete-x"
+                                                        (click)="onDeletePage(page)">
+                                                    </button>
+                                                </div>
+                                            </li>
+                                        </ng-container>
+                                    </ul>
+                                    <kosmos-table-of-content-select-line *ngIf="hasChildren(task)" [selected]="task.id == selectedTaskId"></kosmos-table-of-content-select-line>
+                                </li>
+                            </ng-container>
+                        </ol>
+                    </li>
+                </ng-container>
+            </ol>
+        </section>
+    </ng-container>
+</div>

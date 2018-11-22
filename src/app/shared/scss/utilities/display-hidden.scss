@@ -1,0 +1,10 @@
+// For hiding elements that still need to be focusable, like invisible file inputs
+
+@mixin display-hidden() {
+	position: absolute;
+	z-index: -1;
+	width: 0.1px;
+	height: 0.1px;
+	overflow: hidden;
+	opacity: 0;
+}

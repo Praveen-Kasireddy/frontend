@@ -1,0 +1,22 @@
+<div class="container" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)"
+    draggable="true">
+    <div class="placeholder" [ngClass]="{'draggable-over-me': draggableOverMe}"></div>
+    <div class="content" (drop)="onDropFilterOnPosition(-1)">
+        <kosmos-characteristic-header characteristicIndex="{{characteristicIndex}}" [characteristic]="characteristic"
+            [sheetDimensionType]="sheetDimensionType" [canBeChartItem]="canBeChartItem" [groupIndex]="groupIndex">
+        </kosmos-characteristic-header>
+        <div (drop)="onDropFilterOnPosition(-1)" (dragenter)="onDragEnterContent($event)" (dragleave)="onDragLeaveContent($event)"
+            [ngClass]="{'show-border': isOverContent}">
+            <div class="filter-badges">
+                <div *ngIf="isCustomFormula" class="kpmg-icon-calculator clickable" (click)="onEditFormula($event)"></div>
+                <div *ngIf="isCustomFormula" [ngClass]="{ 'percent-enabled': characteristic.formatPercent, 'percent-disabled': !characteristic.formatPercent }"
+                    title="Show results as percentage/without percentage" i18n-title="formatPercent|formatPercent@@data-explorer:analysis::side-bar"
+                    (click)="onToggleFormatPercent()">%</div>
+                <kosmos-filter-badge *ngFor="let filter of characteristic.characteristics; let i = index" caption="{{filter.name}}"
+                    groupIndex="{{groupIndex}}" filterIndex="{{i}}" (drop)="onDropFilterOnPosition(i)"
+                    characteristicIndex="{{characteristicIndex}}">
+                </kosmos-filter-badge>
+            </div>
+        </div>
+    </div>
+</div>

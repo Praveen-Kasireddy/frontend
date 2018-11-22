@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="54px" viewBox="0 0 72 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 15@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="72" height="54" rx="2"></rect>
+        <rect id="path-2" x="18" y="4" width="21" height="18"></rect>
+        <rect id="path-3" x="18" y="31" width="21" height="19"></rect>
+        <rect id="path-4" x="47" y="4" width="21" height="18"></rect>
+        <rect id="path-5" x="47" y="31" width="21" height="19"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="Group-15">
+            <g id="Rectangle-2-Copy-13">
+                <use fill-opacity="0.1" fill="#A0A8BD" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke-opacity="0.7" stroke="#9CA4B8" stroke-width="1" x="0.5" y="0.5" width="71" height="53" rx="2"></rect>
+            </g>
+            <path d="M18,26 L72,26" id="Line-11-Copy-6" stroke="#B2B9C7"></path>
+            <rect id="Rectangle-10-Copy-11" fill="#0091DA" x="4" y="4" width="10" height="46"></rect>
+            <g id="Rectangle-2-Copy-14">
+                <use fill-opacity="0.1" fill="#A0A8BD" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <rect stroke-opacity="0.7" stroke="#9CA4B8" stroke-width="1" x="18.5" y="4.5" width="20" height="17"></rect>
+            </g>
+            <rect id="Rectangle-4-Copy-10" fill="#9CA4B8" x="17" y="3" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-16" fill="#9CA4B8" x="37" y="3" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-18" fill="#9CA4B8" x="17" y="20" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-17" fill="#9CA4B8" x="37" y="20" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-20" fill="#9CA4B8" x="17" y="30" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-19" fill="#9CA4B8" x="37" y="30" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-26" fill="#9CA4B8" x="17" y="48" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-25" fill="#9CA4B8" x="37" y="48" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-30" fill="#9CA4B8" x="46" y="3" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-29" fill="#9CA4B8" x="46" y="20" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-28" fill="#9CA4B8" x="46" y="30" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-27" fill="#9CA4B8" x="46" y="48" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-34" fill="#9CA4B8" x="66" y="3" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-33" fill="#9CA4B8" x="66" y="20" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-32" fill="#9CA4B8" x="66" y="30" width="3" height="3"></rect>
+            <rect id="Rectangle-4-Copy-31" fill="#9CA4B8" x="66" y="48" width="3" height="3"></rect>
+            <g id="Rectangle-2-Copy-18">
+                <use fill-opacity="0.1" fill="#A0A8BD" fill-rule="evenodd" xlink:href="#path-3"></use>
+                <rect stroke-opacity="0.7" stroke="#9CA4B8" stroke-width="1" x="18.5" y="31.5" width="20" height="18"></rect>
+            </g>
+            <g id="Rectangle-2-Copy-17">
+                <use fill-opacity="0.1" fill="#A0A8BD" fill-rule="evenodd" xlink:href="#path-4"></use>
+                <rect stroke-opacity="0.7" stroke="#9CA4B8" stroke-width="1" x="47.5" y="4.5" width="20" height="17"></rect>
+            </g>
+            <g id="Rectangle-2-Copy-19">
+                <use fill-opacity="0.1" fill="#A0A8BD" fill-rule="evenodd" xlink:href="#path-5"></use>
+                <rect stroke-opacity="0.7" stroke="#9CA4B8" stroke-width="1" x="47.5" y="31.5" width="20" height="18"></rect>
+            </g>
+            <path d="M43,0 L43,54" id="Line-11-Copy-5" stroke="#B2B9C7"></path>
+        </g>
+    </g>
+</svg>

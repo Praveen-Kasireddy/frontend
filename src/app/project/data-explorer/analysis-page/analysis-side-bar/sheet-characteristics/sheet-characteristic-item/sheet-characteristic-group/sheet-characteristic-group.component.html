@@ -1,0 +1,14 @@
+<div draggable="true" (drop)="onDrop($event)" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)">
+    <div class="placeholder" [ngClass]="{'draggable-over-placeholder': draggableOverMe}"></div>
+    <div class="group">
+        <kosmos-characteristic-group-header class="group-header" [groupIndex]="groupIndex" [canBeChartItem]="canBeChartItem"
+            [characteristic]="characteristic" [sheetDimensionType]="sheetDimensionType">
+        </kosmos-characteristic-group-header>
+        <kosmos-sheet-characteristic *ngFor="let c of characteristic.sheetCharacteristics; let i = index"
+            [characteristic]="c" [characteristicIndex]="i" [sheetDimensionType]="sheetDimensionType" [canBeChartItem]="c.characteristics?.length > 0"
+            [groupIndex]="groupIndex" (drop)="onDropSubCharacteristic(i)">
+        </kosmos-sheet-characteristic>
+        <div class="placeholder" [ngClass]="{'draggable-over-placeholder': draggableOverPlaceholder}" (drop)="onDropSubCharacteristic(-1)"
+            (dragenter)="onDragEnterPlaceholder($event)" (dragleave)="onDragLeavePlaceholder($event)">&nbsp;</div>
+    </div>
+</div>

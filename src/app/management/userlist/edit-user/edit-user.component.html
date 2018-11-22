@@ -1,0 +1,71 @@
+<dx-popup title="EDIT USER" height="560px" width="680px" resizeEnabled="true">
+    <div *dxTemplate="let data of 'content'" class="popup">
+        <dx-validation-group>
+            <div class="form-group">
+                <div class="form-item">
+                    <label>KPMG GPID</label>
+                    <dx-text-box class="title" [(value)]="user.gpid"></dx-text-box>
+                </div>
+            </div>
+            <div style="clear: both;">
+                <div class="form-group">
+                    <div class="form-item">
+                        <label>Salutation</label>
+                        <dx-text-box class="title" [(value)]="user.salutation">
+                        </dx-text-box>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;">
+                <div class="form-group">
+                    <div class="form-item">
+                        <label>First Name</label>
+                        <dx-text-box class="title" [(value)]="user.firstName">
+                            <dx-validator>
+                                <dxi-validation-rule type="required"></dxi-validation-rule>
+                            </dx-validator>
+                        </dx-text-box>
+                    </div>
+                    <div class="form-item" width="440px">
+                        <label>Email</label>
+                        <dx-text-box class="email" [(value)]="user.email">
+                            <dx-validator>
+                                <dxi-validation-rule type="required"></dxi-validation-rule>
+                                <dxi-validation-rule type="email"></dxi-validation-rule>
+                            </dx-validator>
+                        </dx-text-box>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-item">
+                        <label>Last Name</label>
+                        <dx-text-box class="title" [(value)]="user.lastName">
+                            <dx-validator>
+                                <dxi-validation-rule type="required"></dxi-validation-rule>
+                            </dx-validator>
+                        </dx-text-box>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;">
+                <div class="form-group">
+                    <div class="form-item">
+                        <label>Is Active</label>
+                        <dx-check-box [(value)]="user.isActive"></dx-check-box>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-item">
+                        <label>Is Admin</label>
+                        <dx-check-box [(value)]="user.isAdmin"></dx-check-box>
+                    </div>
+                </div>
+            </div>
+        </dx-validation-group>
+    </div>
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+        text: 'Done',
+        onClick: validateAndSubmitForm
+   }">
+    </dxi-toolbar-item>
+</dx-popup>

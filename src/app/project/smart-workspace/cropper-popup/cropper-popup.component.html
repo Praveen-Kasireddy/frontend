@@ -1,0 +1,29 @@
+<dx-popup title="IMAGE" (visibleChange)="popupVisibleChanged()" [(visible)]="visible" i18n-title="Image|Image@@cropper:popup"
+    height="800px" width="1000px" resizeEnabled="false">
+
+    <div *dxTemplate="let data of 'content'" class="popup">
+
+        <kosmos-smart-workspace-toolbar class="smart-workspace-toolbar">
+            <kosmos-toolbar-group class="toolbar-group toolbar-group-icons">
+                <button class="toolbar-button" (click)="fileUpload.value=null; fileUpload.click();" title="Upload Image">Upload</button>
+            </kosmos-toolbar-group>
+            <kosmos-toolbar-group class="toolbar-group toolbar-group-icons">
+                <button class="toolbar-button toolbar-icon-button btn-toolbar-page-add" title="reset" (click)="reset()">
+                    <span class="kpmg-icon kpmg-icon-refresh"></span>
+                </button>
+            </kosmos-toolbar-group>
+        </kosmos-smart-workspace-toolbar>
+
+        <div [style.display]="imageUrl?'inherit':'none'">
+            <angular-cropper #angularCropper [cropperOptions]="cropperOptions" [imageUrl]="imageUrl"></angular-cropper>
+        </div>
+
+        <input #fileUpload style="display:none;" crossorigin type='file' (change)="readUrl($event)">
+    </div>
+
+    <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{ text: 'Done',  onClick: onDone }">
+    </dxi-toolbar-item>
+</dx-popup>
+
+
+<div id="ie-clipboard-contenteditable" class="hiddenForIeCropping" contenteditable="true"></div>

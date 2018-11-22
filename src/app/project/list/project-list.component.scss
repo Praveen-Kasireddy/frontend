@@ -1,0 +1,73 @@
+@import 'app-shared';
+:host {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    z-index: $depth--0;
+}
+
+kosmos-main-nav-default {
+    z-index: $depth--2;
+}
+
+h1 {
+    font-weight: bold;
+    flex-shrink: 0;
+    display: flex;
+    margin: $spacing--3 0 0 $spacing--3;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    z-index: $depth--1;
+}
+
+.items {
+    align-items: stretch;
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    overflow: auto;
+    padding: $spacing--1;
+    &.-is-loading {
+        align-items: center;
+        justify-content: center;
+    }
+    &.-has-projects {
+        align-items: flex-start;
+        height: auto;
+        padding: $spacing--3;
+    }
+}
+
+.number-of-files {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    color: #a0a8bd;
+    font-size: 12px;
+    .uploaded-files-number {
+        font-family: 'UniversLTStd-55Roman';
+        font-weight: 800;
+    }
+    .uploading-files {
+        font-family: 'UniversLTPro-45Light';
+    }
+}
+
+kosmos-project-card,
+kosmos-new-project-card.-has-projects,
+kosmos-new-deactivated-project-card.-has-projects {
+    flex: 0 0 250px;
+    margin: $spacing--3 0 0 $spacing--3;
+}
+
+kosmos-new-project-card,
+kosmos-new-deactivated-project-card {
+    flex: 1;
+    margin: 0;
+}

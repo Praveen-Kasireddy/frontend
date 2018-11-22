@@ -1,0 +1,45 @@
+#project_setup {
+    .container-fluid {
+        margin: 20px 0;
+    }
+
+    ._dictionary-selector {
+        width: 87%;
+    }
+
+    ._has-global-terms-input {
+        width: 10%;
+    }
+
+    ._hide-dimension {
+        margin-right: 10px;
+
+        &.active {
+            background-color: rgb(221, 221, 221);
+            color: rgb(150, 150, 150);
+        }
+    }
+;
+    ._remove-dimension {
+        text-align: center;
+        padding: 5px;
+        background-color: rgb(240, 240, 240);
+        margin-right: 5px;
+    }
+
+    ._hide-dimension,
+    ._remove-dimension {
+        border: 1px solid rgb(169, 169, 169);
+        border-radius: 3px;
+        padding: 5px;
+        color: black;
+        cursor: pointer;
+        vertical-align: middle;
+        font-size: 16px;
+    }
+
+    ._delta-add-children-container {
+        display: inline-block;
+        padding-right: 25px;
+    }
+}

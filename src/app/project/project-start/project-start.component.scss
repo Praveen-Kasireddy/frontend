@@ -1,0 +1,90 @@
+.briefing {
+    float: left;
+    width: 100%;
+}
+
+.button {
+    padding: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
+.commercial-actions {
+    margin-top: 48px;
+}
+
+.da-contact {
+    float: left;
+    padding: 5px;
+}
+
+.da-contact-name {
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 120px;
+}
+
+.da-contacts {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.dates {
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 73px;
+}
+
+.delete-button {
+    cursor: pointer;
+    float: right;
+}
+
+.fees {
+    margin-top: 26px;
+}
+
+.form-group {
+    display: block;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    float: left;
+    margin-left: 0;
+    .form-item {
+        flex: 0 1 auto;
+        max-width: none;
+        padding-right: 20px;
+    }
+}
+
+.group {
+    float: left;
+}
+
+.label {
+    white-space: nowrap;
+}
+
+.popup {
+    overflow: auto;
+}
+
+.names {
+    width: 300px;
+}
+
+.startDate {
+    float: left;
+}
+
+.endDate {
+    float: left;
+}
+
+.briefing {
+    width: 660px;
+}

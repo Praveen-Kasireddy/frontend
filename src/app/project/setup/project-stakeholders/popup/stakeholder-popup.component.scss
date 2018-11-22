@@ -1,0 +1,23 @@
+.form {
+    flex: auto;
+    max-width: 100%;
+}
+.icon {
+    background-color: #f0f1f5;
+    padding: 8px;
+}
+.icon::before {
+    color: #4a5769;
+    font-size: 15pt;
+    vertical-align: middle;
+}
+.inputAfterIcon {
+    width: 100%;
+}
+.row,
+.rowWithIcon {
+    padding: 8px;
+}
+.rowWithIcon {
+    display: flex;
+}

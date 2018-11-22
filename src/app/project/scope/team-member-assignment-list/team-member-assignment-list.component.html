@@ -1,0 +1,8 @@
+<div class="assignable-user-list">
+    <div *ngFor="let user of teamMembersWithCounter" (click)="setSelectedTeamMember(user.teamMember)" class="assignable-user"
+        [ngClass]="{'selected-user': isSelected(user)}">
+        <kosmos-avatar class="user-avatar" [name]="user.teamMember.fullName"></kosmos-avatar>
+        <span class="user-name">{{ user.teamMember.fullName }}</span>
+        <span class="user-counter badge badge-pill badge-dark" *ngIf="user.counter!=0">{{ user.counter }}</span>
+    </div>
+</div>

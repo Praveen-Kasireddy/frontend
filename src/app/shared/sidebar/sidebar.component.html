@@ -1,0 +1,54 @@
+<div class="bootstrap sidebar">
+    <div class="selected-labels-sidebar">
+        <div class="sidebar-body">
+            <div class="sidebar-container" [ngStyle]="additionalSidebarStyle">
+                <ng-content select="ng-container"></ng-content>
+                <div class="title-container" *ngIf="!isHeaderHidden">
+                    <h1 class="page-title">
+                        <ng-content select=".sidebar-title"></ng-content>
+                    </h1>
+                    <div *ngIf="showHelpToggle" ng-hide="true" class="help-button" (click)="toggleHelp()">
+                        <span [ngClass]="{
+									'kpmg-icon-help': !showHelp,
+									'kpmg-icon-remove': showHelp
+								}"></span>
+                    </div>
+                </div>
+                <div class="help-content" [ngClass]="{'hidden': !showHelp, 'no-smart-workspace': !isSmartWorkspace}"
+                    *ngIf="showHelpToggle && !isHeaderHidden">
+                    <ng-content select=".sidebar-content:not(.no-content)"></ng-content>
+                </div>
+
+                <div class="help-content no-help-content" *ngIf="!showHelpToggle && !isHeaderHidden">
+                    <ng-content select=".sidebar-content.no-content"></ng-content>
+                </div>
+
+                <div class="main-content" [ngClass]="{'first': isHeaderHidden, ' no-smart-workspace': !isSmartWorkspace}">
+                    <ng-content select=".sidebar-middle"></ng-content>
+                </div>
+
+                <div [ngClass]="{'hidden': !isSmartWorkspace}">
+                    <p (click)="isContentMiddleCollapsed = !isContentMiddleCollapsed" class="expander">Editor<span
+                            class="help-button" [ngClass]="{
+                                'kpmg-icon-chevron-down': !isContentMiddleCollapsed,
+                                'kpmg-icon-chevron-left': isContentMiddleCollapsed
+                            }"></span>
+                    </p>
+                    <div [ngClass]="{'collapse': isContentMiddleCollapsed}">
+                        <div class="main-content" [ngClass]="{'first': isHeaderHidden}">
+                            <ng-content select=".sidebar-smartworkspace"></ng-content>
+                        </div>
+                    </div>
+
+                    <div class="main-content" [ngClass]="{'first': isHeaderHidden}">
+                        <ng-content select=".sidebar-smartworkspace-snippets"></ng-content>
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <ng-content select=".sidebar-bottom"></ng-content>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

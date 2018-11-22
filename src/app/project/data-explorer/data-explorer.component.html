@@ -1,0 +1,20 @@
+<div class="flex-row">
+    <div class="container">
+        <kosmos-header [title]="selectedProject?.name" i18n-subtitle="Data explorer|Data explorer subtitle@@project:data-explorer"
+            subtitle="Data Explorer Analysis"></kosmos-header>
+        <div class="content">
+            <kosmos-new-analysis-button (componentClicked)="openPopup()"></kosmos-new-analysis-button>
+            <kosmos-analysis-card *ngFor="let analysis of analyses" [analysis]="analysis"></kosmos-analysis-card>
+        </div>
+    </div>
+
+    <kosmos-sidebar>
+        <span class="sidebar-title">Data Explorer</span>
+        <div class="sidebar-content">
+            <p>
+
+            </p>
+        </div>
+    </kosmos-sidebar>
+</div>
+<kosmos-new-analysis-popup></kosmos-new-analysis-popup>

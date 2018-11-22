@@ -1,0 +1,5 @@
+<div class="container" (drop)="onDropOnMainLevel($event)">
+    <kosmos-sheet-characteristic-item *ngFor="let characteristic of selectedDimension?.characteristics; let i = index"
+        [characteristic]="characteristic" [itemIndex]="i" [sheetDimensionType]="sheetDimensionType" [canBeChartItem]="canBeChartItem(characteristic)" (toggleFormatPercent)="onCharacteristicToggleFormatPercent($event)">
+    </kosmos-sheet-characteristic-item>
+</div>

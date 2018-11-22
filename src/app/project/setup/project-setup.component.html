@@ -1,0 +1,227 @@
+<div class="container">
+
+    <kosmos-header [title]="selectedProject?.name" i18n-subtitle="Project Setup|Project Setup Subtitle for Header@@project:setup"
+        subtitle="Project Setup"></kosmos-header>
+
+    <div class="content">
+        <div class="content-inner">
+            <dx-validation-group #dxValidGroupAll>
+                <section class="engagement-details">
+                    <h3 i18n="Engagement details|Section Headline Engagement details@@project:create:section:engagement-details">Engagement
+                        Details
+                    </h3>
+
+                    <div class="form-group">
+                        <div class="form-item">
+                            <label>Project Name</label>
+                            <div class="form-input">
+                                <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" class="name" [(value)]="project.name"
+                                    name="projectName" (onFocusOut)="validateMe($event)">
+                                    <dx-validator>
+                                        <dxi-validation-rule type="required"></dxi-validation-rule>
+                                    </dx-validator>
+                                </dx-text-box>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label>Client Name</label>
+                            <div class="form-input">
+                                <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" class="clientName" [(value)]="project.clientName"
+                                    (onFocusOut)="validateMe($event)">
+                                    <dx-validator>
+                                        <dxi-validation-rule type="required"></dxi-validation-rule>
+                                    </dx-validator>
+                                </dx-text-box>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label>Client Number</label>
+                            <div class="form-input">
+                                <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" class="clientId" [(value)]="project.clientId">
+                                </dx-text-box>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label>Engagement Number</label>
+                            <div class="form-input">
+                                <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" class="engagement" [(value)]="project.engagementNumber">
+                                    <dx-validator>
+                                        <dxi-validation-rule type="numeric"></dxi-validation-rule>
+                                    </dx-validator>
+                                </dx-text-box>
+                            </div>
+                        </div>
+                        <div class="form-item medium">
+                            <label>&nbsp;</label>
+                            <dx-radio-group [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [dataSource]="configuration.commercialActions"
+                                displayExpr="description" layout="horizontal" [(value)]="project.commercialAction"
+                                valueExpr="id">
+                            </dx-radio-group>
+                        </div>
+                        <div class="form-item">
+                            <label>Target Name</label>
+                            <dx-text-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" class="targetName" [(value)]="project.targetCompanyName"
+                                (onFocusOut)="validateMe($event)" maxLength="200">
+                                <dx-validator>
+                                    <dxi-validation-rule type="required"></dxi-validation-rule>
+                                </dx-validator>
+                            </dx-text-box>
+                        </div>
+                        <div class="form-item">
+                            <label>Project Fees (est.)</label>
+                            <dx-select-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [dataSource]="configuration.fees"
+                                displayExpr="description" [(value)]="project.fees" valueExpr="id"></dx-select-box>
+                        </div>
+                        <div class="form-item">
+                            <label>Est. Start Date</label>
+                            <div class="form-input">
+                                <dx-date-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" class="startDate" type="date"
+                                    [(value)]="project.startDate" [(max)]="project.dueDate" (onFocusOut)="validateMe($event)"
+                                    displayFormat="d-MMM-yyyy">
+                                    <dx-validator>
+                                        <dxi-validation-rule type="required"></dxi-validation-rule>
+                                    </dx-validator>
+                                </dx-date-box>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label>Est. End Date</label>
+                            <div class="form-input">
+                                <dx-date-box [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" class="dueDate" type="date"
+                                    [(value)]="project.dueDate" [(min)]="project.startDate" (onFocusOut)="validateMe($event)"
+                                    displayFormat="d-MMM-yyyy">
+                                    <dx-validator>
+                                        <dxi-validation-rule type="required"></dxi-validation-rule>
+                                    </dx-validator>
+                                </dx-date-box>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label>Industry</label>
+                            <div class="form-input">
+                                <dx-drop-down-box [(value)]="project.industryId" valueExpr="id" displayExpr="description"
+                                    [dataSource]="allIndustries" (onOpened)="industryOpened()">
+                                    <dxo-drop-down-options height="400px"></dxo-drop-down-options>
+                                    <div *dxTemplate="let data of 'content'">
+                                        <dx-tree-list [dataSource]="industries" dataStructure="tree" keyExpr="id"
+                                            itemsExpr="children" (onSelectionChanged)="onIndustrySelectionChanged($event)"
+                                            showColumnHeaders="false" height="100%">
+                                            <dxi-column dataField="description" caption=""></dxi-column>
+                                            <dxo-search-panel visible="true"></dxo-search-panel>
+                                            <dxo-selection mode="single"></dxo-selection>
+                                            <dxo-sorting mode="none"></dxo-sorting>
+                                            <dxo-search-panel [(text)]="searchText" width="80%"></dxo-search-panel>
+                                        </dx-tree-list>
+                                    </div>
+                                </dx-drop-down-box>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-item medium">
+                            <label>Project Summary</label>
+                            <div class="form-input">
+                                <dx-text-area [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" [(value)]="project.summary"
+                                    height="160">
+                                </dx-text-area>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-item medium">
+                            <label>Objectives</label>
+                            <div>
+                                <kosmos-project-objectives [(items)]="project.objectives"></kosmos-project-objectives>
+                            </div>
+                        </div>
+                        <div class="form-item medium">
+                            <label>Milestones</label>
+                            <div>
+                                <kosmos-project-milestones [(items)]="project.milestones"></kosmos-project-milestones>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="legal-entities">
+                    <h3 i18n="Legal Entities|Section Headline Legal Entities@@project:create:section:legal-entities">Legal
+                        Entities
+                    </h3>
+                    <div class="form-group">
+                        <div class="form-item medium">
+                            <kosmos-project-legal-entities [(items)]="project.legalEntities"></kosmos-project-legal-entities>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="stakeholders">
+                    <h3 i18n="Stakeholders|Section Headline Stakeholders@@project:create:section:stakeholders">Stakeholders</h3>
+                    <div class="form-group">
+                        <kosmos-project-stakeholders [(items)]="project.stakeholders"></kosmos-project-stakeholders>
+                    </div>
+                </section>
+
+                <section class="team">
+                    <h3 i18n="Team|Section Headline Team@@project:create:section:team">Team</h3>
+                    <div class="form-group">
+                        <kosmos-team-members [(items)]="project.team" [(availableUsers)]="availableUsers" (changed)="updateTeam($event)"></kosmos-team-members>
+                    </div>
+                    <div *ngIf="validationMessages.teamMembers.visible" class="validation-message" i18n="Team Members|Validation Message Team Members@@project:create:validation-message:team-members">
+                        Please assign at least one team member
+                    </div>
+                </section>
+            </dx-validation-group>
+        </div>
+    </div>
+</div>
+<kosmos-sidebar>
+    <span class="sidebar-title" i18n="Set up a new Project| Title@@project:create:sidebar:title">Project Setup</span>
+    <div class="sidebar-content" i18n="Project Setup Sidebar| content@@project:create:sidebar:content">
+        <h2>PROJECT SETUP OVERVIEW</h2>
+        <p>
+            Key information about your project, which can be viewed by all members of the team, is presented in Project
+            Setup. Only selected information has been entered via the <strong>Mini Project Setup</strong>. The
+            remaining fields should be completed and updated throughout the project. Once all the data has been
+            captured, click <strong><i>Update project</i></strong><i> </i>on the bottom right sidebar.
+        </p>
+        <p>
+            The <strong>Engagement Details</strong> should provide an informative project summary, clear and agreed
+            objectives and important milestones (including appointments, deliverables and process milestones). The due
+            date should reflect the expected end of the project rather than the deliverable date.
+        </p>
+        <p>
+            Enter the full <strong>Legal Entity</strong> names and respective abbreviations of the companies which are
+            subject to analysis in your project. This information is required for the data explorer.
+        </p>
+        <p>
+            Contact details of the client and other <strong>Stakeholders</strong> (such as other advisors, shareholders
+            of the client, etc.) can be shared with the team.
+        </p>
+        <p>
+            Select the <strong>Team</strong> members who should be granted access to the project workspace and assign
+            their role on this project.
+        </p>
+        <p>
+
+        </p>
+        <p>
+            <span style='color:#365f91'>USEFUL LINKS </span><i><span style='color:#ff0000'>(active links are available
+                    in Cosmos)</span></i>
+        </p>
+        <p>
+            Select your country and solution line Quality and Risk Management Manual for guidance in Columbus for
+            guidance on the Initiate and Plan phases of the engagement process which should be completed during the
+            project setup:
+        </p>
+        <ul>
+            <li>
+                <a href="https://www.columbus.kworld.kpmg.com/G/0"><span style='color:#0000ff'>Columbus (Service line
+                        manual)</span></a>
+            </li>
+        </ul>
+    </div>
+    <dx-button [kosmosCheckRights]="RIGHTS.UPDATE_PROJECT" class="sidebar-bottom button" i18n-text="Project Setup Sidebar|create project@@project:create:button:projectcreate"
+        text="{{editHandler.saveButtonText}}" (onClick)="validateAndSubmitForm()">
+    </dx-button>
+</kosmos-sidebar>
+<dx-toast message="Project was successfully updated" [(visible)]="isToastVisible" type="Success" i18n-message="toastMessage|toastMessage@@project:start:toast-message"></dx-toast>

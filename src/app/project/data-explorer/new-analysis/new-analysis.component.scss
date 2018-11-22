@@ -1,0 +1,75 @@
+@import 'app-shared';
+@import '../variables';
+
+:host {
+    display: flex;
+    height: 125px;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px dashed $colour--name-rock-blue;
+    float: left;
+    margin-top: 7px;
+    margin-left: 9px;
+    padding-right: 4px;
+    position: relative;
+    width: $width;
+
+    &:hover {
+        border-color: $colour--name-sidebar-gray;
+        .card-action {
+            color: $colour--name-sidebar-gray;
+        }
+        .card-button {
+            border-color: $colour--name-sidebar-gray;
+        }
+        .card-line {
+            background-color: $colour--name-sidebar-gray;
+        }
+    }
+}
+
+.card-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-action {
+    color: $colour--name-rock-blue;
+    font-size: 14px;
+    padding-left: 8px;
+    padding-top: 8px;
+}
+
+.card-button {
+    align-items: center;
+    border: 1px dashed $colour--name-rock-blue;
+    border-radius: 50%;
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    position: relative;
+    width: 32px;
+    margin-left: 8px;
+}
+
+.plus-line {
+    background-color: $colour--name-rock-blue;
+    position: absolute;
+}
+
+.plus-line--horizontal {
+    height: 1px;
+    width: 16px;
+    left: 7px;
+}
+
+.plus-line--vertical {
+    height: 16px;
+    width: 1px;
+    top: 7px;
+}

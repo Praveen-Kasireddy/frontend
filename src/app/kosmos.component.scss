@@ -1,0 +1,243 @@
+@import '../assets/styles/themes/material/main';
+// Helpers
+@import 'app-shared';
+// Output
+@import '~normalize.css';
+@include global-border-box();
+@include global-layout();
+// Bootstrap theme
+@import 'shared/scss/bootstrap/bootstrap-theme';
+
+/**
+ * 1. IE11 renders an `X` in the input when entering a value which can be used to clear the input. We do not want this
+ *    so this removes it.
+ */
+// PLEASE USE `kosmos-headline`
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: normal;
+    color: $colour--name-dark-gray;
+}
+
+h1 {
+    font-size: $font-size--h1;
+}
+
+h2 {
+    font-size: $font-size--h2;
+}
+
+h3 {
+    font-size: $font-size--h3;
+}
+
+h4 {
+    font-size: $font-size--h4;
+}
+
+h5 {
+    font-size: $font-size--h5;
+}
+
+input,
+button {
+    outline: none;
+}
+
+input::-ms-clear {
+    /* 1 */
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+// App
+.app {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: $colour--name-catskill-white;
+}
+
+ng-component {
+    flex: 1;
+}
+
+// TODO deprecate this
+.app-main {
+    width: calc(100% - #{$size--nav} - #{$size--sidebar});
+    z-index: 0;
+    display: flex;
+    flex: 1;
+    overflow: visible;
+    flex-direction: column;
+}
+
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    display: block;
+}
+
+// context menu
+.ngx-contextmenu .dropdown-menu {
+    border: solid 1px #c8c8c8;
+    background-color: #fff;
+    padding: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+
+    li {
+        display: block;
+        text-align: left;
+    }
+
+    li.divider {
+        border-top: solid 1px #c8c8c8;
+        margin: 0 4px;
+    }
+
+    a {
+        color: #000;
+        display: block;
+        padding: 5px 14px;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background-color: #c8c8c8;
+    }
+}
+
+// styling for notifications
+.notifications {
+    top: 10px;
+    margin-bottom: 2px !important;
+    align-self: center;
+    right: calc(50% + 175px);
+    text-align: center;
+    font: $font-family--kpmg-web;
+    padding: 0;
+    min-height: 40px;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 3px 23px 0 rgba(160, 168, 189, 0.3), 0 1px 0 0 rgba(160, 168, 189, 0.5);
+}
+
+.kpmg-hide-notification .notifications,
+.simple-notification .icon,
+.sn-progress-loader,
+.kpmg-report .notifications {
+    display: none;
+}
+
+.sn-content {
+    padding: 0 !important;
+    font-size: 12px !important;
+}
+
+.simple-notification.error {
+    width: 500px;
+    background: $colour--name-mandy !important;
+}
+
+//change top for error toasters in workspace
+.kpmg-workspace .simple-notification.error {
+    top: 83px;
+}
+
+.simple-notification.success {
+    top: 83px;
+    width: 500px;
+    background: $colour--name-mountain-meadow !important;
+}
+
+.simple-notification-wrapper {
+    position: absolute !important;
+    left: 50%;
+}
+
+.menu-buttons {
+    margin-top: -65px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-button {
+    height: 35px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: thin solid $colour--name-rock-blue;
+        top: -2px;
+    }
+}
+
+.menu-button-disabled {
+    height: 35px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.button-text {
+    /*
+    I know,this is bullshit. But I havent found a way to align
+    the text vertically, Neither verticalAlign  nor justify-content/justify-Items
+    or anything else worked for me.
+    */
+    margin-top: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.button-text-disabled {
+    color: gray;
+    margin-top: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: default;
+}
+
+.button-was-selected {
+    background-color: $colour--name-black;
+    color: $colour--name-white;
+    border: solid 1px $colour--name-black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.button-not-selected {
+    background-color: $colour--name-white;
+    color: $colour--name-black;
+    border: solid 1px $colour--name-black;
+    text-align: center;
+    vertical-align: middle;
+}

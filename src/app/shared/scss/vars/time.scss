@@ -1,0 +1,11 @@
+// Increase this value for debugging (default: 1)
+$speed-modifier: 1;
+
+$time--shortest: 100 * $speed-modifier * 1ms;
+$time--shorter:  150 * $speed-modifier * 1ms;
+$time--short:    200 * $speed-modifier * 1ms;
+$time--default:  300 * $speed-modifier * 1ms;
+$time--medium:   400 * $speed-modifier * 1ms;
+$time--long:     600 * $speed-modifier * 1ms;
+$time--longer:   1000 * $speed-modifier * 1ms;
+$time--longest:  2000 * $speed-modifier * 1ms;

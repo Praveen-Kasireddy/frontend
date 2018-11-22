@@ -1,0 +1,8 @@
+<kosmos-sidebar>
+    <span class="sidebar-title" i18n="Source Data Sidebar| Title@@project:config-select:sidebar:title">Source Data</span>
+    <div class="sidebar-content">
+    </div>
+    <dx-button class="sidebar-bottom button ingestbutton" *ngIf="!isIngested" [disabled]="isIngesting" i18n-text="Project Ingest Sidebar|Ingest now@@project:ingest:button:ingestnow"
+        text="Ingest now" (onClick)="onIngestNowClicked($event)">
+    </dx-button>
+</kosmos-sidebar>

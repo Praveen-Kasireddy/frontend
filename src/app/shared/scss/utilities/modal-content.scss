@@ -1,0 +1,27 @@
+@import 'vars/spacing';
+@import 'vars/colour';
+@import 'vars/size';
+@import '../../../../assets/styles/themes/material/typography';
+
+@mixin modal-content() {
+    position: relative;
+    background-color: $colour--name-white;
+    border-radius: 3px;
+    min-height: 142px;
+    width: 200px;
+
+    kosmos-heading /deep/ h4 {
+        margin: $spacing--3;
+        color: $colour--name-darker-blue;
+        font-family: $typography--font-family--bold;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .close:disabled,
+    input:disabled,
+    kosmos-btn button:disabled {
+        opacity: 1;
+        background-color: $colour--name-mid-gray;
+    }
+}

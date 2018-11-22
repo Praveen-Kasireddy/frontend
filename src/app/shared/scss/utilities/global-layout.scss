@@ -1,0 +1,12 @@
+@mixin global-layout {
+	html {
+		height: 100%;
+		overflow: hidden;
+	}
+
+	body {
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+	}
+}

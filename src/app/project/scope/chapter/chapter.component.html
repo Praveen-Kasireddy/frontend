@@ -1,0 +1,46 @@
+<div class="inner" *ngIf="showEmptyChapters()" (window:resize)="onResize($event)">
+    <div class=" title">
+        <div>
+            <label *ngIf="!isMyTasksView" class="menuAnchor context-menu-button kpmg-icon-menu-more" id="{{menuAnchorId}}"></label>
+        </div>
+        <dx-context-menu [dataSource]="menuItems" (onItemClick)="menuItemClick($event)" showEvent="click" target="#{{menuAnchorId}}"
+            [width]="200"></dx-context-menu>
+        <label *ngIf="chapter?.scopeItemGuid == undefined" class="individually-added">c</label>
+        <label class="header" (click)="toogleSelection()" [ngClass]="{'waitingResponse': waitingForResponse, 'acceptingClick': !waitingForResponse }">
+            {{ chapter.name }}
+        </label>
+
+        <kosmos-up-down-button *ngIf="!isMyTasksView" [isBottomMost]="isBottomMost" [isTopMost]="isTopMost"
+            (moveUpEvent)="onMoveUp()" (moveDownEvent)="onMoveDown()"></kosmos-up-down-button>
+
+    </div>
+    <div class="tasks">
+        <kosmos-task [isMyTasksView]="isMyTasksView" *ngFor="let task of chapter.children" (taskChange)="enableMenuItems()"
+            (taskRename)="taskRename($event)" (taskDelete)="taskDelete($event)" [task]="task" [productId]="productId"
+            (taskInsert)="onTaskInsert($event)" (taskRemoveFromChapter)="onTaskRemoveFromChapter($event)" [chapterId]="chapter?.id"
+            [chapterName]="chapter?.name" [isLastTaskInList]="chapter?.children[chapter.children.length -1].id == task.id"></kosmos-task>
+
+        <!-- No tasks -->
+        <!-- -->
+        <div *ngIf="!isMyTasksView && !hasChapterAndTasks()" (dragleave)="onDragLeave($event)" style="display: flex;flex-direction: row;">
+            <div *ngIf="showDropZone" class="dropzoneMin">&nbsp;</div>
+            <div [ngClass]="{ 'dropzoneMax': showDropZone, 'dropzoneMin': !showDropZone}" id="{{chapterDropZoneId}}"
+                (dragenter)="onDragEnter($event)" (dragover)="onDragOver($event)" (drop)="onDrop($event)">&nbsp;</div>
+            <kosmos-new-task-button id="{{addTask}}" (componentClicked)="openNewTaskPopup()"></kosmos-new-task-button>
+        </div>
+
+
+
+        <!-- New Task at first position -->
+        <kosmos-new-task-button *ngIf="!isMyTasksView && hasChapterAndTasks() && isNewTaskButtonOnNewLine" style="margin-left: 35px"
+            id="{{addTask}}" (componentClicked)="openNewTaskPopup()"></kosmos-new-task-button>
+
+        <!-- New Task not at first position -->
+        <kosmos-new-task-button *ngIf="!isMyTasksView &&  hasChapterAndTasks() && !isNewTaskButtonOnNewLine" id="{{addTask}}"
+            (componentClicked)="openNewTaskPopup()"></kosmos-new-task-button>
+
+    </div>
+</div>
+
+<kosmos-new-task-popup [(visible)]="isNewTaskPopupVisible" (closeEvent)="closeNewTaskPopup()" (taskCreated)="requeryTasks()"
+    [chapterId]="chapter?.id" [projectGuid]="selectedProject.projectGuid"></kosmos-new-task-popup>

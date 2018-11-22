@@ -1,0 +1,30 @@
+@import 'app-shared';
+.form-group {
+    display: block;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    .form-item {
+        flex: 0 1 auto;
+        max-width: none;
+    }
+}
+
+.title {
+    width: 100%;
+}
+
+.value {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.message {
+    font-weight: bold;
+}
+
+::ng-deep .data-approval-popup .dx-toolbar.dx-popup-bottom {
+    border-top: 1px solid $colour--name-aluminium;
+}

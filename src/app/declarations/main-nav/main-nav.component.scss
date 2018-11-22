@@ -1,0 +1,141 @@
+@import 'app-shared';
+
+$width: 70px;
+$width--large: 204px;
+
+:host {
+    color: $colour--name-near-white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    width: $width;
+    z-index: 1500;
+
+    &:hover {
+        .inner {
+            transition: width 0.2s 0.4s $ease-enter;
+            width: $width--large;
+        }
+        kosmos-session-timer {
+            transition: width 0.2s 0.4s $ease-enter;
+            width: $width--large;
+        }
+    }
+}
+
+.inner {
+    -ms-overflow-style: none;
+    align-self: flex-start;
+    background-color: $colour--name-darker-blue;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: width 0.2s $ease-leave;
+    width: $width;
+    z-index: $depth--1;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+header {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    height: 80px;
+    overflow: hidden;
+    width: $width--large;
+}
+
+.logo {
+    display: inline-block;
+    height: 40px;
+    margin: $spacing--default 0;
+    text-align: center;
+    width: $width;
+}
+
+.content {
+    display: inline-block;
+    padding-right: $spacing--5;
+    white-space: nowrap;
+    width: $width--large - $width;
+}
+
+.title {
+    font-size: $font-size--body;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.subtitle {
+    font-size: $font-size--small;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+nav {
+    -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0;
+    overflow-y: auto;
+    padding: 0;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.separator {
+    display: block;
+    height: 1px;
+    margin: $spacing--4 $spacing--4;
+    background-color: rgba($colour--name-near-white, 0.2);
+    min-height: 1px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    margin: $spacing--default 0;
+    text-align: center;
+    background: none;
+    border: 0;
+}
+
+.user-version-container {
+    width: $width--large;
+    display: flex;
+    margin-top: $spacing--7;
+
+    kosmos-user {
+        margin-left: 19px;
+    }
+
+    kosmos-version {
+        align-self: flex-end;
+        justify-content: flex-end;
+        margin-left: auto;
+        padding-right: 19px;
+    }
+}
+
+:host kosmos-session-timer {
+    width: $width;
+    transition: width 0.2s $ease-leave;
+}
+
+.align-bottom {
+    margin-top: auto;
+}

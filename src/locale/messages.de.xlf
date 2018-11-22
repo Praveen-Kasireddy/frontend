@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="2.0"   xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file original="ng.template" id="ngi18n">
+     <unit id="main-nav:welcome">
+      <notes>
+        <note category="description">Welcome Link</note>
+        <note category="meaning">Navbar</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:12</note>
+      </notes>
+      <segment>
+        <source>Welcome</source>
+        <target>Willkommen</target>
+      </segment>
+    </unit>
+
+
+    <unit id="main-nav:My Projects">
+      <notes>
+        <note category="description">My Projects Link</note>
+        <note category="meaning">My Projects</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:12</note>
+      </notes>
+      <segment>
+        <source>My Projects</source>
+        <target>Meine Projekte</target>
+      </segment>
+    </unit>
+    <unit id="main-nav:My Tasks">
+      <notes>
+        <note category="description">My Tasks Link</note>
+        <note category="meaning">My Tasks</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:13</note>
+      </notes>
+      <segment>
+        <source>My Tasks</source>
+        <target>Meine Aufgaben</target>
+      </segment>
+    </unit>
+    <unit id="main-nav:Source Data">
+      <notes>
+        <note category="description">Source Data Link</note>
+        <note category="meaning">Source Data</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:14</note>
+      </notes>
+      <segment>
+        <source>Source Data</source>
+        <target>Quelldaten</target>
+      </segment>
+    </unit>
+    <unit id="main-nav:Data Overview">
+      <notes>
+        <note category="description">Data Overview Link</note>
+        <note category="meaning">Data Overview</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:15</note>
+      </notes>
+      <segment>
+        <source>Data Overview</source>
+        <target>Datenübersicht</target>
+      </segment>
+    </unit>
+    <unit id="main-nav:Project Setup">
+      <notes>
+        <note category="description">Project Setup Link</note>
+        <note category="meaning">Project Setup</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:17</note>
+      </notes>
+      <segment>
+        <source>Project Setup</source>
+        <target>Projektaufbau</target>
+      </segment>
+    </unit>
+    <unit id="main-nav:Project Scope">
+      <notes>
+        <note category="description">Project Scope Link</note>
+        <note category="meaning">Navbar</note>
+        <note category="location">app/declarations/main-nav/main-nav.component.ts:18</note>
+      </notes>
+      <segment>
+        <source>Project scope</source>
+        <target>Projektumfang</target>
+      </segment>
+    </unit>
+
+
+    <unit id="home:welcome:h2">
+      <notes>
+        <note category="description">Welcome message for start page</note>
+        <note category="meaning">welcome header</note>
+        <note category="location">app/home/welcome.component.ts:2,4</note>
+      </notes>
+      <segment>
+        <source>Welcome</source>
+        <target>Willkommen</target>
+      </segment>
+    </unit>
+    <unit id="project:list">
+      <notes>
+        <note category="description">List Title for Headerk</note>
+        <note category="meaning">Project Card</note>
+        <note category="location">app/project/list/project-list.component.ts:3</note>
+      </notes>
+      <segment>
+        <source>My Projects</source>
+        <target>Meine Projekte</target>
+      </segment>
+    </unit>
+    <unit id="project:list:card-new">
+      <notes>
+        <note category="description">New Projectk</note>
+        <note category="meaning">Project Card</note>
+        <note category="location">app/project/list/card-new/card-new.component.ts:7</note>
+      </notes>
+      <segment>
+        <source>Create new project</source>
+        <target>Neues Projekt</target>
+      </segment>
+    </unit>
+    <unit id="project:list:card:duespan">
+      <notes>
+        <note category="description">project due date</note>
+        <note category="meaning">Project Card</note>
+        <note category="location">app/project/list/card/card.component.ts:13</note>
+      </notes>
+      <segment>
+        <source>Due</source>
+        <target>Fällig</target>
+      </segment>
+    </unit>
+    <unit id="project:list:card:done">
+      <notes>
+        <note category="description">items done</note>
+        <note category="meaning">Project Card</note>
+        <note category="location">app/project/list/card/card.component.ts:22</note>
+      </notes>
+      <segment>
+        <source>items done</source>
+        <target>items erledigt</target>
+      </segment>
+    </unit>
+
+    <unit id="project:list:sidebar:title">
+      <notes>
+        <note category="description"> Title</note>
+        <note category="meaning">Project List Sidebar</note>
+        <note category="location">app/project/list/project-list-sidebar/project-list-sidebar.component.ts:37</note>
+      </notes>
+      <segment>
+        <source>My Projects</source>
+        <target>Meine Projekte</target>
+      </segment>
+    </unit>
+    <unit id="project:list:sidebar:content">
+      <notes>
+        <note category="description"> Title</note>
+        <note category="meaning">Project List Sidebar</note>
+        <note category="location">app/project/list/project-list-sidebar/project-list-sidebar.component.ts:46,78</note>
+      </notes>
+      <segment>
+        <source>
+                    <pc id="0" equivStart="START_HEADING_LEVEL2" equivEnd="CLOSE_HEADING_LEVEL2" type="other" dispStart="&lt;h2&gt;" dispEnd="&lt;/h2&gt;">WELCOME</pc>
+                    <pc id="1" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">Welcome to KPMG Cosmos. We have designed KPMG Cosmos as modern web application which is running inside your browser,
+                        so it might be useful for you to remember the following principles, before entering KPMG Cosmos:</pc>
+                    <pc id="2" equivStart="START_UNORDERED_LIST" equivEnd="CLOSE_UNORDERED_LIST" type="other" dispStart="&lt;ul&gt;" dispEnd="&lt;/ul&gt;">
+                        <pc id="3" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            <pc id="4" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">General navigation</pc> happens via the left hand sidebar which automatically hides when
+                            ever you don’t use it.</pc>
+                        <pc id="5" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">
+                            <pc id="6" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">Bottom left</pc> you can always press the home button which will bring you back to this screen
+                            directly.</pc>
+                        <pc id="7" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">Before you close the KPMG Cosmos tab in your browser or before using the browser navigation, please make
+                            sure to press the
+                            <pc id="8" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">save button</pc> on your screen.</pc>
+                        <pc id="9" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">In case you need any assistance, you have any positive/ negative feedback please feel free to contact
+                            us via our
+                            <pc id="10" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a&gt;" dispEnd="&lt;/a&gt;">KPMG Cosmos mailbox</pc>
+                        </pc>
+                    </pc>
+                    <pc id="11" equivStart="START_HEADING_LEVEL2" equivEnd="CLOSE_HEADING_LEVEL2" type="other" dispStart="&lt;h2&gt;" dispEnd="&lt;/h2&gt;">MY PROJECTS</pc>
+                    <pc id="12" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">All projects, you have access to, are shown on the left.</pc>
+                    <pc id="13" equivStart="START_UNORDERED_LIST" equivEnd="CLOSE_UNORDERED_LIST" type="other" dispStart="&lt;ul&gt;" dispEnd="&lt;/ul&gt;">
+                        <pc id="14" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">Once you
+                            <pc id="15" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">select a project</pc>, you have full access to all project details and the project navigation
+                            will be shown on your left sidebar. </pc>
+                        <pc id="16" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">In addition to project and client name, you can also see the
+                            <pc id="17" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">current project status</pc> which shows you the amount of completed scope items in a second.
+                            </pc>
+                        <pc id="18" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">In case you want to
+                            <pc id="19" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">create a new project</pc>, please click the “plus button” on the very left which will directly
+                            bring you to the project setup screen.</pc>
+                    </pc>
+                </source>
+                 <target>
+                    <pc id="0" equivStart="START_HEADING_LEVEL2" equivEnd="CLOSE_HEADING_LEVEL2" type="other" dispStart="&lt;h2&gt;" dispEnd="&lt;/h2&gt;">Willkommen</pc>
+                    <pc id="1" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">Willkommen im Cosmos... unendliche Weiten...:</pc>
+                 </target>
+      </segment>
+    </unit>
+    <unit id="project:config-select:sidebar:title">
+      <notes>
+        <note category="description"> Title</note>
+        <note category="meaning">Project Config Sidebar</note>
+        <note category="location">app/project/config-select/project-config-select-sidebar/project-config-select-sidebar.component.ts:37</note>
+        <note category="location">app/project/scope/project-scope-sidebar/project-scope-sidebar.component.ts:37</note>
+      </notes>
+      <segment>
+        <source>Project configuration</source>
+        <target>Projekt Konfiguration</target>
+      </segment>
+    </unit>
+    <unit id="dev-test:textbox:placeholder">
+      <notes>
+        <note category="description">value of the placeholder of an textbox</note>
+        <note category="meaning">textbox placeholder</note>
+        <note category="location">app/dev-test/dev-test.component.html:18</note>
+      </notes>
+      <segment>
+        <source>Address</source>
+        <target>Adresse</target>
+      </segment>
+    </unit>
+
+    <!-- EMPTY PAGE  -->
+    <unit id="empty-page:header">
+      <notes>
+        <note category="description">header for a empty page</note>
+        <note category="meaning">Project Card</note>
+        <note category="location">app/project/list/card/card.component.ts:22</note>
+      </notes>
+      <segment>
+        <source>New and empty page.</source>
+        <target>Neue leere Seite.</target>
+      </segment>
+    </unit>
+
+  </file>
+</xliff>

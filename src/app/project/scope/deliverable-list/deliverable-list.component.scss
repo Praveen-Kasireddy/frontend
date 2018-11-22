@@ -1,0 +1,64 @@
+@import 'app-shared';
+.dx-treeview {
+    border: none;
+    /deep/ {
+        .dx-treeview-node-container {
+            @include font-smoothing();
+            font-family: 'UniversLTPro-45Light';
+            font-size: 14px;
+        }
+        .dx-texteditor {
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-width: thin;
+        }
+        .dx-texteditor-input {
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .dx-state-focused {
+            background: transparent;
+            font-weight: normal;
+            color: $colour--primary--kosmos-black;
+        }
+        .dx-state-hover {
+            background: transparent;
+            font-weight: $colour--primary--kosmos-black;
+        }
+        .dx-state-selected {
+            background: transparent;
+            color: $colour--primary--kosmos-black;
+        }
+        .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-selected > .dx-treeview-item,
+        .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-focused > .dx-treeview-item,
+        .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-hover > .dx-treeview-item,
+        .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-selected > .dx-treeview-item *,
+        .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-focused > .dx-treeview-item *,
+        .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-hover > .dx-treeview-item * {
+            background: transparent;
+            color: $colour--primary--kosmos-black;
+        }
+    }
+}
+
+.selected {
+    margin-right: 0;
+}
+
+.not-selected {
+    margin-right: 18px;
+}
+
+label {
+    @include font-smoothing();
+    font-family: 'UniversLTPro-45Light';
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+    border: 0;
+    cursor: pointer;
+}

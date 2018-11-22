@@ -1,0 +1,32 @@
+<dx-popup title="RENAME" [dragEnabled]="false" (onShowing)="popupShowing()" (visibleChange)="popupVisibleChanged()" [(visible)]="visible"
+  i18n-title="Name|Name@@project:start" height="250px" width="400px">
+  <div *dxTemplate="let data of 'content'">
+    <dx-validation-group>
+      <div class="form-group">
+        <div class="form-item form">
+          <div class="row">
+            <span>Title</span>
+          </div>
+          <div class="form-input row">
+            <div class="form-input">
+              <dx-text-box [(value)]="newTitle" class="title" name="title" i18n-placeholder="Title|Title@@project:create:stakeholders:popup"
+                placeholder="Title" (onFocusOut)="validateMe($event)">
+                <dx-validator>
+                  <dxi-validation-rule type="required"></dxi-validation-rule>
+                </dx-validator>
+              </dx-text-box>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </dx-validation-group>
+  </div>
+
+  <dxi-toolbar-item widget="dxButton" location="after" toolbar="bottom" [options]="{
+      text: 'Done',
+      onClick: changeName
+    }">
+  </dxi-toolbar-item>
+
+</dx-popup>

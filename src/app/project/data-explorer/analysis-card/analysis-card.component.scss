@@ -1,0 +1,26 @@
+@import 'app-shared';
+@import '../variables';
+
+:host {
+    background-color: $colour--name-white;
+    border: thin solid rgba(160, 168, 189, 0.5);
+    border-radius: 3px;
+    color: inherit;
+    cursor: pointer;
+    float: left;
+    height: 125px;
+    margin: $tag-item-margin;
+    position: relative;
+    width: $width;
+}
+
+.name {
+    font-weight: bold;
+    padding: 15px;
+}
+
+.timestamp {
+    bottom: 0;
+    padding: 15px;
+    position: absolute;
+}

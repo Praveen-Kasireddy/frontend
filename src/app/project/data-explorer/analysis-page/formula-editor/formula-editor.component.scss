@@ -1,0 +1,60 @@
+@import 'app-shared';
+
+:host {
+    background: white;
+}
+
+.anchor {
+    float: left;
+    height: 15px;
+    width: 2px;
+    background: bisque;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.container {
+    background: white;
+    display: block;
+    min-height: 40px;
+    padding: 10px;
+}
+
+.first-place-holder {
+    background: $colour--name-catskill-white;
+    border: thin solid $colour--name-rock-blue;
+    cursor: pointer;
+    margin: 4px;
+    padding: 4px;
+    float: left;
+}
+
+.item {
+    background: white;
+    border: thin solid $colour--name-rock-blue;
+    cursor: pointer;
+    margin: 4px;
+    padding: 4px;
+    float: left;
+}
+
+.label {
+    float: left;
+}
+.place-holder {
+    background: $colour--name-catskill-white;
+    border: thin solid $colour--name-rock-blue;
+    margin: 4px;
+    padding: 4px;
+    float: left;
+}
+
+.remove {
+    float: right;
+    font-size: 8pt;
+    margin-top: -2px;
+    margin-right: -3px;
+    margin-left: 5px;
+}

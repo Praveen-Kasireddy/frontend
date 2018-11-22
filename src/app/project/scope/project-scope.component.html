@@ -1,0 +1,119 @@
+<div class="container">
+
+    <kosmos-header *ngIf="!isMyTasksView" [title]="selectedProject?.name" i18n-subtitle="Project Scope|Project Scope Subtitle for Header@@project:scope"
+        subtitle="Project Scope"></kosmos-header>
+
+    <kosmos-header *ngIf="isMyTasksView" [title]="selectedProject?.name" i18n-subtitle="Task List|Project Tasklist Subtitle for Header@@project:tasklist"
+        subtitle="Task List"></kosmos-header>
+
+    <div *ngIf="isMyTasksView" class="filter-button" (click)="toggleFilter()" [ngClass]="{ 'filter-button-selected': showFilter, 'filter-button-not-selected': !showFilter }">
+        <span class="kpmg-icon-filter filter-icon"></span>
+    </div>
+
+    <kosmos-tasks-filter-bar *ngIf="isMyTasksView" [activeTypeFilter]="filterInfo.filterType" [filterButtonInfos]="filterButtonInfos"
+        [hidden]="!showFilter" (filterChanged)="onSetFilter($event)"></kosmos-tasks-filter-bar>
+
+    <div name="products" class="productButtons">
+        <kosmos-product-button [canBeDeleted]="!isMyTasksView" class="product-button" *ngFor="let product of products"
+            [product]="product" [(wasSelected)]="product==selectedProduct" (selected)="selectProduct(product)" (remove)="onRemove(product)"></kosmos-product-button>
+        <div *ngIf="!isMyTasksView" class="new-button">
+            <kosmos-new-product-button id="addDeliv" (click)="addDeliverables()"></kosmos-new-product-button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-inner">
+            <kosmos-section [isMyTasksView]="isMyTasksView" [filterInfo]="filterInfo"></kosmos-section>
+        </div>
+    </div>
+</div>
+
+<kosmos-sidebar *ngIf="isMyTasksView">
+    <span class="sidebar-title" i18n="Project Config Sidebar| Title@@project:config-select:sidebar:title">Task List</span>
+    <div class="sidebar-content">
+        <p>
+            <span style='color:#365f91'>TASK LIST OVERVIEW</span>
+        </p>
+        <p>
+            By default, only tasks which have been assigned to you will be displayed. By using the <strong>filter
+                settings </strong>in the top right corner, you can select which tasks should be displayed.
+        </p>
+        <p>
+            The coloured progress indicators on the bottom left corner of every card show the <strong>status </strong>of
+            the task.
+        </p>
+        <p>
+            <strong>Click on a task card</strong>, whether assigned to you or not, to be routed into the KPMG Cosmos
+            Smart Workspace where you can <strong>start working </strong>on the respective task.
+        </p>
+        <p>
+            <strong>Relevant guidance</strong>, such as a description of the task, the suggested content for the
+            analyses, useful links and text snippets, are <strong>provided per task</strong> in the Cosmos Smart
+            Workspace. In addition, best practice templates will be made available
+        </p>
+    </div>
+
+    <div class="sidebar-middle">
+
+    </div>
+</kosmos-sidebar>
+
+
+<kosmos-sidebar *ngIf="!isMyTasksView">
+    <span class="sidebar-title" i18n="Project Config Sidebar| Title@@project:config-select:sidebar:title">Project Scope</span>
+    <div class="sidebar-content">
+        <p>
+            <span style='color:#365f91'>PROJECT SCOPE OVERVIEW</span>
+        </p>
+        <p>
+            The objective of the project scope module is to break down your project to a task level in order to
+            increase transparency and to enhance internal collaboration. KPMG Cosmos will automatically show you a
+            standard list of tasks relevant for the selected deliverable.
+        </p>
+        <p>
+            Click on <strong><i>Add deliverable</i></strong> to select the appropriate deliverable. Multiple
+            deliverables can be selected within a project to facilitate our DA Global Propositions. <strong><i> </i></strong>
+        </p>
+        <p>
+            <strong>Select and deselect tasks or chapters </strong>by clicking on cards or chapter headers. The status
+            will be displayed on all selected tasks. Tasks can only be deselected by clicking on the card when none of
+            the team member are highlighted.
+        </p>
+        <p>
+            Add tasks or chapters which are not included in the predefined list by selecting <strong><i>Add task </i></strong>within
+            the relevant chapter or <strong><i>Add chapter</i></strong><i> </i>at the bottom of the screen.
+        </p>
+        <p>
+            <strong>Assign tasks to your team</strong> by selecting a team member in the right sidebar and clicking on
+            a task or section header. The initials of the team member will appear on the card.
+        </p>
+        <p>
+            <strong>Team members </strong>can be added in the <strong>Project Setup </strong>module.
+        </p>
+        <p>
+            The name of the task and chapter will automatically be displayed in the header of the deliverable. You can
+            <strong>change the name</strong> by clicking on <strong><i>… </i></strong>. Please note however that
+            templates and other knowledge management content is linked to each task – the renaming function should
+            therefore only be used when renaming the given task.
+        </p>
+        <p>
+            The deliverable will be generated in the sequence of the chapters and tasks in the Project Scope. Tasks and
+            chapters can therefore be rearranged as required in this module. To <strong>move a chapter </strong>select
+            the up or down arrow displayed when hovering the mouse over the chapter name. To <strong>move a task</strong>,
+            click on the black handle which appears when hovering the mouse over the card and drag to the desired
+            position.
+        </p>
+    </div>
+
+    <div class="sidebar-middle">
+        <div *ngIf="!isMyTasksView" class="title-container">
+            <h1 class="page-title" i18n="Project Scope Sidebar Subtitle| Subtitle@@project:project-scope:sidebar:subtitle">Assign
+                Team Members</h1>
+        </div>
+        <div *ngIf="!isMyTasksView">
+            <kosmos-team-member-assignment-list></kosmos-team-member-assignment-list>
+        </div>
+    </div>
+</kosmos-sidebar>
+
+<kosmos-deliverable-list (selectionChanged)="onDeliverablesSelected($event)"></kosmos-deliverable-list>
+<kosmos-delete-popup [(visible)]="isPopupVisible && !isMyTasksView" (closeEvent)="closePopup($event)"></kosmos-delete-popup>

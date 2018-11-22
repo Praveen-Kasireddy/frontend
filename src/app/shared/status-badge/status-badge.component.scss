@@ -1,0 +1,38 @@
+@import "app-shared";
+
+:host {
+	border-radius: 6px;
+	color: $colour--name-white;
+	display: inline-block;
+	font-family: $font-family--univers-bold;
+	font-size: 10px;
+	font-weight: normal;
+	letter-spacing: 0.1em;
+	line-height: 1.7;
+	padding: 0 $spacing--5;
+	text-transform: uppercase;
+}
+
+/**
+ * Modifier: active project
+ */
+
+:host(.-active) {
+	background-color: $colour--name-blue;
+}
+
+/**
+ * Modifier: draft project
+ */
+
+:host(.-draft) {
+	background-color: $colour--name-gray;
+}
+
+/**
+ * Modifier: closed project
+ */
+
+:host(.-closed) {
+	background-color: $colour--name-moon-gray;
+}
