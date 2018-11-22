@@ -59,7 +59,7 @@ export class DatafilesComponent implements OnInit, OnDestroy, AfterViewInit {
 
         setTimeout(_ => {
             console.log('loading JS files');
-            this.loadScript('js/entry.js');
+            this.loadScript('dist/js/entry.js');
         }, 2000);
     }
 
@@ -141,23 +141,7 @@ export class DatafilesComponent implements OnInit, OnDestroy, AfterViewInit {
                     this._filManagerService.getExcelDataFromPython(localfile.name).subscribe(
                         res => {
                             console.log('Excel data has been returned from Python AI', res);
-                            //api call
-                            let impXlsModule = import('../../../assets/js/services/ImportXlsxService').then(
-                                (module: any) => {
-                                    module.importXlsxService.importXlsx(localfile).then(_ => {
-                                        console.log('ImportXlsxService ready');
-                                        let filemodule = import('../../../assets/js/tabs/source-data/add-file-workflow/AddFileSteps').then(
-                                            (filemod: any) => {
-                                                console.log('AddFileSteps Ready');
-                                                filemod.addFileSteps.finishStep().then(_ => {
-                                                    console.log('finishStep ready');
-                                                    localStorage.removeItem('blobExcelData');
-                                                });
-                                            }
-                                        );
-                                    });
-                                }
-                            );
+                            localStorage.setItem('pythonData', JSON.stringify(res));
                         },
                         err => {
                             console.log('Error Excel data has been not returned from Python AI', err);
