@@ -59,7 +59,7 @@ export class DatafilesComponent implements OnInit, OnDestroy, AfterViewInit {
 
         setTimeout(_ => {
             console.log('loading JS files');
-            this.loadScript('dist/js/entry.js');
+            this.loadScript('js/entry.js');
         }, 2000);
     }
 

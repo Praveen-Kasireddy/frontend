@@ -4,11 +4,11 @@
         i18n-subtitle="Source Data|Source Data Subtitle for Header@@project:Source Data"
         subtitle="Data Sources"
     ></kosmos-header>
-    <div #filesview style="height: calc(100vh - 110px)" style="display: none" ></div>
+    <div #filesview style="height: calc(100vh - 110px)" ></div>
     <kosmos-message-box Title="Warning" showDoneButton="true" showCloseButton="true"></kosmos-message-box>
     <dx-toast [message]="toastMessage" [(visible)]="isToastVisible" type="Error"></dx-toast>
 
-    <div class="body-container">
+    <div class="body-container" style="display: none">
         <div class="side-menu" style="display: none">
             <div class="extending-sub-menu">
                 <img src="assets/images/kosmos-logo-dark.png">

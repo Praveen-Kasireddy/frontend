@@ -8,10 +8,9 @@ import { Observable } from 'rxjs';
 const httpOptions = {
     headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://appservicesprint4.azurewebsites.net',
         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-        'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
-        'Access-Control-Allow-Credentials': 'true'
+        'Access-Control-Allow-Headers': '*'
     })
 };
 
@@ -22,7 +21,7 @@ export class FileManagerService {
 
     private _apiTestUrl: string = 'python';
 
-    private _apiBlobUrl: string = '/api/cellvalue';
+    private _apiBlobUrl: string = 'https://appservicesprint4.azurewebsites.net/api/cellvalue';
 
     constructor(private _http: HttpClient, private _logger: NGXLogger) {
         this._baseUrl = KosmosConfigurationService.appConfig.API_URL_CORE;

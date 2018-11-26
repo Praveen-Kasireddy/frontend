@@ -53,7 +53,7 @@ export class DatasourcesComponent implements OnInit, OnDestroy, AfterViewInit {
     ngOnInit() {
         setTimeout(_ => {
             console.log('calling loadScript');
-            this.loadScript('dist/js/entry.js');
+            //this.loadScript('js/entry.js');
         }, 2000);
 
         this.selectedProject = this._sharedStorageService.get('selectedProject');

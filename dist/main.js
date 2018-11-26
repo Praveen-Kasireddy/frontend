@@ -4239,10 +4239,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var httpOptions = {
     headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]({
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://appservicesprint4.azurewebsites.net',
         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-        'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
-        'Access-Control-Allow-Credentials': 'true'
+        'Access-Control-Allow-Headers': '*'
     })
 };
 var FileManagerService = /** @class */ (function () {
@@ -4250,7 +4249,7 @@ var FileManagerService = /** @class */ (function () {
         this._http = _http;
         this._logger = _logger;
         this._apiTestUrl = 'python';
-        this._apiBlobUrl = '/api/cellvalue';
+        this._apiBlobUrl = 'https://appservicesprint4.azurewebsites.net/api/cellvalue';
         this._baseUrl = _core_services_configuration_kosmos_configuration_service__WEBPACK_IMPORTED_MODULE_2__["KosmosConfigurationService"].appConfig.API_URL_CORE;
         this._apiEndpoint = 'filemanager';
     }
