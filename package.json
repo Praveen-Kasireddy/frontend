@@ -64,7 +64,7 @@
         "highcharts": "^5.0.14",
         "intl": "^1.2.5",
         "jasmine-tfs-reporter": "^1.0.2",
-        "jquery": "^3.2.1",
+        "jquery": "^3.5.0",
         "jquery-contextmenu": "^3.0.0-beta.2",
         "jquery-ui": "^1.12.1",
         "jquery-ui-dist": "^1.12.1",
