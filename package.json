@@ -70,7 +70,7 @@
         "jquery-ui-dist": "^1.12.1",
         "json-loader": "^0.5.7",
         "jszip": "^3.1.5",
-        "lodash": "^4.17.10",
+        "lodash": "^4.17.19",
         "mathjs": "^5.1.0",
         "moment": "^2.22.2",
         "ngx-logger": "^3.0.5",
@@ -120,7 +120,7 @@
         "gulp-uglify": "*",
         "gulp-util": "*",
         "gulp-watch": "^4.3.9",
-        "lodash": "^4.17.10",
+        "lodash": "^4.17.19",
         "webpack-stream": "^4.0.3"
     }
 }
