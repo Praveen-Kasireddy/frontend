@@ -61,7 +61,7 @@
         "flag-icon-css": "^3.0.0",
         "font-awesome": "^4.7.0",
         "globalize": "^1.4.0",
-        "highcharts": "^5.0.14",
+        "highcharts": "^9.0.0",
         "intl": "^1.2.5",
         "jasmine-tfs-reporter": "^1.0.2",
         "jquery": "^3.2.1",
