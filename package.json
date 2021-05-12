@@ -71,7 +71,7 @@
         "json-loader": "^0.5.7",
         "jszip": "^3.1.5",
         "lodash": "^4.17.10",
-        "mathjs": "^5.1.0",
+        "mathjs": "^7.5.1",
         "moment": "^2.22.2",
         "ngx-logger": "^3.0.5",
         "ngx-store": "^2.0.0",
