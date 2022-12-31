@@ -89,8 +89,8 @@
         "zone.js": "^0.8.26"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "~0.8.5",
-        "@angular-devkit/build-optimizer": "^0.8.5",
+        "@angular-devkit/build-angular": "~15.0.4",
+        "@angular-devkit/build-optimizer": "^0.1302.1",
         "@angular/cli": "^6.2.5",
         "@angular/compiler-cli": "^6.1.10",
         "@angular/language-service": "^6.1.10",
@@ -121,6 +121,6 @@
         "gulp-util": "*",
         "gulp-watch": "^4.3.9",
         "lodash": "^4.17.10",
-        "webpack-stream": "^4.0.3"
+        "webpack-stream": "^7.0.0"
     }
 }
